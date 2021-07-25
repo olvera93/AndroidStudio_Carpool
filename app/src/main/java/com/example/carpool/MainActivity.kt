@@ -55,8 +55,10 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             if (usuario.text.isEmpty() || contrasena.text.isEmpty()){
                 Toast.makeText(this, "Usuario o contraseña invalidos", Toast.LENGTH_LONG).show()
+
+                usuario.error = "No debe de estar vacio"
                 contrasena.error="Contraseña incorrecta"
-                
+
                 fun EditText.clearError() {
                     error = null
                 }
