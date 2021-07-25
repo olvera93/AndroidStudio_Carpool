@@ -1,12 +1,12 @@
 package com.example.carpool
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
 
 const val USER_NAME ="org.bedu.activity.USER_NAME"
 
@@ -20,28 +20,51 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        button=findViewById(R.id.Login)
 
         usuario= findViewById(R.id.EditUsuario)
+        usuario.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                usuario.error = "Usuario no puede estar vacío"
+                button.isEnabled = s.toString().isNotEmpty()
+
+            }
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
         contrasena=findViewById(R.id.EditContrasena)
-        inspector=findViewById(R.id.inspector)
-        button=findViewById(R.id.Login)
-        inspector=findViewById(R.id.inspector)
-        textView = findViewById(R.id.textView)
+        contrasena.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                button.isEnabled = s.toString().isNotEmpty()
+
+            }
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
 
         //Iniciamos el listener
-
         button.setOnClickListener {
-            if (usuario.text.isEmpty()||contrasena.text.isEmpty()){
-                textView.setText(R.string.Errorlogin)
-                //textView.setTextColor(R.color.)
-                inspector.setImageResource(R.drawable.wrong)
-                contrasena.error="Contraseña incorrecta"
-            }else{
+            if (usuario.text.isEmpty() || contrasena.text.isEmpty()){
+                Toast.makeText(this, "Usuario o contraseña invalidos", Toast.LENGTH_LONG).show()
 
-                textView.setText(R.string.OKlogin)
-                inspector.setImageResource(R.drawable.correct)
+                usuario.error = "No debe de estar vacio"
+                contrasena.error="Contraseña incorrecta"
+
+                fun EditText.clearError() {
+                    error = null
+                }
+
+            }else{
+                Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_LONG).show()
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
                 val intent = Intent(this, Welcome::class.java).apply {
@@ -52,7 +75,6 @@ class MainActivity : AppCompatActivity() {
             //prueba commit
             //Hola
         }
-
     }
 
 }
