@@ -16,13 +16,19 @@ class Welcome : AppCompatActivity() {
         text=findViewById(R.id.textView2)
         val bundle = intent.extras
         val name= bundle?.getString(USER_NAME)
+        val password = bundle?.getString(PASSWORD)
         text.text="Bienvenido $name"
 
         button = findViewById(R.id.button2)
 
         button.setOnClickListener {
-            val intent = Intent(this, VerPerfil::class.java).apply {
+            val bundle =Bundle()
+            bundle.putString(USER_NAME, name)
+            bundle.putString(PASSWORD,password)
 
+
+            val intent = Intent(this, VerPerfil::class.java).apply {
+                putExtras(bundle)
             }
             startActivity(intent)
         }

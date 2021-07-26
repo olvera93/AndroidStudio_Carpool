@@ -15,4 +15,5 @@
     <string name="Telefono">Telefono</string>
     <string name="Contraseña">Contraseña</string>
     <string name="edt_cta">Editar cuenta</string>
+    <string name="Actbtn">Actualizar</string>
 </resources>

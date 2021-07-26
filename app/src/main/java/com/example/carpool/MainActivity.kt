@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 const val USER_NAME ="org.bedu.activity.USER_NAME"
+const val PASSWORD="org.bedu.activity.PASSWORD"
 
 class MainActivity : AppCompatActivity() {
 
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_LONG).show()
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
+                bundle.putString(PASSWORD,contrasena.text.toString())
                 val intent = Intent(this, Welcome::class.java).apply {
                     putExtras(bundle)
                 }
