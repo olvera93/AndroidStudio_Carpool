@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">
-        <activity android:name=".TravelScreen"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".TravelScreen"/>
         <activity android:name=".Welcome" />
         <activity android:name=".principalscreen" />
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplashTheme">

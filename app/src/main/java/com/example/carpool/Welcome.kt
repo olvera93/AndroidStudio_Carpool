@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 
 class Welcome : AppCompatActivity() {
+
     private lateinit var text:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
