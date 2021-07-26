@@ -10,4 +10,13 @@
     <string name="forgot">¿Olvidaste tu contraseña?</string>
     <string name="contrasenaerror">Contraseña incorrecta</string>
     <string name="Welcome">Bienvenido %s</string>
+
+    <!-- Valores pantalla de registro: -->
+    <string name="registerTitle">Registro</string>
+    <string name="registerUsername">Ingresa tu usuario</string>
+    <string name="registerPassword">Escribe tu contraseña</string>
+    <string name="registerUsernameTitle">Usuario</string>
+    <string name="registerPasswordTitle">Contraseña</string>
+    <string name="registerBtn">Registrarse</string>
+    <string name="registerLogin">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
 </resources>
