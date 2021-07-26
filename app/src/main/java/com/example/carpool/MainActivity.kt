@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_LONG).show()
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
-                val intent = Intent(this, Welcome::class.java).apply {
+                val intent = Intent(this, principalscreen::class.java).apply {
                     putExtras(bundle)
                 }
                 startActivity(intent)

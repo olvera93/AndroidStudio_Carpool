@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">
-        <activity android:name=".Welcome" />
+        <activity android:name=".principalscreen" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplashTheme">

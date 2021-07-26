@@ -13,7 +13,7 @@ class principalscreen : AppCompatActivity() {
 
     lateinit var inspector:ImageView
     lateinit var button: Button
-    lateinit var textView: TextView
+    //lateinit var textView: TextView
     lateinit var CoordenadaActual: EditText
     lateinit var CoordenadaDestino: EditText
 
@@ -24,7 +24,7 @@ class principalscreen : AppCompatActivity() {
         CoordenadaActual=findViewById(R.id.EditCoordenadaActual)
         CoordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
         button=findViewById(R.id.button)
-        textView = findViewById(R.id.textView)
+        //textView = findViewById(R.id.textView)
 
         button.setOnClickListener {
             if (CoordenadaActual.text.isEmpty()||CoordenadaDestino.text.isEmpty()){
@@ -41,6 +41,5 @@ class principalscreen : AppCompatActivity() {
             }
         }
 
-    }
-
 }
+
