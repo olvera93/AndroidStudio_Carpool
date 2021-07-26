@@ -10,4 +10,9 @@
     <string name="forgot">¿Olvidaste tu contraseña?</string>
     <string name="contrasenaerror">Contraseña incorrecta</string>
     <string name="Welcome">Bienvenido %s</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Apellido">Apellido</string>
+    <string name="Telefono">Telefono</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="edt_cta">Editar cuenta</string>
 </resources>
