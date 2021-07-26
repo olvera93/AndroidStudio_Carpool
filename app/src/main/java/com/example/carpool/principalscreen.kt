@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 
-class principalscreen { AppCompatActivity() {
+class principalscreen : AppCompatActivity() {
 
     lateinit var inspector:ImageView
     lateinit var button: Button
@@ -28,12 +28,14 @@ class principalscreen { AppCompatActivity() {
 
         button.setOnClickListener {
             if (CoordenadaActual.text.isEmpty()||CoordenadaDestino.text.isEmpty()){
-                EditText.setNumber(R.string.ErrorCoordenada)
+                CoordenadaActual.setText(R.string.ErrorCoordenada)
+                CoordenadaDestino.setText(R.string.ErrorCoordenada)
                 CoordenadaActual.error="Coordenadas incorrectas"
                 CoordenadaDestino.error="Coordenadas incorrectas"
             }else{
 
-                EditText.setText(R.string.OKCoordenada)
+                CoordenadaActual.setText(R.string.OKCoordenada)
+                CoordenadaDestino.setText(R.string.OKCoordenada)
                 }
 
             }
