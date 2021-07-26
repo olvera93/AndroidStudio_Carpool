@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.TextView
 import com.example.carpool.progressbar.LoadingDialog
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -66,6 +67,9 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback {
             val coordenadas = LatLng(coordenadaActual!!.toDouble(), coordenadaDestino!!.toDouble())
             val market: MarkerOptions = MarkerOptions().position(coordenadas).title("Hola")
             map.addMarker(market)
+            // Se agrega una animación cuando muestra la ubicación
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordenadas, 15f),4000, null)
         }catch (e: NumberFormatException){
 
         }
