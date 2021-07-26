@@ -34,7 +34,7 @@ class VerPerfil : AppCompatActivity() {
         val usuario=bundle?.get(USER_NAME)
         val pass = bundle?.get(PASSWORD)
         EditNombre.hint=usuario.toString()
-        EditContra.hint = pass.toString()
+        //EditContra.hint = pass.toString()
         EditNombre.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
             }
