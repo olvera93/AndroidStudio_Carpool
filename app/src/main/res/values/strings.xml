@@ -8,4 +8,9 @@
     <string name="OKlogin">Ingreso datos correctos</string>
     <string name="contrasenaerror">Contraseña incorrecta</string>
     <string name="Welcome">Bienvenido %s</string>
+    <string name="CoordenadaActual">Ingrese sus coordenadas actuales</string>
+    <string name="CoordenadaDestino">Ingrese las coordenadas del destino</string>
+    <string name="ErrorCoordenada">Coordenadas no validas</string>
+    <string name="OKCoordenada">Coordenadas validas</string>
+
 </resources>
