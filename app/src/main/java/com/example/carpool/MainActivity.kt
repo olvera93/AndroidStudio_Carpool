@@ -70,10 +70,14 @@ class MainActivity : AppCompatActivity() {
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
                 val intent = Intent(this, TravelScreen::class.java).apply {
+
+                val intent = Intent(this, principalscreen::class.java).apply {
                     putExtras(bundle)
                 }
                 startActivity(intent)
                 }
+            //prueba commit
+            //Hola
         }
     }
 

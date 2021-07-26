@@ -12,4 +12,10 @@
     <string name="Welcome">Bienvenido %s</string>
 
     <string name="esperando_viaje">Esperando Viaje...</string>
+
+    <string name="CoordenadaActual">Ingrese sus coordenadas actuales</string>
+    <string name="CoordenadaDestino">Ingrese las coordenadas del destino</string>
+    <string name="ErrorCoordenada">Coordenadas no validas</string>
+    <string name="OKCoordenada">Coordenadas validas</string>
+
 </resources>
