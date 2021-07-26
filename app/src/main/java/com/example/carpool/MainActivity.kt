@@ -19,12 +19,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var textView: TextView
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         setTheme(R.style.AppTheme)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         button=findViewById(R.id.Login)
 
         usuario= findViewById(R.id.EditUsuario)
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_LONG).show()
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
-                val intent = Intent(this, Welcome::class.java).apply {
+                val intent = Intent(this, TravelScreen::class.java).apply {
                     putExtras(bundle)
                 }
                 startActivity(intent)

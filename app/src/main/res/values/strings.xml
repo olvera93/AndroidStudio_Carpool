@@ -10,4 +10,6 @@
     <string name="forgot">¿Olvidaste tu contraseña?</string>
     <string name="contrasenaerror">Contraseña incorrecta</string>
     <string name="Welcome">Bienvenido %s</string>
+
+    <string name="esperando_viaje">Esperando Viaje...</string>
 </resources>
