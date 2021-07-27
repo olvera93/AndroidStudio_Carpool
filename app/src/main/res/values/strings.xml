@@ -7,7 +7,7 @@
     <string name="usuario">Ingrese su nombre de usuario</string>
     <string name="password">Ingrese su contraseña</string>
     <string name="botonLog">Log In</string>
-    <string name="forgot">¿Olvidaste tu contraseña?</string>
+    <string name="forgot"><u>¿Olvidaste tu contraseña?</u></string>
     <string name="contrasenaerror">Contraseña incorrecta</string>
     <string name="Welcome">Bienvenido %s</string>
 

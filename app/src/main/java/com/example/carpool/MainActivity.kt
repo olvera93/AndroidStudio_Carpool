@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var button: Button
     lateinit var textView: TextView
 
+
     //descargar bundle de registro
 
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
 
         button = findViewById(R.id.Login)
+
 
         usuario = findViewById(R.id.EditUsuario)
         usuario.addTextChangedListener(object : TextWatcher {
@@ -79,6 +81,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
     }
 
 }
