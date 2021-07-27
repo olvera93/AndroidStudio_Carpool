@@ -54,9 +54,8 @@ class MainActivity : AppCompatActivity() {
 
         //Iniciamos el listener
         button.setOnClickListener {
-            if (usuario.text.isEmpty() || contrasena.text.isEmpty()){
+            if (!validacionCampos(usuario.text.toString(),contrasena.text.toString())){
                 Toast.makeText(this, "Usuario o contraseña invalidos", Toast.LENGTH_LONG).show()
-
                 usuario.error = "No debe de estar vacio"
                 contrasena.error="Contraseña incorrecta"
 
@@ -78,3 +77,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+fun validacionCampos(campo1:String,campo2:String):Boolean{
+    return campo1.isNotEmpty()&&campo1!=null || campo2.length>0 &&campo2!=null
+        }

@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NumeroEdit"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <EditText
         android:id="@+id/ContraEdit"
@@ -47,23 +47,7 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ContraText"
-        app:layout_constraintVertical_bias="0.011" />
-
-    <EditText
-        android:id="@+id/ApellidoEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:drawableRight="@drawable/edit"
-        android:drawablePadding="10dp"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NombreText"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <EditText
         android:id="@+id/NumeroEdit"
@@ -111,15 +95,31 @@
         android:id="@+id/ApellidoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/Apellido"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/ApellidoEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.931" />
+
+    <EditText
+        android:id="@+id/ApellidoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:drawableRight="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NombreText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/NombreText"
@@ -157,6 +157,6 @@
         app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ApellidoEdit"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
