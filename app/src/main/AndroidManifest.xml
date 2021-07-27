@@ -22,17 +22,12 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".TravelScreen"/>
-        <activity android:name=".Welcome" />
         <activity android:name=".principalscreen" />
 
         <activity
-            android:name=".MainActivity">
+            android:name=".MainActivity"/>
             
-        <activity android:name=".Welcome" />
-        <activity
-            android:name=".MainActivity">
 
-        </activity>
     </application>
 
 </manifest>
