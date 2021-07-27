@@ -13,9 +13,11 @@ const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
 class principalscreen : AppCompatActivity() {
 
     lateinit var inspector:ImageView
-    lateinit var button: Button
+    lateinit var buttonCoordenadas: Button
     lateinit var coordenadaActual: EditText
     lateinit var coordenadaDestino: EditText
+    lateinit var buttonverPerfil:  Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +25,10 @@ class principalscreen : AppCompatActivity() {
 
         coordenadaActual=findViewById(R.id.EditCoordenadaActual)
         coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
-        button=findViewById(R.id.button)
+        buttonCoordenadas=findViewById(R.id.button)
+        buttonverPerfil=findViewById(R.id.VerPerfilbtn)
 
-        button.setOnClickListener {
+        buttonCoordenadas.setOnClickListener {
 
 
             if (coordenadaActual.text.isEmpty()||coordenadaDestino.text.isEmpty()){
@@ -44,6 +47,12 @@ class principalscreen : AppCompatActivity() {
                 }
 
             }
+        buttonverPerfil.setOnClickListener {
+            val intent = Intent(this,VerPerfil::class.java).apply {
+
+            }
+            startActivity(intent)
+        }
         }
 
 }

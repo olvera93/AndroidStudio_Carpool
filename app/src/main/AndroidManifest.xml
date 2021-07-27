@@ -10,18 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">
         <activity android:name=".Register"
-        android:theme="@style/SplashTheme">
-        <intent-filter>
-        <activity android:name=".VerPerfil"></activity>
-        <activity android:name=".Welcome" />
-        <activity
-            android:name=".MainActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".VerPerfil"></activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/SplashTheme">
+           </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -30,8 +33,7 @@
         <activity android:name=".TravelScreen"/>
         <activity android:name=".principalscreen" />
 
-        <activity
-            android:name=".MainActivity"/>
+
             
 
     </application>
