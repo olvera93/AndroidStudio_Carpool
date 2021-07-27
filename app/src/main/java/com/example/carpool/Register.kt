@@ -36,8 +36,10 @@ class Register : AppCompatActivity() {
             }else{
                 val tempUsuario = User(registerUser.text.toString(),registerPassword.text.toString())
                 if(tempUsuario.addUser()){
+                    val bundle =Bundle()
                     Toast.makeText(this, "Se ha registrado con éxito :)", Toast.LENGTH_LONG).show()
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java).apply{
+                  }
                     startActivity(intent)
                 }else{
                     Toast.makeText(this,"Esa cuenta ya está registrada :(",Toast.LENGTH_LONG).show()
@@ -46,6 +48,7 @@ class Register : AppCompatActivity() {
                 }
             }
         }
+
         registerLoginButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

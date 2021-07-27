@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var button: Button
     lateinit var textView: TextView
 
+    //descargar bundle de registro
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
 
@@ -71,9 +74,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
-                bundle.putString(PASSWORD,contrasena.text.toString())
-                val intent = Intent(this, principalscreen::class.java).apply {
-                                   putExtras(bundle)
+                val intent = Intent(this, principalscreen::class.java).apply { putExtras(bundle)
                 }
                 startActivity(intent)
             }
