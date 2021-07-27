@@ -150,6 +150,7 @@
 
     <Button
         android:id="@+id/Actualizar"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Actbtn"
@@ -159,7 +160,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.584"
-        android:background="@color/Backgroundgrey"/>
+        android:textColor="@color/black"
+        android:backgroundTint="@color/Backgroundgrey"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
