@@ -12,6 +12,12 @@
         <activity android:name=".Register"
         android:theme="@style/SplashTheme">
         <intent-filter>
+        <activity android:name=".VerPerfil"></activity>
+        <activity android:name=".Welcome" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

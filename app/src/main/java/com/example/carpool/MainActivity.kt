@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 const val USER_NAME ="org.example.activity.USER_NAME"
+const val PASSWORD="org.example.activity.PASSWORD"
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,9 +58,8 @@ class MainActivity : AppCompatActivity() {
 
         //Iniciamos el listener
         button.setOnClickListener {
-            if (usuario.text.isEmpty() || contrasena.text.isEmpty()) {
+            if (!validacionCampos(usuario.text.toString(),contrasena.text.toString())){
                 Toast.makeText(this, "Usuario o contraseña invalidos", Toast.LENGTH_LONG).show()
-
                 usuario.error = "No debe de estar vacio"
                 contrasena.error = "Contraseña incorrecta"
 
@@ -71,11 +71,17 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
                 val bundle =Bundle()
                 bundle.putString(USER_NAME, usuario.text.toString())
+                bundle.putString(PASSWORD,contrasena.text.toString())
                 val intent = Intent(this, principalscreen::class.java).apply {
-                    putExtras(bundle)
+                                   putExtras(bundle)
                 }
                 startActivity(intent)
             }
         }
     }
+
 }
+
+fun validacionCampos(campo1:String,campo2:String):Boolean{
+    return campo1.isNotEmpty()&&campo1!=null || campo2.length>0 &&campo2!=null
+        }
