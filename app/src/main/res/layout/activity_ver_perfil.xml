@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerPerfil">
+    tools:context=".VerPerfil"
+    android:background="@color/Backgroundgrey">
 
 
     <ImageView
@@ -20,49 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
 
         />
-
-    <TextView
-        android:id="@+id/ContraText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Contraseña"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumeroEdit"
-        app:layout_constraintVertical_bias="0.07" />
-
-    <EditText
-        android:id="@+id/ContraEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/edit"
-        android:drawablePadding="10dp"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ContraText"
-        app:layout_constraintVertical_bias="0.105" />
-
-    <EditText
-        android:id="@+id/NumeroEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/edit"
-        android:drawablePadding="10dp"
-        android:inputType="phone"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumeroText"
-        app:layout_constraintVertical_bias="0.1" />
 
     <View
         android:id="@+id/divider"
@@ -86,16 +44,16 @@
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/ApellidoText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreText"
-        app:layout_constraintVertical_bias="0.258" />
+        app:layout_constraintVertical_bias="0.272" />
 
     <TextView
         android:id="@+id/ApellidoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+
         android:text="@string/Apellido"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/ApellidoEdit"
@@ -103,7 +61,7 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.931" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <EditText
         android:id="@+id/ApellidoEdit"
@@ -116,16 +74,73 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreText"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <TextView
+        android:id="@+id/ContraText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Contraseña"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NumeroEdit"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <EditText
+        android:id="@+id/ContraEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ContraText"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <TextView
+        android:id="@+id/NumeroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/Telefono"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ApellidoEdit"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/NumeroEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NumeroText"
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/NombreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Nombre"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,20 +158,21 @@
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.584"
+        android:background="@color/Backgroundgrey"/>
 
-    <TextView
-        android:id="@+id/NumeroText"
+    <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/Telefono"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ApellidoEdit"
-        app:layout_constraintVertical_bias="0.0" />
+        app:barrierDirection="left"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="17dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
