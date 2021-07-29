@@ -1,5 +1,5 @@
 ## 💻 Proyecto - Carpool
-<img src="images/carpool.png" align="right" height="150" width="150" hspace="10">
+<img src="images/carpool.png" align="right" height="100" width="100" hspace="10">
 
 ## :wave: Bienvenid@s
 
@@ -26,8 +26,6 @@ Este proyecto se basará en las distintas aplicaciones de movilidad ya existente
 Alcance del proyecto:
 Este proyecto no tiene el objetivo de convertirse en una aplicación totalmente funcional y comercializable, sino que tiene la finalidad de servir como herramienta de aplicación de los conocimientos adquiridos durante el módulo, probar distintas formas de resolver problemas, practicar  y mejorar habilidades de programación. Por lo anterior, no es obligatorio crear una aplicación desde cero junto a su concepto y funcionalidades, sino que tomar de una ya existente todo lo anterior y así encontrar la forma de simular todas sus funcionalidades dentro de un código que se ejecute de forma similar.  
 El código a crear buscará desarrollar cada uno de los temas vistos en las sesiones que serán extraídos de las secciones de postwork y reto final, buscando la manera de aplicar lo que se explicó durante cada sesión.
-
---------
   
 </div>
 
