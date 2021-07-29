@@ -10,21 +10,18 @@ import android.widget.EditText
 import android.widget.Toast
 
 class VerPerfil : AppCompatActivity() {
-
+    //TO-DO enlazar los datos de el usuario para que aparezcan como valor default en editTexts
     lateinit var EditNombre:EditText
     lateinit var EditApellido:EditText
     lateinit var EditTelefono:EditText
     lateinit var EditContra:EditText
     lateinit var actbtn:Button
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_perfil)
 
-        EditApellido=findViewById(R.id.ApellidoEdit)
+        EditApellido=findViewById(R.id.UsuarioEdit)
         EditContra=findViewById(R.id.ContraEdit)
         EditNombre=findViewById(R.id.NombreEdit)
         EditTelefono=findViewById(R.id.NumeroEdit)

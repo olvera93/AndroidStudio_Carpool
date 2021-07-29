@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var inspector:ImageView
     lateinit var button: Button
     lateinit var textView: TextView
-
     //descargar bundle de registro
 
 
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val userDB: User = intent.getParcelableExtra("userDB")!!
         button = findViewById(R.id.Login)
 
         usuario = findViewById(R.id.EditUsuario)
@@ -71,12 +70,16 @@ class MainActivity : AppCompatActivity() {
                 }
 
             } else {
-                Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
-                val bundle =Bundle()
-                bundle.putString(USER_NAME, usuario.text.toString())
-                val intent = Intent(this, principalscreen::class.java).apply { putExtras(bundle)
+                if(userDB.validateUser(usuario.text.toString(),contrasena.text.toString())){
+                    Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
+                    val bundle = Bundle()
+                    bundle.putString(USER_NAME, usuario.text.toString())
+                    val intent = Intent(this, principalscreen::class.java).apply {putExtras(bundle)}
+                    startActivity(intent)
                 }
-                startActivity(intent)
+                else{
+                    Toast.makeText(this, "Usuario/Contraseña incorrectos :(", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
