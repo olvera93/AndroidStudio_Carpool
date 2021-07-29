@@ -1,8 +1,9 @@
-## 💻 Proyecto
+## 💻 Proyecto - Carpool
+<img src="images/carpool.png" align="right" height="150" width="150" hspace="10">
 
 ## :wave: Bienvenid@s
 
-<img src="images/carpool.png" width="100"> # Carpool 
+
 
 ## Integrantes: 
 
@@ -14,12 +15,13 @@
 <div style="text-align: justify;">
 
 ## :gear: Requerimientos
-
+- Android Studio
+- Teléfono físico (Recomendado)
+- SDK Services Google
 
 ### :clipboard:  Descripción
-  
-  
 
+--------
   
 </div>
 
