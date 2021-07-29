@@ -36,23 +36,29 @@ class principalscreen : AppCompatActivity() {
 
         buttonCoordenadas.setOnClickListener {
 
-
             if (coordenadaActual.text.isEmpty()||coordenadaDestino.text.isEmpty()){
-                coordenadaActual.error="Coordenadas incorrectas"
-                coordenadaDestino.error="Coordenadas incorrectas"
-            }else{
+                coordenadaActual.error="Coordenadas no debe estar vacío"
+                coordenadaDestino.error="Coordenadas no debe estar vacío"
+            } else {
+                if (coordenadaActual.text.toString().toDouble() <= -90.0 && coordenadaActual.text.toString().toDouble() <= 90.0 && coordenadaDestino.text.toString().toDouble() <= -180.0 && coordenadaDestino.text.toString().toDouble() <= 180.0 ) {
+                    coordenadaActual.error="Coordenadas incorrectas"
+                    coordenadaDestino.error="Coordenadas incorrectas"
 
-                val bundle2 =Bundle()
-                bundle2.putString(COORDENADAS_ACTUALES, coordenadaActual.text.toString())
-                bundle2.putString(COORDENADAS_DESTINO, coordenadaDestino.text.toString())
-                val intent = Intent(this, TravelScreen::class.java).apply {
-                    putExtras(bundle2)
+                } else {
+                    val bundle2 =Bundle()
+                    bundle2.putString(COORDENADAS_ACTUALES, coordenadaActual.text.toString())
+                    bundle2.putString(COORDENADAS_DESTINO, coordenadaDestino.text.toString())
+                    val intent = Intent(this, TravelScreen::class.java).apply {
+                        putExtras(bundle2)
+                    }
+                    startActivity(intent)
                 }
-                startActivity(intent)
-
-                }
-
             }
+
+
+
+
+        }
         buttonverPerfil.setOnClickListener {
             val bundle3 =Bundle()
             bundle3.putString(USER_NAME, usuario.toString())
