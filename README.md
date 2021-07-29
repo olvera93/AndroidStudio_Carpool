@@ -1,5 +1,5 @@
 ## 💻 Proyecto - Carpool
-<img src="images/carpool.png" align="right" height="50" width="50" hspace="10">
+<img src="images/carpool.png" align="right" height="100" width="100" hspace="10">
 
 ## :wave: Bienvenid@s
 
