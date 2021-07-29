@@ -16,7 +16,7 @@
 
 ## :gear: Requerimientos
 - Android Studio
-- Teléfono físico (Recomendado) o API Android 11.0 o superior
+- Teléfono físico (Recomendado) o API Android 5.0 o superior
 - SDK Services Google
 
 ### :clipboard:  Descripción
