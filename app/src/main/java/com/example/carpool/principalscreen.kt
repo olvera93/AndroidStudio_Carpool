@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
+import androidx.recyclerview.widget.RecyclerView
 
 const val COORDENADAS_ACTUALES ="org.example.activity.COORDENADAS_ACTUALES"
 const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
@@ -26,6 +27,9 @@ class principalscreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principalscreen)
 
+        val recycler = findViewById<RecyclerView>(R.id.recycler)
+
+
         val bundle1=intent.extras
         val usuario=bundle1?.get(USER_NAME)
 
@@ -33,6 +37,8 @@ class principalscreen : AppCompatActivity() {
         coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
         buttonCoordenadas=findViewById(R.id.button)
         buttonverPerfil=findViewById(R.id.VerPerfilbtn)
+
+        val btnTravelHistory = findViewById<Button>(R.id.btnTravelHistory)
 
         buttonCoordenadas.setOnClickListener {
 
@@ -67,7 +73,18 @@ class principalscreen : AppCompatActivity() {
             }
             startActivity(intent2)
         }
+
+        btnTravelHistory.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString(USER_NAME, usuario.toString())
+            val intent = Intent(this, TravelHistory::class.java).apply {
+                putExtras(bundle)
+            }
+            startActivity(intent)
+
+
         }
+    }
 
 }
 
