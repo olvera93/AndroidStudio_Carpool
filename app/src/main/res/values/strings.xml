@@ -29,6 +29,15 @@
     <string name="registerPhoneTitle">Número de teléfono</string>
     <string name="editTextPhoneRegister">Escribe tu número de teléfono</string>
 
+    <!-- Valores pantalla de Historial de Viajes: -->
+    <string name="TravelHistory">Viajes</string>
+    <string name="driverName">Nombre del conductor</string>
+    <string name="phone">Teléfono</string>
+
+
+
+
+
     <string name="Nombre">Nombre Completo</string>
     <string name="VerPerfilUser">Usuario</string>
     <string name="Telefono">Telefono</string>
