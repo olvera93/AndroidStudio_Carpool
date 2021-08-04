@@ -13,23 +13,27 @@
 
     <!-- Valores pantalla de registro: -->
     <string name="registerTitle">Registro</string>
-    <string name="registerUsername">Ingresa tu usuario</string>
+    <string name="registerUsername">Ingresa un nombre de usuario</string>
     <string name="registerPassword">Escribe tu contraseña</string>
     <string name="registerUsernameTitle">Usuario</string>
     <string name="registerPasswordTitle">Contraseña</string>
     <string name="registerBtn">Registrarse</string>
     <string name="registerLogin">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
     <string name="esperando_viaje">Esperando Viaje...</string>
-
+    <string name="registerNameTitle">Nombre completo</string>
     <string name="CoordenadaActual">Ingrese sus coordenadas actuales</string>
     <string name="CoordenadaDestino">Ingrese las coordenadas del destino</string>
     <string name="ErrorCoordenada">Coordenadas no validas</string>
     <string name="OKCoordenada">Coordenadas validas</string>
+    <string name="editTextFullNameRegister">Coloca tu nombre completo</string>
+    <string name="registerPhoneTitle">Número de teléfono</string>
+    <string name="editTextPhoneRegister">Escribe tu número de teléfono</string>
 
-    <string name="Nombre">Nombre</string>
-    <string name="Apellido">Apellido</string>
+    <string name="Nombre">Nombre Completo</string>
+    <string name="VerPerfilUser">Usuario</string>
     <string name="Telefono">Telefono</string>
     <string name="Contraseña">Contraseña</string>
     <string name="edt_cta">Editar cuenta</string>
     <string name="Actbtn">Actualizar</string>
+
 </resources>

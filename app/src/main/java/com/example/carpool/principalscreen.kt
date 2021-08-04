@@ -18,6 +18,7 @@ class principalscreen : AppCompatActivity() {
     lateinit var coordenadaDestino: EditText
     lateinit var buttonverPerfil:  Button
 
+    val userDB: User = intent.getParcelableExtra("userDB")!!
     //Descarga bundle de Login
 
 
@@ -27,7 +28,7 @@ class principalscreen : AppCompatActivity() {
         setContentView(R.layout.activity_principalscreen)
 
         val bundle1=intent.extras
-        val usuario=bundle1?.get(USER_NAME)
+
 
         coordenadaActual=findViewById(R.id.EditCoordenadaActual)
         coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
@@ -61,9 +62,9 @@ class principalscreen : AppCompatActivity() {
         }
         buttonverPerfil.setOnClickListener {
             val bundle3 =Bundle()
-            bundle3.putString(USER_NAME, usuario.toString())
+            //bundle3.putString(USER_NAME, usuario.toString())
             val intent2 = Intent(this,VerPerfil::class.java).apply {
-            putExtras(bundle3)
+           // putExtras(bundle3)
             }
             startActivity(intent2)
         }

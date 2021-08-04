@@ -10,30 +10,29 @@ import android.widget.EditText
 import android.widget.Toast
 
 class VerPerfil : AppCompatActivity() {
-
+    //TO-DO enlazar los datos de el usuario para que aparezcan como valor default en editTexts
     lateinit var EditNombre:EditText
-    lateinit var EditApellido:EditText
+    lateinit var EditUsuario:EditText
     lateinit var EditTelefono:EditText
     lateinit var EditContra:EditText
     lateinit var actbtn:Button
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_perfil)
 
-        EditApellido=findViewById(R.id.ApellidoEdit)
+        EditUsuario=findViewById(R.id.UsuarioEdit)
         EditContra=findViewById(R.id.ContraEdit)
         EditNombre=findViewById(R.id.NombreEdit)
         EditTelefono=findViewById(R.id.NumeroEdit)
         actbtn = findViewById(R.id.Actualizar)
 
-        val bundle=intent.extras
-        val usuario=bundle?.get(USER_NAME)
+        val userDB: User = intent.getParcelableExtra("userDB")!!
 
-        EditNombre.hint=usuario.toString()
+        EditUsuario.hint=userDB.user.toString()
+        EditNombre.hint=userDB.name.toString()
+        EditContra.hint=userDB.password.toString()
+        EditTelefono.hint=userDB.phone.toString()
         //EditContra.hint = pass.toString()
         EditNombre.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
@@ -49,7 +48,7 @@ class VerPerfil : AppCompatActivity() {
             }
         })
         actbtn.setOnClickListener {
-            if(EditApellido.text.isEmpty()||EditContra.text.isEmpty()||EditNombre.text.isEmpty()||EditTelefono.text.isEmpty()){
+            if(EditUsuario.text.isEmpty()||EditContra.text.isEmpty()||EditNombre.text.isEmpty()||EditTelefono.text.isEmpty()){
                 Toast.makeText(this, "Ingrese datos validos", Toast.LENGTH_LONG).show()
                 fun EditText.clearError() {
                     error = null

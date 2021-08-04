@@ -37,37 +37,37 @@
 
     <EditText
         android:id="@+id/NombreEdit"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:drawableEnd="@drawable/edit"
         android:drawablePadding="10dp"
         android:inputType="text"
         android:paddingStart="10dp"
         android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/ApellidoText"
+        app:layout_constraintBottom_toTopOf="@+id/UsuarioEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreText"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <TextView
-        android:id="@+id/ApellidoText"
+        android:id="@+id/UsuarioText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="@string/Apellido"
+        android:text="@string/VerPerfilUser"
         android:textColor="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/ApellidoEdit"
+        app:layout_constraintBottom_toTopOf="@+id/UsuarioEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.929" />
+        app:layout_constraintVertical_bias="0.902" />
 
     <EditText
-        android:id="@+id/ApellidoEdit"
-        android:layout_width="wrap_content"
+        android:id="@+id/UsuarioEdit"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:drawableRight="@drawable/edit"
@@ -76,10 +76,10 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreText"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintVertical_bias="0.033" />
 
     <TextView
         android:id="@+id/ContraText"
@@ -96,7 +96,7 @@
 
     <EditText
         android:id="@+id/ContraEdit"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/edit"
         android:drawablePadding="10dp"
@@ -104,10 +104,10 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ContraText"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <TextView
         android:id="@+id/NumeroText"
@@ -120,12 +120,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ApellidoEdit"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioEdit"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/NumeroEdit"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/edit"
         android:drawablePadding="10dp"
@@ -133,10 +133,10 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NumeroText"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/NombreText"
@@ -146,7 +146,7 @@
         android:text="@string/Nombre"
         android:textColor="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
