@@ -18,9 +18,12 @@ class VerPerfil : AppCompatActivity() {
     lateinit var EditContra:EditText
     lateinit var actbtn:Button
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_perfil)
+        val userDB: User = intent.getParcelableExtra("userDB")!!
 
         EditUsuario=findViewById(R.id.UsuarioEdit)
         EditContra=findViewById(R.id.ContraEdit)
@@ -28,10 +31,9 @@ class VerPerfil : AppCompatActivity() {
         EditTelefono=findViewById(R.id.NumeroEdit)
         actbtn = findViewById(R.id.Actualizar)
 
-        val bundle = intent.getBundleExtra("userDB")
-        var person  = bundle.getParcelable<Person>("selected_person") as Perso
 
-        val userDB: User = intent.getParcelableExtra("userDB")!!
+
+
 
         EditUsuario.hint=userDB.user.toString()
         EditNombre.hint=userDB.name.toString()

@@ -75,10 +75,9 @@ class principalscreen : AppCompatActivity() {
         }
         buttonverPerfil.setOnClickListener {
 
-            val intent2 = Intent(this, VerPerfil::class.java).apply {
+            val intent = Intent(this, VerPerfil::class.java)
             intent.putExtra("userDB",userDB)
-            }
-            startActivity(intent2)
+            startActivity(intent)
         }
 
         btnTravelHistory.setOnClickListener {
