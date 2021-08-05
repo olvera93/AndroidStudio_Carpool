@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
+import androidx.annotation.Nullable
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carpool.R
 import com.example.carpool.RecyclerAdapter.TravelHistory
 import com.example.carpool.controllers.TravelScreen
 import com.example.carpool.controllers.VerPerfil
@@ -23,7 +25,8 @@ class principalscreen : AppCompatActivity() {
     lateinit var coordenadaDestino: EditText
     lateinit var buttonverPerfil:  Button
 
-    //val userDB: User = intent.getParcelableExtra("userDB")!!
+
+
     //Descarga bundle de Login
 
 
@@ -31,7 +34,7 @@ class principalscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principalscreen)
-
+        val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
         val recycler = findViewById<RecyclerView>(R.id.recycler)
 
 
@@ -71,10 +74,9 @@ class principalscreen : AppCompatActivity() {
 
         }
         buttonverPerfil.setOnClickListener {
-            val bundle3 =Bundle()
-            //bundle3.putString(USER_NAME, usuario.toString())
+
             val intent2 = Intent(this, VerPerfil::class.java).apply {
-           // putExtras(bundle3)
+            intent.putExtra("userDB",userDB)
             }
             startActivity(intent2)
         }

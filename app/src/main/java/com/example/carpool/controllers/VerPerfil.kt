@@ -28,6 +28,9 @@ class VerPerfil : AppCompatActivity() {
         EditTelefono=findViewById(R.id.NumeroEdit)
         actbtn = findViewById(R.id.Actualizar)
 
+        val bundle = intent.getBundleExtra("userDB")
+        var person  = bundle.getParcelable<Person>("selected_person") as Perso
+
         val userDB: User = intent.getParcelableExtra("userDB")!!
 
         EditUsuario.hint=userDB.user.toString()

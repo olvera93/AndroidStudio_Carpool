@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 if(userDB.validateUser(usuario.text.toString(),contrasena.text.toString())){
                     Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, VerPerfil::class.java)
+                    val intent = Intent(this, principalscreen::class.java)
                     intent.putExtra("userDB",userDB)
 
                     startActivity(intent)

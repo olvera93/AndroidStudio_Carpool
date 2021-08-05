@@ -1,0 +1,44 @@
+<resources>
+
+    <string name="username">User</string>
+    <string name="password">Password</string>
+
+    <string name="app_name">Carpool</string>
+    <string name="user">Enter your username</string>
+    <string name="password_text">Enter your password</string>
+    <string name="botonLog">Log In</string>
+    <string name="forgot"><u>Forgot your password?</u></string>
+    <string name="password_error">Wrong password</string>
+
+    <!-- Valores pantalla de registro: -->
+    <string name="register_title">Register</string>
+    <string name="register_username">Enter a username</string>
+    <string name="register_password">Enter a password</string>
+    <string name="register_username_title">Username</string>
+    <string name="register_password_title">Password</string>
+    <string name="register_btn">Register</string>
+    <string name="register_login">Do you already have an account? <u>Log in</u></string>
+    <string name="waiting_travel">Waiting travel...</string>
+    <string name="register_nameTitle">Full name</string>
+    <string name="current_coordinates">Enter your current coordinates</string>
+    <string name="destination_coordinates">Enter your destination coordinates</string>
+    <string name="coordinate_error">Wrong coordinates</string>
+    <string name="editText_fullname_register">Enter your full name</string>
+    <string name="register_phonetitle">Phone number</string>
+    <string name="edittext_phone_register">Enter your phone number</string>
+
+    <!-- Valores pantalla de Historial de Viajes: -->
+    <string name="travel_history">Travels</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="phone">Phone number</string>
+
+
+
+
+
+    <string name="name">Full name</string>
+    <string name="view_profile_user">User</string>
+    <string name="user_edit">Edit account</string>
+    <string name="user_update">Update</string>
+
+</resources>

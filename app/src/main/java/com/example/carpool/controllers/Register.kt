@@ -3,6 +3,7 @@ package com.example.carpool.controllers
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import com.example.carpool.MainActivity
 import com.example.carpool.R
@@ -58,7 +59,13 @@ class Register : AppCompatActivity() {
         }
 
         registerLoginButton.setOnClickListener{
+            val tempUsuario =
+                User("Admin","5555555555",
+                    "Admin", "Admin123")
+            val prueba=tempUsuario.addUser()
+            Log.d("Prueba Booleano",prueba.toString())
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("userDB",tempUsuario)
             startActivity(intent)
         }
     }

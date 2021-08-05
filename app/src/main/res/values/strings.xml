@@ -1,48 +1,44 @@
 <resources>
 
-    <string name="username">Username</string>
-    <string name="passwordText">Password</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
 
     <string name="app_name">Carpool</string>
-    <string name="usuario">Ingrese su nombre de usuario</string>
-    <string name="password">Ingrese su contraseña</string>
-    <string name="botonLog">Log In</string>
+    <string name="user">Ingrese su nombre de usuario</string>
+    <string name="password_text">Ingrese su contraseña</string>
+    <string name="botonLog">Iniciar sesion</string>
     <string name="forgot"><u>¿Olvidaste tu contraseña?</u></string>
-    <string name="contrasenaerror">Contraseña incorrecta</string>
-    <string name="Welcome">Bienvenido %s</string>
+    <string name="password_error">Contraseña incorrecta</string>
 
     <!-- Valores pantalla de registro: -->
-    <string name="registerTitle">Registro</string>
-    <string name="registerUsername">Ingresa un nombre de usuario</string>
-    <string name="registerPassword">Escribe tu contraseña</string>
-    <string name="registerUsernameTitle">Usuario</string>
-    <string name="registerPasswordTitle">Contraseña</string>
-    <string name="registerBtn">Registrarse</string>
-    <string name="registerLogin">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
-    <string name="esperando_viaje">Esperando Viaje...</string>
-    <string name="registerNameTitle">Nombre completo</string>
-    <string name="CoordenadaActual">Ingrese sus coordenadas actuales</string>
-    <string name="CoordenadaDestino">Ingrese las coordenadas del destino</string>
-    <string name="ErrorCoordenada">Coordenadas no validas</string>
-    <string name="OKCoordenada">Coordenadas validas</string>
-    <string name="editTextFullNameRegister">Coloca tu nombre completo</string>
-    <string name="registerPhoneTitle">Número de teléfono</string>
-    <string name="editTextPhoneRegister">Escribe tu número de teléfono</string>
+    <string name="register_title">Registro</string>
+    <string name="register_username">Ingresa un nombre de usuario</string>
+    <string name="register_password">Escribe tu contraseña</string>
+    <string name="register_username_title">Usuario</string>
+    <string name="register_password_title">Contraseña</string>
+    <string name="register_btn">Registrarse</string>
+    <string name="register_login">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
+    <string name="waiting_travel">Esperando Viaje...</string>
+    <string name="register_nameTitle">Nombre completo</string>
+    <string name="current_coordinates">Ingrese sus coordenadas actuales</string>
+    <string name="destination_coordinates">Ingrese las coordenadas del destino</string>
+    <string name="coordinate_error">Coordenadas no validas</string>
+    <string name="editText_fullname_register">Coloca tu nombre completo</string>
+    <string name="register_phonetitle">Número de teléfono</string>
+    <string name="edittext_phone_register">Escribe tu número de teléfono</string>
 
     <!-- Valores pantalla de Historial de Viajes: -->
-    <string name="TravelHistory">Viajes</string>
-    <string name="driverName">Nombre del conductor</string>
+    <string name="travel_history">Viajes</string>
+    <string name="driver_name">Nombre del conductor</string>
     <string name="phone">Teléfono</string>
 
 
 
 
 
-    <string name="Nombre">Nombre Completo</string>
-    <string name="VerPerfilUser">Usuario</string>
-    <string name="Telefono">Telefono</string>
-    <string name="Contraseña">Contraseña</string>
-    <string name="edt_cta">Editar cuenta</string>
-    <string name="Actbtn">Actualizar</string>
+    <string name="name">Nombre Completo</string>
+    <string name="view_profile_user">Usuario</string>
+    <string name="user_edit">Editar cuenta</string>
+    <string name="user_update">Actualizar</string>
 
 </resources>
