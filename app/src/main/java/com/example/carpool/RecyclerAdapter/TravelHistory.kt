@@ -1,8 +1,10 @@
-package com.example.carpool
+package com.example.carpool.RecyclerAdapter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carpool.R
+import com.example.carpool.model.Driver
 
 class TravelHistory : AppCompatActivity() {
 

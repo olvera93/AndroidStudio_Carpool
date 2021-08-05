@@ -1,13 +1,12 @@
-package com.example.carpool
+package com.example.carpool.controllers
 
 
-import android.content.pm.PackageManager
-import android.database.CursorIndexOutOfBoundsException
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.widget.TextView
-import androidx.core.content.ContextCompat
+import com.example.carpool.COORDENADAS_ACTUALES
+import com.example.carpool.COORDENADAS_DESTINO
+import com.example.carpool.R
 import com.example.carpool.progressbar.LoadingDialog
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -16,7 +15,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import java.lang.NumberFormatException
-import java.util.jar.Manifest
 
 class TravelScreen : AppCompatActivity(), OnMapReadyCallback {
 

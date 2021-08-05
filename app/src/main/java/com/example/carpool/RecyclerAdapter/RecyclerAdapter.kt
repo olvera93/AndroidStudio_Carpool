@@ -1,4 +1,4 @@
-package com.example.carpool
+package com.example.carpool.RecyclerAdapter
 
 
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carpool.model.Driver
+import com.example.carpool.R
 
 class RecyclerAdapter(val drivers : List<Driver>) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){

@@ -6,6 +6,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carpool.controllers.VerPerfil
+import com.example.carpool.model.User
 
 
 class MainActivity : AppCompatActivity() {

@@ -1,6 +1,5 @@
-package com.example.carpool
+package com.example.carpool.controllers
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +7,8 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.carpool.R
+import com.example.carpool.model.User
 
 class VerPerfil : AppCompatActivity() {
     //TO-DO enlazar los datos de el usuario para que aparezcan como valor default en editTexts

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">>
-        <activity android:name=".Register"
+        <activity android:name=".controllers.Register"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
         </activity>
 
 
-        <activity android:name=".VerPerfil"></activity>
+        <activity android:name=".controllers.VerPerfil"></activity>
 
         <activity
             android:name=".MainActivity"
@@ -30,9 +30,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".TravelScreen"/>
+        <activity android:name=".controllers.TravelScreen"/>
         <activity android:name=".principalscreen" />
-        <activity android:name=".TravelHistory"></activity>
+        <activity android:name=".RecyclerAdapter.TravelHistory"></activity>
 
 
 

@@ -1,9 +1,12 @@
-package com.example.carpool
+package com.example.carpool.controllers
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.example.carpool.MainActivity
+import com.example.carpool.R
+import com.example.carpool.model.User
 
 class Register : AppCompatActivity() {
     lateinit var registerUser: EditText

@@ -5,6 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carpool.RecyclerAdapter.TravelHistory
+import com.example.carpool.controllers.TravelScreen
+import com.example.carpool.controllers.VerPerfil
+import com.example.carpool.model.User
 
 const val COORDENADAS_ACTUALES ="org.example.activity.COORDENADAS_ACTUALES"
 const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
@@ -19,7 +23,7 @@ class principalscreen : AppCompatActivity() {
     lateinit var coordenadaDestino: EditText
     lateinit var buttonverPerfil:  Button
 
-    val userDB: User = intent.getParcelableExtra("userDB")!!
+    //val userDB: User = intent.getParcelableExtra("userDB")!!
     //Descarga bundle de Login
 
 
@@ -69,7 +73,7 @@ class principalscreen : AppCompatActivity() {
         buttonverPerfil.setOnClickListener {
             val bundle3 =Bundle()
             //bundle3.putString(USER_NAME, usuario.toString())
-            val intent2 = Intent(this,VerPerfil::class.java).apply {
+            val intent2 = Intent(this, VerPerfil::class.java).apply {
            // putExtras(bundle3)
             }
             startActivity(intent2)
@@ -77,9 +81,9 @@ class principalscreen : AppCompatActivity() {
 
         btnTravelHistory.setOnClickListener {
             val bundle = Bundle()
-            bundle.putString(USER_NAME, usuario.toString())
+            //bundle.putString(USER_NAME, usuario.toString())
             val intent = Intent(this, TravelHistory::class.java).apply {
-                putExtras(bundle)
+                //putExtras(bundle)
             }
             startActivity(intent)
 
