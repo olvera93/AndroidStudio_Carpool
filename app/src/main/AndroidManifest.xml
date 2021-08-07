@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.carpool">
-    
+
+    <!-- Pedir permiso para la localización -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +24,9 @@
         </activity>
 
 
-        <activity android:name=".controllers.VerPerfil"></activity>
+        <activity android:name=".controllers.VerPerfil"
+            android:label="@string/app_name"
+            ></activity>
 
         <activity
             android:name=".MainActivity"
