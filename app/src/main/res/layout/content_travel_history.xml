@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecyclerAdapter.TravelHistory"
-    android:background="@color/Backgroundgrey">
+    android:background="@color/primaryColor">
 
 
 <androidx.recyclerview.widget.RecyclerView

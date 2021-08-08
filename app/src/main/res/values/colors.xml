@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Backgroundgrey">#E8F6EF</color>
     <color name="font">#4C4C6D</color>
+    <color name="primaryColor">#47597e</color>
+    <color name="primaryLightColor">#7586ad</color>
+    <color name="primaryDarkColor">#1a3051</color>
+    <color name="secondaryColor">#4b93d6</color>
+    <color name="secondaryLightColor">#82c3ff</color>
+    <color name="secondaryDarkColor">#0066a4</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
 </resources>

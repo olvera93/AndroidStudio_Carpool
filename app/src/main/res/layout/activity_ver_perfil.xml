@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".controllers.VerPerfil"
-    android:background="@color/Backgroundgrey">
+    android:background="@color/primaryColor">
 
 
     <ImageView
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
 
         android:text="@string/view_profile_user"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         app:layout_constraintBottom_toTopOf="@+id/UsuarioEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/phone"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
@@ -147,7 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/name"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"

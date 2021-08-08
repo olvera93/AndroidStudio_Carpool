@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.carpool.controllers.VerPerfil
 import com.example.carpool.model.User
+import com.google.android.material.button.MaterialButton
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var contrasena:EditText
     lateinit var button: Button
 
+    //material design button
+    private lateinit var loginButton: MaterialButton
+
 
     //Creacion de interfaz
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +29,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Listener botones material design
+        loginButton = findViewById(R.id.Login_button)
+
+        loginButton.setOnClickListener{
+            Toast.makeText(this,getString(R.string.botonLog),Toast.LENGTH_SHORT).show()
+        }
+
         //Descarga de usuarios provinientes de Registros
         val userDB: User = intent.getParcelableExtra("userDB")!!
 
         //Instancia de componentes
-        button = findViewById(R.id.Login)
+        button = findViewById(R.id.Login_button)
         usuario = findViewById(R.id.EditUsuario)
 
         //Generacion de Listener para cambio de texto en el edit de usuario
@@ -92,7 +103,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-}
+
+    }
+
     //Funcion de validacion de campos
 fun validacionCampos(campo1:String,campo2:String):Boolean{
     return campo1.isNotEmpty()&&campo1!=null || campo2.length>0 &&campo2!=null

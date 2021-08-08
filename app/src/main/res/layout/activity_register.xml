@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Backgroundgrey"
+    android:background="@color/primaryColor"
     tools:context=".controllers.Register">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="@string/register_title"
-        android:textColor="@color/black"
+        android:textColor="@color/primaryTextColor"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRegisterPassword" />
 
+
     <EditText
         android:id="@+id/editTextFullName"
         android:layout_width="wrap_content"
@@ -73,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_nameTitle"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextFullName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_username_title"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/phone"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPhoneN"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,13 +129,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_password_title"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+
 
     <Button
         android:id="@+id/RegisterButton"
@@ -156,7 +158,7 @@
         android:backgroundTint="@color/Backgroundgrey"
         android:text="@string/register_login"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@color/primaryTextColor"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
