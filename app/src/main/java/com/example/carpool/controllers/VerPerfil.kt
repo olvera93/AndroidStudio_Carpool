@@ -1,5 +1,6 @@
 package com.example.carpool.controllers
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,9 +10,9 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.carpool.R
 import com.example.carpool.model.User
+import com.example.carpool.principalscreen
 
 class VerPerfil : AppCompatActivity() {
-    //TO-DO enlazar los datos de el usuario para que aparezcan como valor default en editTexts
     lateinit var EditNombre:EditText
     lateinit var EditUsuario:EditText
     lateinit var EditTelefono:EditText
@@ -31,15 +32,11 @@ class VerPerfil : AppCompatActivity() {
         EditTelefono=findViewById(R.id.NumeroEdit)
         actbtn = findViewById(R.id.Actualizar)
 
+        EditUsuario.setText(userDB.user)
+        EditNombre.setText(userDB.name)
+        EditContra.setText(userDB.password)
+        EditTelefono.setText(userDB.phone)
 
-
-
-
-        EditUsuario.hint=userDB.user.toString()
-        EditNombre.hint=userDB.name.toString()
-        EditContra.hint=userDB.password.toString()
-        EditTelefono.hint=userDB.phone.toString()
-        //EditContra.hint = pass.toString()
         EditNombre.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
             }
@@ -49,19 +46,31 @@ class VerPerfil : AppCompatActivity() {
 
             }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (EditNombre.text.isEmpty())
-                    EditNombre.error="Usuario no puede esta vacio"
+                if (EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
+                    EditNombre.error="Nombre no puede estar vacio"
+                    EditTelefono.error="Telefono no puede estar vacio"
+                    EditContra.error = "Contraseña no puede estar vacia"
+                    EditUsuario.error = "Usuario no puede estar vacio"
+                }
+
             }
         })
         actbtn.setOnClickListener {
-            if(EditUsuario.text.isEmpty()||EditContra.text.isEmpty()||EditNombre.text.isEmpty()||EditTelefono.text.isEmpty()){
+            if(EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
                 Toast.makeText(this, "Ingrese datos validos", Toast.LENGTH_LONG).show()
                 fun EditText.clearError() {
                     error = null
             }}
             else{
                 Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_LONG).show()
+                userDB.user = EditUsuario.text.toString()
+                userDB.name = EditNombre.text.toString()
+                userDB.password = EditContra.text.toString()
+                userDB.phone = EditTelefono.text.toString()
 
+                val intent = Intent(this, principalscreen::class.java)
+                intent.putExtra("userDB",userDB)
+                startActivity(intent)
                 }
 
             }

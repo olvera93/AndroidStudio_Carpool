@@ -20,8 +20,8 @@
     <string name="register_login">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
     <string name="waiting_travel">Esperando Viaje...</string>
     <string name="register_nameTitle">Nombre completo</string>
-    <string name="current_coordinates">Ingrese sus coordenadas actuales</string>
-    <string name="destination_coordinates">Ingrese las coordenadas del destino</string>
+    <string name="latitude_coordinates">Ingrese coordenada latitud</string>
+    <string name="longitude_coordinates">Ingrese coordenada longitud</string>
     <string name="coordinate_error">Coordenadas no validas</string>
     <string name="editText_fullname_register">Coloca tu nombre completo</string>
     <string name="register_phonetitle">Número de teléfono</string>
@@ -32,7 +32,9 @@
     <string name="driver_name">Nombre del conductor</string>
     <string name="phone">Teléfono</string>
 
-
+    <!-- Valores pantalla principalScreen: -->
+    <string name="need_to_go_somewhere">¿Necesitas ir a algún lugar?</string>
+    <string name="where_go">¿A dónde quieres ir?</string>
 
 
 
