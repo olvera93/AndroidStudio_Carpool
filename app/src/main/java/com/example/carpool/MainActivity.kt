@@ -6,7 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.carpool.controllers.VerPerfil
+import android.view.LayoutInflater
 import com.example.carpool.model.User
 import com.google.android.material.button.MaterialButton
 
@@ -24,17 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     //Creacion de interfaz
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.AppTheme2)
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //Listener botones material design
-        loginButton = findViewById(R.id.Login_button)
-
-        loginButton.setOnClickListener{
-            Toast.makeText(this,getString(R.string.botonLog),Toast.LENGTH_SHORT).show()
-        }
 
         //Descarga de usuarios provinientes de Registros
         val userDB: User = intent.getParcelableExtra("userDB")!!

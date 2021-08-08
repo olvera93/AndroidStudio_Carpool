@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <color name="primaryColor">#47597e</color>
-        <color name="primaryLightColor">#7586ad</color>
-        <color name="primaryDarkColor">#1a3051</color>
-        <color name="secondaryColor">#4b93d6</color>
-        <color name="secondaryLightColor">#82c3ff</color>
-        <color name="secondaryDarkColor">#0066a4</color>
-        <color name="primaryTextColor">#ffffff</color>
-        <color name="secondaryTextColor">#000000</color>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
     </style>
 
 
-    <style name="SplashTheme" parent="AppTheme">
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+
+    </style>
+
+
+
+    <style name="SplashTheme" parent="AppTheme2">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
-
-
 </resources>

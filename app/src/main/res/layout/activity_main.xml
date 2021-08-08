@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
+    <!--
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EditUsuario"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,20 +46,37 @@
         android:hint="@string/user"
         android:textColor="@color/secondaryTextColor">
 
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
             android:maxLines="1"
             android:drawableLeft="@drawable/user"
             android:drawablePadding="8dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
 
+    <EditText
+        android:id="@+id/EditUsuario"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="8dp"
+        android:hint="@string/user"
+        android:inputType="text"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.427" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="@string/password_text"
+        android:text="@string/password"
         android:textColor="@color/primaryTextColor"
         app:layout_constraintBottom_toTopOf="@+id/EditContrasena"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +85,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <!--
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EditContrasena"
         android:layout_width="280dp"
@@ -83,31 +101,45 @@
         app:layout_constraintVertical_bias="0.583"
         android:layout_margin="4dp"
         android:textColor="@color/secondaryTextColor">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:maxLines="1"
             android:drawableLeft="@drawable/phone"
             android:drawablePadding="8dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
+    <EditText
+    android:id="@+id/EditContrasena"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:drawableLeft="@drawable/phone"
+    android:hint="@string/password_text"
+    android:inputType="textPassword"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.335"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.583" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/Login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/primaryDarkColor"
-        android:text="@string/botonLog"
-        android:textColor="@color/primaryTextColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditContrasena"
-        app:layout_constraintVertical_bias="0.242"
-        tools:ignore="MissingConstraints" />
-
+   <Button
+       android:id="@+id/Login_button"
+       android:layout_width="120dp"
+       android:layout_height="wrap_content"
+       android:text="@string/botonLog"
+       android:backgroundTint="@color/purple_500"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.474"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/EditContrasena"
+       app:layout_constraintVertical_bias="0.242"
+       />
     <TextView
         android:id="@+id/forgotpass"
         android:layout_width="120dp"
