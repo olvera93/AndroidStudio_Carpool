@@ -15,6 +15,8 @@ import com.example.carpool.COORDENADAS_ACTUALES
 import com.example.carpool.COORDENADAS_DESTINO
 import com.example.carpool.R
 import com.example.carpool.progressbar.LoadingDialog
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -22,10 +24,21 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import java.lang.NumberFormatException
+import android.graphics.Color
+import com.google.android.gms.maps.model.PolylineOptions
+import com.google.maps.android.PolyUtil
+import org.json.JSONObject
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+
 
 class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
 
     private lateinit var map: GoogleMap
+
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     companion object {
         const val REQUEST_CODE_LOCATION = 0
@@ -34,6 +47,9 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_travel_screen)
+
+        // initialize fused location client
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         val loading = LoadingDialog(this)
         loading.startLoadingDialog()
@@ -55,26 +71,68 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
         val mapFragment: SupportMapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
         createMarket()
         enableLocation()
-        
+
     }
 
+    @SuppressLint("MissingPermission")
     private fun createMarket() {
         val bundle = intent.extras
         val coordenadaActual= bundle?.getString(COORDENADAS_ACTUALES)
         val coordenadaDestino= bundle?.getString(COORDENADAS_DESTINO)
         try {
-            val coordenadas = LatLng(coordenadaActual!!.toDouble(), coordenadaDestino!!.toDouble())
-            val market: MarkerOptions = MarkerOptions().position(coordenadas).title("Tu destino")
-            map.addMarker(market)
+
+
+            fusedLocationClient.lastLocation
+                .addOnSuccessListener { location ->
+
+
+                    // Se coloca
+                    val latLngOrigin = LatLng(location!!.latitude.toDouble(), location!!.longitude.toDouble())
+                    val latLngDestination = LatLng(coordenadaActual!!.toDouble(), coordenadaDestino!!.toDouble())
+
+
+                    this.map!!.addMarker(MarkerOptions().position(latLngOrigin).title("Ubicación Actual"))
+                    this.map!!.addMarker(MarkerOptions().position(latLngDestination).title("Ubicación Destino"))
+                    this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 14.5f))
+
+                    val path: MutableList<List<LatLng>> = ArrayList()
+                    val urlDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=${latLngOrigin.latitude},${latLngOrigin.longitude}&destination=${latLngDestination.latitude},${latLngDestination.longitude}&mode=driving&key=AIzaSyCoBkAnnncuzu1xcNfGUx0LYBp30C29wdY"
+                    val directionsRequest = object : StringRequest(Request.Method.GET, urlDirections, Response.Listener<String> {
+                            response ->
+                        val jsonResponse = JSONObject(response)
+                        // Obtener rutas
+                        val routes = jsonResponse.getJSONArray("routes")
+                        val legs = routes.getJSONObject(0).getJSONArray("legs")
+                        val steps = legs.getJSONObject(0).getJSONArray("steps")
+                        for (i in 0 until steps.length()) {
+                            val points = steps.getJSONObject(i).getJSONObject("polyline").getString("points")
+                            path.add(PolyUtil.decode(points))
+                        }
+                        for (i in 0 until path.size) {
+                            this.map!!.addPolyline(PolylineOptions().addAll(path[i]).color(Color.RED))
+                        }
+                    }, Response.ErrorListener {
+                            _ ->
+                    }){}
+                    val requestQueue = Volley.newRequestQueue(this)
+                    requestQueue.add(directionsRequest)
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "No se pudo obtener la ubicación actual",
+                        Toast.LENGTH_SHORT).show()
+                }
+
+
             // Se agrega una animación cuando muestra la ubicación
-            map.animateCamera(
-                CameraUpdateFactory.newLatLngZoom(coordenadas, 15f),4000, null)
+            //map.animateCamera(
+                //CameraUpdateFactory.newLatLngZoom(coordenadas, 15f),4000, null)
         }catch (e: NumberFormatException){ }
     }
 

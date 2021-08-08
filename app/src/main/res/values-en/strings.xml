@@ -20,8 +20,8 @@
     <string name="register_login">Do you already have an account? <u>Log in</u></string>
     <string name="waiting_travel">Waiting travel...</string>
     <string name="register_nameTitle">Full name</string>
-    <string name="current_coordinates">Enter your current coordinates</string>
-    <string name="destination_coordinates">Enter your destination coordinates</string>
+    <string name="latitude_coordinates">Enter your latitude coordinates</string>
+    <string name="longitude_coordinates">Enter your longitude coordinates</string>
     <string name="coordinate_error">Wrong coordinates</string>
     <string name="editText_fullname_register">Enter your full name</string>
     <string name="register_phonetitle">Phone number</string>
@@ -32,6 +32,9 @@
     <string name="driver_name">Driver Name</string>
     <string name="phone">Phone number</string>
 
+    <!-- Valores pantalla principalScreen: -->
+    <string name="need_to_go_somewhere">Do you need to go somewhere?</string>
+    <string name="where_go">Where do you want to go?</string>
 
 
 
