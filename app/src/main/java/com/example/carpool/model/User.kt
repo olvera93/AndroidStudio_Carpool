@@ -5,8 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 var database =  mutableListOf(listOf("adminName","adminPhone","adminUser","123"))
 @Parcelize
-class User(val name: String, val phone: String, val user: String,
-           val password:String):Parcelable{
+class User(
+    var name: String, var phone: String, var user: String,
+    var password:String):Parcelable{
 
     fun addUser():Boolean{
         var users: MutableList<String> = mutableListOf()

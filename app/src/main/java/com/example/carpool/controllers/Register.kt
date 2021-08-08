@@ -63,7 +63,6 @@ class Register : AppCompatActivity() {
                 User("Admin","5555555555",
                     "Admin", "Admin123")
             val prueba=tempUsuario.addUser()
-            Log.d("Prueba Booleano",prueba.toString())
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("userDB",tempUsuario)
             startActivity(intent)
