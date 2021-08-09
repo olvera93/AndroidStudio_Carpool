@@ -72,15 +72,13 @@
     <string name="login_succesfully">Successfully logged in</string>
     <string name="invalid_user_password">Incorrect username/password :(</string>
 
-
-
-
-
     <string name="current_location">Current Location</string>
     <string name="destination_location"> Destination Location</string>
     <string name="not_get_location">Could not get current location</string>
     <string name="settings_accept">Go to settings and accept the permissions</string>
     <string name="activate_location">To activate the location go to settings and accept the permissions</string>
+    <string name="coordinates_not_be_empty">Coordinates must not be empty</string>
+    <string name="coordinate_invalid">Invalid coordinates</string>
 
 
 

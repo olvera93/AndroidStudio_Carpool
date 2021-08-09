@@ -80,7 +80,8 @@
     <string name="not_get_location">No se pudo obtener la ubicación actual</string>
     <string name="settings_accept">Ve a ajustes y acepta los permisos</string>
     <string name="activate_location">Para activar la localización ve a ajustes y acepta los permisos</string>
-
+    <string name="coordinates_not_be_empty">Coordenadas no debe estar vacío</string>
+    <string name="coordinate_invalid">Coordenadas invalidas</string>
 
 
     <string name="name">Nombre Completo</string>

@@ -51,13 +51,12 @@ class principalscreen : AppCompatActivity() {
         buttonCoordenadas.setOnClickListener {
 
             if (coordenadaActual.text.isEmpty()||coordenadaDestino.text.isEmpty()){
-                coordenadaActual.error="Coordenadas no debe estar vacío"
-                coordenadaDestino.error="Coordenadas no debe estar vacío"
+                coordenadaActual.error = getString(R.string.coordinates_not_be_empty)
+                coordenadaDestino.error = getString(R.string.coordinates_not_be_empty)
             } else {
                 if (coordenadaActual.text.toString().toDouble() <= -90.0 && coordenadaActual.text.toString().toDouble() <= 90.0 && coordenadaDestino.text.toString().toDouble() <= -180.0 && coordenadaDestino.text.toString().toDouble() <= 180.0 ) {
-                    coordenadaActual.error="Coordenadas incorrectas"
-                    coordenadaDestino.error="Coordenadas incorrectas"
-
+                    coordenadaActual.error = getString(R.string.coordinate_invalid)
+                    coordenadaDestino.error = getString(R.string.coordinate_invalid)
                 } else {
                     val bundle2 =Bundle()
                     bundle2.putString(COORDENADAS_ACTUALES, coordenadaActual.text.toString())
