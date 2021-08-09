@@ -30,12 +30,12 @@ class Register : AppCompatActivity() {
         registerButton.setOnClickListener {
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
                 registerName.text.isEmpty() || registerPhone.text.isEmpty()){
-                Toast.makeText(this, "Por favor introduce los datos correctamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.incorrect_data), Toast.LENGTH_LONG).show()
 
-                registerUser.error = "Escribe un nombre de usuario"
-                registerPassword.error="Escribe una contraseña"
-                registerPhone.error="Escribe un número de teléfono"
-                registerName.error = "Escribe un nombre completo"
+                registerUser.error = getString(R.string.incorrect_user)
+                registerPassword.error= getString(R.string.incorrect_password)
+                registerPhone.error= getString(R.string.incorrect_phone)
+                registerName.error = getString(R.string.incorrect_fullname)
 
                 fun EditText.clearError() {
                     error = null
@@ -46,12 +46,12 @@ class Register : AppCompatActivity() {
                     User(registerName.text.toString(),registerPhone.text.toString(),
                         registerUser.text.toString(), registerPassword.text.toString())
                 if(tempUsuario.addUser()){
-                    Toast.makeText(this, "Se ha registrado con éxito :)", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("userDB",tempUsuario)
                     startActivity(intent)
                 }else{
-                    Toast.makeText(this,"Esa cuenta ya está registrada :(",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,getString(R.string.account_already_registered),Toast.LENGTH_LONG).show()
                     registerUser.setText("")
                     registerPassword.setText("")
                 }

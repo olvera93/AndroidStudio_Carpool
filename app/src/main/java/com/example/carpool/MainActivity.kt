@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                usuario.error = "Usuario no puede estar vacío"
+                usuario.error = getString(R.string.empty_username)
                 button.isEnabled = s.toString().isNotEmpty()
 
             }
@@ -73,9 +73,9 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             if (!validacionCampos(usuario.text.toString(),contrasena.text.toString())) //Validacion de campos
                  {
-                Toast.makeText(this, "Usuario o contraseña invalidos", Toast.LENGTH_LONG).show()
-                usuario.error = "No debe de estar vacio"
-                contrasena.error = "Contraseña incorrecta"
+                Toast.makeText(this, getString(R.string.user_password_invalid), Toast.LENGTH_LONG).show()
+                usuario.error = getString(R.string.username_invalid)
+                contrasena.error = getString(R.string.password_invalid)
 
                 fun EditText.clearError() {
                     error = null
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 //Validacion si existe usuario en la base de datos de la clase User
                 if(userDB.validateUser(usuario.text.toString(),contrasena.text.toString())){
-                    Toast.makeText(this, "Ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.login_succesfully), Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, principalscreen::class.java)
                     intent.putExtra("userDB",userDB)
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 else{
-                    Toast.makeText(this, "Usuario/Contraseña incorrectos :(", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.invalid_user_password), Toast.LENGTH_SHORT).show()
                 }
             }
         }

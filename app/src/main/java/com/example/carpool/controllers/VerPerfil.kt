@@ -47,22 +47,22 @@ class VerPerfil : AppCompatActivity() {
             }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
-                    EditNombre.error="Nombre no puede estar vacio"
-                    EditTelefono.error="Telefono no puede estar vacio"
-                    EditContra.error = "Contraseña no puede estar vacia"
-                    EditUsuario.error = "Usuario no puede estar vacio"
+                    EditNombre.error = getString(R.string.empty_name)
+                    EditTelefono.error = getString(R.string.empty_phone)
+                    EditContra.error = getString(R.string.empty_password)
+                    EditUsuario.error = getString(R.string.empty_username)
                 }
 
             }
         })
         actbtn.setOnClickListener {
             if(EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
-                Toast.makeText(this, "Ingrese datos validos", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.valid_data), Toast.LENGTH_LONG).show()
                 fun EditText.clearError() {
                     error = null
             }}
             else{
-                Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.update_data), Toast.LENGTH_LONG).show()
                 userDB.user = EditUsuario.text.toString()
                 userDB.name = EditNombre.text.toString()
                 userDB.password = EditContra.text.toString()

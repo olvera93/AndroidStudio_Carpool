@@ -35,6 +35,51 @@
     <!-- Valores pantalla principalScreen: -->
     <string name="need_to_go_somewhere">¿Necesitas ir a algún lugar?</string>
     <string name="where_go">¿A dónde quieres ir?</string>
+    <string name="request_trip">Solicitar Viaje</string>
+    <string name="view_profile">Perfil</string>
+
+
+    <!-- Nombre pantalla TravelHistory -->
+    <string name="travel_histories">Historial De Viajes</string>
+
+    <!-- Nombre pantalla TravelScreen -->
+    <string name="travel_screen">Viaje</string>
+
+    <!-- Nombre pantalla Login -->
+    <string name="login">Inicio Sesión</string>
+
+    <!-- Nombre pantalla Register -->
+    <string name="register">Registro</string>
+
+
+    <!-- Toast -->
+    <string name="incorrect_data">Por favor introduce los datos correctamente</string>
+    <string name="incorrect_user">Escribe un nombre de usuario</string>
+    <string name="incorrect_password">Escribe una contraseña</string>
+    <string name="incorrect_phone">Escribe un número de teléfono</string>
+    <string name="incorrect_fullname">Escribe un nombre completo</string>
+    <string name="successfully_registered">Se ha registrado con éxito :)</string>
+    <string name="account_already_registered">Esa cuenta ya está registrada :(</string>
+
+
+    <string name="empty_name">Nombre no puede estar vacio</string>
+    <string name="empty_username">Usuario no puede estar vacio</string>
+    <string name="empty_phone">Telefono no puede estar vacio</string>
+    <string name="empty_password">Contraseña no puede estar vacia</string>
+    <string name="valid_data">Ingrese datos validos</string>
+    <string name="update_data">Datos actualizados correctamente</string>
+
+    <string name="username_invalid">Incorrecto Usuario</string>
+    <string name="password_invalid">Incorrecto Password</string>
+    <string name="user_password_invalid">Usuario o contraseña invalidos</string>
+    <string name="login_succesfully">Ha iniciado sesión correctamente</string>
+    <string name="invalid_user_password">Usuario/Contraseña incorrectos :(</string>
+
+    <string name="current_location">Ubicación Actual</string>
+    <string name="destination_location">Ubicación Destino</string>
+    <string name="not_get_location">No se pudo obtener la ubicación actual</string>
+    <string name="settings_accept">Ve a ajustes y acepta los permisos</string>
+    <string name="activate_location">Para activar la localización ve a ajustes y acepta los permisos</string>
 
 
 

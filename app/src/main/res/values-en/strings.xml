@@ -35,7 +35,52 @@
     <!-- Valores pantalla principalScreen: -->
     <string name="need_to_go_somewhere">Do you need to go somewhere?</string>
     <string name="where_go">Where do you want to go?</string>
+    <string name="request_trip">Request Trip</string>
+    <string name="view_profile">Profile</string>
 
+    <!-- Nombre pantalla TravelHistory -->
+    <string name="travel_histories">Travel History</string>
+
+    <!-- Nombre pantalla TravelScreen -->
+    <string name="travel_screen">Travel</string>
+
+    <!-- Nombre pantalla Login -->
+    <string name="login">Login</string>
+
+    <!-- Nombre pantalla Register -->
+    <string name="register">Register</string>
+
+    <!-- Toast -->
+    <string name="incorrect_data">Please enter the data correctly</string>
+    <string name="incorrect_user">Enter a username</string>
+    <string name="incorrect_password">Enter a password</string>
+    <string name="incorrect_phone">Enter a phone</string>
+    <string name="incorrect_fullname">Write a full name</string>
+    <string name="successfully_registered">Successfully registered :)</string>
+    <string name="account_already_registered">That account is already registered :(</string>
+
+    <string name="empty_name">Name can´t be empty</string>
+    <string name="empty_username">Username can´t be empty</string>
+    <string name="empty_phone">Phone can´t be empty</string>
+    <string name="empty_password">Password can´t be empty</string>
+    <string name="valid_data">Enter valid data</string>
+    <string name="update_data">Data updated correctly</string>
+
+    <string name="username_invalid">Invalid Username</string>
+    <string name="password_invalid">Invalid Password</string>
+    <string name="user_password_invalid">Invalid username or password</string>
+    <string name="login_succesfully">Successfully logged in</string>
+    <string name="invalid_user_password">Incorrect username/password :(</string>
+
+
+
+
+
+    <string name="current_location">Current Location</string>
+    <string name="destination_location"> Destination Location</string>
+    <string name="not_get_location">Could not get current location</string>
+    <string name="settings_accept">Go to settings and accept the permissions</string>
+    <string name="activate_location">To activate the location go to settings and accept the permissions</string>
 
 
 

@@ -98,8 +98,8 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                     val latLngDestination = LatLng(coordenadaActual!!.toDouble(), coordenadaDestino!!.toDouble())
 
 
-                    this.map!!.addMarker(MarkerOptions().position(latLngOrigin).title("Ubicación Actual"))
-                    this.map!!.addMarker(MarkerOptions().position(latLngDestination).title("Ubicación Destino"))
+                    this.map!!.addMarker(MarkerOptions().position(latLngOrigin).title(getString(R.string.current_location)))
+                    this.map!!.addMarker(MarkerOptions().position(latLngDestination).title(getString(R.string.destination_location)))
                     this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 14.5f))
 
                     val path: MutableList<List<LatLng>> = ArrayList()
@@ -125,7 +125,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                     requestQueue.add(directionsRequest)
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this, "No se pudo obtener la ubicación actual",
+                    Toast.makeText(this, getString(R.string.not_get_location),
                         Toast.LENGTH_SHORT).show()
                 }
 
@@ -155,7 +155,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
     private fun requestLocationPermission() {
         // Ya se le habia pedido al usuario dar permiso pero los rechazo
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
-            Toast.makeText(this, "Ve a ajustes y acepta los permisos", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.settings_accept), Toast.LENGTH_LONG).show()
         } else {
             // Es la primera vez que se le pide permisos al usuario
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_CODE_LOCATION)
@@ -176,7 +176,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     map.isMyLocationEnabled = true
                 } else {
-                    Toast.makeText(this, "Para activar la localización ve a ajustes y acepta los permisos", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getString(R.string.activate_location), Toast.LENGTH_LONG).show()
                 }
 
             }
@@ -196,7 +196,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
         if (!isLocationPermissionGranted()) { //Si no están permitidos
             map.isMyLocationEnabled = false
         } else {
-            Toast.makeText(this, "Para activar la localización ve a ajustes y acepta los permisos", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.activate_location), Toast.LENGTH_LONG).show()
 
         }
     }
