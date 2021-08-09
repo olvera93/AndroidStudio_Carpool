@@ -94,6 +94,9 @@
     <string name="copy">Copiar</string>
     <string name="paste_action">Seleccionaste pegar</string>
     <string name="paste">Pegar</string>
+    <string name="cut_action">Seleccionaste cortar</string>
+    <string name="cut">Cortar</string>
+
 
 
 

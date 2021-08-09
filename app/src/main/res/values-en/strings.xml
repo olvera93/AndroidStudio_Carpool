@@ -92,4 +92,6 @@
     <string name="copy">Copy</string>
     <string name="paste_action">Pasted</string>
     <string name="paste">paste</string>
+    <string name="cut_action">Cutt</string>
+    <string name="cut">Cut</string>
 </resources>

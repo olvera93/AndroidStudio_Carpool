@@ -106,11 +106,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        //Listener para implementacion de menu en el EditText usuario
         usuario.setOnLongClickListener{
                 if (actionMode == null) actionMode = startSupportActionMode(ActionModeCallback())
                 true
             }
 
+        //Listener para implementacion de menu en el EditText contraseña
+        contrasena.setOnLongClickListener{
+            if (actionMode == null) actionMode = startSupportActionMode(ActionModeCallback())
+            true
+        }
         }
     //Clase interna para implementar el callback de ActionMode
     inner class ActionModeCallback: ActionMode.Callback {
