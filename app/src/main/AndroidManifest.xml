@@ -32,7 +32,8 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplashTheme"
-            android:label="@string/login">
+            android:label="@string/login"
+            android:parentActivityName=".controllers.Register">
            </activity>
 
         <meta-data

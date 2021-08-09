@@ -89,4 +89,12 @@
     <string name="user_edit">Editar cuenta</string>
     <string name="user_update">Actualizar</string>
 
+    <!--Menu-->
+    <string name="copy_action">Seleccionaste copiar</string>
+    <string name="copy">Copiar</string>
+    <string name="paste_action">Seleccionaste pegar</string>
+    <string name="paste">Pegar</string>
+
+
+
 </resources>

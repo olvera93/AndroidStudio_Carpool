@@ -87,4 +87,9 @@
     <string name="user_edit">Edit account</string>
     <string name="user_update">Update</string>
 
+    <!--Menu-->
+    <string name="copy_action">Copied</string>
+    <string name="copy">Copy</string>
+    <string name="paste_action">Pasted</string>
+    <string name="paste">paste</string>
 </resources>

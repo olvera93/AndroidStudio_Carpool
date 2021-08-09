@@ -7,6 +7,9 @@ import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.view.ActionMode
 import com.example.carpool.model.User
 import com.google.android.material.button.MaterialButton
 
@@ -17,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var usuario: EditText
     lateinit var contrasena:EditText
     lateinit var button: Button
+    //Variable global para Action Mode:
+    private var actionMode: ActionMode? = null
 
     //material design button
     private lateinit var loginButton: MaterialButton
@@ -30,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        //Creacion del back button
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+
         //Listener botones material design
 
         //Descarga de usuarios provinientes de Registros
@@ -38,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         //Instancia de componentes
         button = findViewById(R.id.Login_button)
         usuario = findViewById(R.id.EditUsuario)
+
 
         //Generacion de Listener para cambio de texto en el edit de usuario
         usuario.addTextChangedListener(object : TextWatcher {
@@ -96,11 +106,48 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        usuario.setOnLongClickListener{
+                if (actionMode == null) actionMode = startSupportActionMode(ActionModeCallback())
+                true
+            }
+
+        }
+    //Clase interna para implementar el callback de ActionMode
+    inner class ActionModeCallback: ActionMode.Callback {
+        override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+            val inflater = mode?.getMenuInflater()
+            inflater?.inflate(R.menu.menu, menu)
+            mode?.setTitle("Options Menu")
+            return true
+        }
+
+        override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+            return true
+        }
+        override fun onDestroyActionMode(mode: ActionMode?) {
+            actionMode = null
+        }
+        override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+            when (item?.getItemId()) {
+                R.id.option_1 -> {
+                    actionMode?.setTitle(getString(R.string.copy))
+                    Toast.makeText(this@MainActivity, getString(R.string.copy_action), Toast.LENGTH_SHORT).show()
+                    return true
+                }
+                R.id.option_2->{
+                    actionMode?.setTitle(getString(R.string.paste))
+                    Toast.makeText(this@MainActivity, getString(R.string.paste_action), Toast.LENGTH_SHORT).show()
+                }
+            }
+            return false
+        }
 
     }
 
 
-    }
+}
+
+
 
     //Funcion de validacion de campos
 fun validacionCampos(campo1:String,campo2:String):Boolean{
