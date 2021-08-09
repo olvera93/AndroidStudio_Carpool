@@ -28,6 +28,14 @@
         <entry key="..\:/Users/Marco Antonio/Documents/GitHub/AndroidStudio_Carpool/app/src/main/res/layout/content_travel_history.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Marco Antonio/Documents/GitHub/AndroidStudio_Carpool/app/src/main/res/layout/item_driver.xml" value="0.33" />
         <entry key="..\:/Users/Marco Antonio/Documents/GitHub/AndroidStudio_Carpool/app/src/main/res/layout/loading_item.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_principalscreen.xml" value="0.25437738892773326" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.2223825685277359" />
+        <entry key="app/src/main/res/layout/activity_travel_screen.xml" value="0.13496376811594202" />
+        <entry key="app/src/main/res/layout/activity_ver_perfil.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/content_travel_history.xml" value="0.33220910623946037" />
+        <entry key="app/src/main/res/layout/item_driver.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/loading_item.xml" value="0.13496376811594202" />
       </map>
     </option>
   </component>
