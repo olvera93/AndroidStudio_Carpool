@@ -25,6 +25,11 @@
 - SDK Google Services
 
 ## 🛠️ Funcionalidad
+  
+Carpool es una plataforma de tecnología. En donde nuestra app para smartphones Android conectan a socios conductores y a usuarios.
+Donde opera Carpool por el momento es México, el usuario puede usar la app para pedir viajes. Cuando el usuario ingresa sus coordenadas latitud y longitud, la app le mostrara la ruta mas viable para llegar a su destino.
+
+En la app también aparece información acerca del historial de viajes que ha hecho el usuario, se le mostrara la información del conductor como su nombre, tipo de vehículo, número de matrícula y su reputación . Estos datos le ayudara al usuario por si tuvo algún incoveniente con un conductor.
 
 ### :clipboard:  Descripción
 
@@ -42,10 +47,10 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
 <footer>
   <h3> Autores ✒️</h3>
   
-  *David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)<br>
-  *Gonzalo  [![Web](https://img.shields.io/badge/GitHub-olvera93-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/olvera93)<br>
-  *Marco [![Web](https://img.shields.io/badge/GitHub-mibarra24-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mibarra24)<br>
-  *Stuart  [![Web](https://img.shields.io/badge/GitHub-StuartGa-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/StuartGa)
+  * David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)<br>
+  * Gonzalo [![Web](https://img.shields.io/badge/GitHub-olvera93-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/olvera93)<br>
+  * Marco [![Web](https://img.shields.io/badge/GitHub-mibarra24-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mibarra24)<br>
+  * Stuart [![Web](https://img.shields.io/badge/GitHub-StuartGa-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/StuartGa)
   
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
   </p>
