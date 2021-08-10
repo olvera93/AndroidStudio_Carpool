@@ -40,13 +40,12 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
 
 <footer>
   <h3>Autores:</h3>
-  <ul>
-  <li>David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)</li>
-  <li>Gonzalo  [![Web](https://img.shields.io/badge/GitHub-olvera93-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/olvera93)</li>
-  <li>Marco [![Web](https://img.shields.io/badge/GitHub-mibarra24-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mibarra24)</li>
-  <li>Stuart  [![Web](https://img.shields.io/badge/GitHub-StuartGa-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/StuartGa)</li>
-    <li>ejemplo [![Web](https://img.shields.io/badge/GitHub-MoureDev-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mouredev)</li>
-  </ul>
+  
+  -David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)
+  -Gonzalo  [![Web](https://img.shields.io/badge/GitHub-olvera93-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/olvera93)
+  -Marco [![Web](https://img.shields.io/badge/GitHub-mibarra24-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mibarra24)
+  -Stuart  [![Web](https://img.shields.io/badge/GitHub-StuartGa-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/StuartGa)
+  
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
   </p>
   <footer>
