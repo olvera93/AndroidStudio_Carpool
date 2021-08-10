@@ -41,9 +41,9 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
 <footer>
   <h3>Autores:</h3>
   
-  -David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)
-  -Gonzalo  [![Web](https://img.shields.io/badge/GitHub-olvera93-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/olvera93)
-  -Marco [![Web](https://img.shields.io/badge/GitHub-mibarra24-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mibarra24)
+  -David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)<br>
+  -Gonzalo  [![Web](https://img.shields.io/badge/GitHub-olvera93-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/olvera93)<br>
+  -Marco [![Web](https://img.shields.io/badge/GitHub-mibarra24-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/mibarra24)<br>
   -Stuart  [![Web](https://img.shields.io/badge/GitHub-StuartGa-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/StuartGa)
   
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
