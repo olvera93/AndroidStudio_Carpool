@@ -29,6 +29,8 @@ class Register : AppCompatActivity() , View.OnClickListener{
         registerLoginButton = findViewById(R.id.registerLogin)
         registerPhone = findViewById(R.id.editTextPhoneN)
         registerName = findViewById(R.id.editTextFullName)
+
+
         //Menu context para cada componente Edit
         registerForContextMenu(registerName)
         registerName.setOnClickListener(this)

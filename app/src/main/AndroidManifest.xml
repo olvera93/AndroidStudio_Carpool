@@ -44,7 +44,9 @@
             android:label="@string/travel_screen"/>
 
         <activity android:name=".principalscreen"
-            android:label="@string/request_trip"/>
+            android:label="@string/request_trip"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
 
         <activity android:name=".RecyclerAdapter.TravelHistory"
             android:label="@string/travel_histories"></activity>
