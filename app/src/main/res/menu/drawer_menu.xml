@@ -19,9 +19,9 @@
                     android:title="@string/drawer_payments" />
 
                 <item
-                    android:id="@+id/nav_settings"
+                    android:id="@+id/History"
                     android:icon="@drawable/settings"
-                    android:title="@string/drawer_settings" />
+                    android:title="@string/drawer_history" />
             </group>
         </menu>
     </item>

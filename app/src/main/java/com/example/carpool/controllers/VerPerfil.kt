@@ -25,7 +25,7 @@ class VerPerfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_perfil)
         val userDB: User = intent.getParcelableExtra("userDB")!!
-
+        getSupportActionBar()?.setHomeButtonEnabled(true)
         EditUsuario=findViewById(R.id.UsuarioEdit)
         EditContra=findViewById(R.id.ContraEdit)
         EditNombre=findViewById(R.id.NombreEdit)

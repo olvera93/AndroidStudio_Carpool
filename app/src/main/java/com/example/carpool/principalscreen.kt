@@ -3,6 +3,7 @@ package com.example.carpool
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
@@ -13,25 +14,30 @@ import com.example.carpool.controllers.TravelScreen
 import com.example.carpool.controllers.VerPerfil
 import com.example.carpool.model.User
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 const val COORDENADAS_ACTUALES ="org.example.activity.COORDENADAS_ACTUALES"
 const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
 
 
 
-class principalscreen : AppCompatActivity() {
+class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
 
     lateinit var buttonCoordenadas: Button
     lateinit var coordenadaActual: EditText
     lateinit var coordenadaDestino: EditText
-    lateinit var buttonverPerfil:  Button
+
+    private lateinit var drawer:DrawerLayout
+    private lateinit var toggle: ActionBarDrawerToggle
 
     //Drawer header
     lateinit var  drawer_header:TextView
     lateinit var drawer_number:TextView
-
+    //Drawe body
 
     //Descarga bundle de Login
 
@@ -43,24 +49,23 @@ class principalscreen : AppCompatActivity() {
         setContentView(R.layout.activity_principalscreen)
         val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
         val recycler = findViewById<RecyclerView>(R.id.recycler)
+
+
         //App Bar
         val appBar = findViewById<Toolbar>(R.id.app_bar)
         this.setSupportActionBar(appBar)
 
+        setupDrawer(appBar)
 
-
-
-
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
 
 
         coordenadaActual=findViewById(R.id.EditCoordenadaActual)
         coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
         buttonCoordenadas=findViewById(R.id.button)
-        buttonverPerfil=findViewById(R.id.VerPerfilbtn)
 
-        setupDrawer(appBar)
 
-        val btnTravelHistory = findViewById<Button>(R.id.btnTravelHistory)
+
 
         buttonCoordenadas.setOnClickListener {
 
@@ -86,20 +91,8 @@ class principalscreen : AppCompatActivity() {
 
 
         }
-        buttonverPerfil.setOnClickListener {
 
 
-        }
-
-        btnTravelHistory.setOnClickListener {
-            //bundle.putString(USER_NAME, usuario.toString())
-            val intent = Intent(this, TravelHistory::class.java).apply {
-                //putExtras(bundle)
-            }
-            startActivity(intent)
-
-
-        }
 
 
     }
@@ -113,27 +106,34 @@ class principalscreen : AppCompatActivity() {
         drawer_number = findViewById(R.id.drawer_number)
         drawer_header.text=userDB?.name
         drawer_number.text=userDB?.phone
+
+
         return super.onCreateOptionsMenu(menu)
     }
-    override fun onOptionsItemSelected(item_contact: MenuItem): Boolean {
-        var msg = ""
+
+
+
+    private fun setupDrawer(toolbar: Toolbar){
+
+        drawer = findViewById(R.id.drawer_layout)
+        toggle = ActionBarDrawerToggle(this,drawer,toolbar,R.string.open_drawer,R.string.close_drawer)
+        drawer.addDrawerListener(toggle)
+        val navigationView:NavigationView= findViewById(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener (this)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
-        when(item_contact.itemId){
+        when (item.itemId){
             R.id.profile ->{val intent = Intent(this, VerPerfil::class.java)
                 intent.putExtra("userDB",userDB)
                 startActivity(intent)}
-            R.id.share -> msg=getString(R.string.sharing_element)
+            R.id.History ->{val intent = Intent(this, TravelHistory::class.java)
+                startActivity(intent)}
         }
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
-        return super.onOptionsItemSelected(item_contact)
+        drawer.closeDrawer(GravityCompat.START)
+        return true
     }
-    private fun setupDrawer(toolbar: Toolbar){
-        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-        val drawerToggle = ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_drawer,R.string.close_drawer)
-    }
-
-
-
 
 
 }
