@@ -12,7 +12,7 @@ import com.example.carpool.MainActivity
 import com.example.carpool.R
 import com.example.carpool.model.User
 
-class Register : AppCompatActivity() , View.OnClickListener{
+class Register : AppCompatActivity() {
     lateinit var registerUser: EditText
     lateinit var registerPassword: EditText
     lateinit var registerButton: Button
@@ -29,22 +29,6 @@ class Register : AppCompatActivity() , View.OnClickListener{
         registerLoginButton = findViewById(R.id.registerLogin)
         registerPhone = findViewById(R.id.edit_phoneR)
         registerName = findViewById(R.id.edit_full_nameR)
-
-
-        //Menu context para cada componente Edit
-        registerForContextMenu(registerName)
-        registerName.setOnClickListener(this)
-
-        registerForContextMenu(registerUser)
-        registerUser.setOnClickListener(this)
-
-        registerForContextMenu(registerPassword)
-        registerPassword.setOnClickListener(this)
-
-        registerForContextMenu(registerPhone)
-        registerPhone.setOnClickListener(this)
-
-
 
         registerButton.setOnClickListener {
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
@@ -87,9 +71,5 @@ class Register : AppCompatActivity() , View.OnClickListener{
             startActivity(intent)
         }
 
-    }
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
     }
 }
