@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.RecyclerView
@@ -32,7 +33,7 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     lateinit var coordenadaDestino: EditText
 
     private lateinit var drawer:DrawerLayout
-    private lateinit var toggle: ActionBarDrawerToggle
+   // private lateinit var toggle: ActionBarDrawerToggle
 
     //Drawer header
     lateinit var  drawer_header:TextView
@@ -99,6 +100,7 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
 
 
     //Funciones appBar
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
         menuInflater.inflate(R.menu.toolbar_menu, menu)
@@ -116,7 +118,24 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     private fun setupDrawer(toolbar: Toolbar){
 
         drawer = findViewById(R.id.drawer_layout)
-        toggle = ActionBarDrawerToggle(this,drawer,toolbar,R.string.open_drawer,R.string.close_drawer)
+        val toggle:ActionBarDrawerToggle = object:ActionBarDrawerToggle (this,drawer,toolbar,R.string.open_drawer,R.string.close_drawer){
+                override fun onDrawerClosed(view: View){
+                    super.onDrawerClosed(view)
+                    coordenadaActual.isVisible=true
+                    coordenadaDestino.isVisible=true
+                    buttonCoordenadas.isVisible=true
+                    //toast("Drawer closed")
+                }
+
+                override fun onDrawerOpened(drawerView: View){
+                    super.onDrawerOpened(drawerView)
+                    coordenadaActual.isVisible=false
+                    coordenadaDestino.isVisible=false
+                    buttonCoordenadas.isVisible=false
+                    //toast("Drawer opened")
+                }
+            }
+
         drawer.addDrawerListener(toggle)
         val navigationView:NavigationView= findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener (this)
