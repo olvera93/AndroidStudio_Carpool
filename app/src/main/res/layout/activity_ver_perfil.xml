@@ -35,9 +35,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.261" />
 
-
-
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/NombreEdit"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -46,14 +44,25 @@
         android:inputType="text"
         android:paddingStart="10dp"
         android:textSize="16sp"
-        android:textStyle="bold"
         android:textColorHint="@color/black"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/UsuarioEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreText"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.283">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nameP"
+            android:maxLength="30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/UsuarioText"
@@ -69,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider"
         app:layout_constraintVertical_bias="0.902" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/UsuarioEdit"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -77,16 +86,26 @@
         android:drawableRight="@drawable/edit"
         android:drawablePadding="10dp"
         android:inputType="text"
-        android:textStyle="bold"
         android:textSize="16sp"
         android:paddingLeft="10dp"
         android:textColorHint="@color/black"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreText"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.033"  >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_userP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="16"
+            android:inputType="text"
+            android:maxLines="1"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/ContraText"
@@ -102,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@+id/NumeroEdit"
         app:layout_constraintVertical_bias="0.053" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ContraEdit"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -113,12 +132,24 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColorHint="@color/black"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ContraText"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.071"  >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_passwordP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/NumeroText"
@@ -135,23 +166,33 @@
         app:layout_constraintTop_toBottomOf="@+id/UsuarioEdit"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/NumeroEdit"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/edit"
         android:drawablePadding="10dp"
         android:inputType="phone"
-        android:textStyle="bold"
         android:paddingLeft="10dp"
         android:textSize="16sp"
         android:textColorHint="@color/black"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NumeroText"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.043" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_phoneP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/NombreText"

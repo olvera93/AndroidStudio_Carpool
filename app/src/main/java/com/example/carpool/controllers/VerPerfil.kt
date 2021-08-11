@@ -28,10 +28,10 @@ class VerPerfil : AppCompatActivity() {
 
         val userDB: User = intent.getParcelableExtra("userDB")!!
         getSupportActionBar()?.setHomeButtonEnabled(true)
-        EditUsuario=findViewById(R.id.UsuarioEdit)
-        EditContra=findViewById(R.id.ContraEdit)
-        EditNombre=findViewById(R.id.NombreEdit)
-        EditTelefono=findViewById(R.id.NumeroEdit)
+        EditUsuario=findViewById(R.id.edit_userP)
+        EditContra=findViewById(R.id.edit_passwordP)
+        EditNombre=findViewById(R.id.edit_nameP)
+        EditTelefono=findViewById(R.id.edit_phoneP)
         actbtn = findViewById(R.id.Actualizar)
 
         EditUsuario.setText(userDB.user)

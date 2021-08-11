@@ -23,12 +23,12 @@ class Register : AppCompatActivity() , View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        registerUser = findViewById(R.id.editTextUsername)
-        registerPassword = findViewById(R.id.editTextPassword)
+        registerUser = findViewById(R.id.edit_userR)
+        registerPassword = findViewById(R.id.edit_passwordR)
         registerButton = findViewById(R.id.RegisterButton)
         registerLoginButton = findViewById(R.id.registerLogin)
-        registerPhone = findViewById(R.id.editTextPhoneN)
-        registerName = findViewById(R.id.editTextFullName)
+        registerPhone = findViewById(R.id.edit_phoneR)
+        registerName = findViewById(R.id.edit_full_nameR)
 
 
         //Menu context para cada componente Edit
@@ -88,32 +88,8 @@ class Register : AppCompatActivity() , View.OnClickListener{
         }
 
     }
-    //Funciones del menu contextual
-    override fun onCreateContextMenu(menu:  ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-        var inflater = menuInflater
-        inflater.inflate(R.menu.contextualmenu, menu)
-    }
 
     override fun onClick(v: View?) {
-        var popMenu = PopupMenu(this, v)
-        popMenu.menuInflater.inflate(R.menu.contextualmenu, popMenu.menu)
-        // implementar closure
-        popMenu.show()
-    }
-
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        when(item?.itemId) {
-            R.id.copy -> {
-                Toast.makeText(this, getString(R.string.copy_action), Toast.LENGTH_SHORT).show()
-            }
-            R.id.paste->{
-                Toast.makeText(this, getString(R.string.paste_action), Toast.LENGTH_SHORT).show()
-            }
-            R.id.cut->{
-                Toast.makeText(this, getString(R.string.cut), Toast.LENGTH_SHORT).show()
-            }
-        }
-        return super.onContextItemSelected(item)
+        TODO("Not yet implemented")
     }
 }

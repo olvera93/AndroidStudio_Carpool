@@ -17,17 +17,15 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintVertical_bias="0.001" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:width="280dp"
         android:maxLength="16"
-        android:drawableStart="@drawable/user"
         android:drawablePadding="8dp"
         android:hint="@string/register_username"
         android:inputType="text"
@@ -36,41 +34,84 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textUsernameTitle" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textUsernameTitle"
+        app:hintTextAppearance="@style/MyHintStyle"
+        app:errorEnabled="true"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:width="280dp"
+        android:layout_margin="4dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_userR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="16"
+            android:textColor="@color/secondaryTextLightColor"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextPassword"
         android:maxLength="16"
         android:textColor="@color/secondaryTextLightColor"
-        android:drawableStart="@drawable/outline_lock_24"
         android:drawablePadding="8dp"
         android:hint="@string/register_password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRegisterPassword" />
-
-
-    <EditText
-        android:id="@+id/editTextFullName"
-        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textRegisterPassword"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:hintTextAppearance="@style/MyHintStyle"
+        app:errorEnabled="true"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:width="280dp"
-        android:maxLength="30"
-        android:textColor="@color/secondaryTextLightColor"
-        android:drawableStart="@drawable/user"
+        android:layout_margin="4dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_passwordR"
+            android:maxLength="16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/secondaryTextLightColor"
+            android:drawableStart="@drawable/outline_lock_24"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
         android:drawablePadding="8dp"
         android:hint="@string/editText_fullname_register"
         android:inputType="textPersonName"
+        android:maxLength="30"
+        android:textColor="@color/secondaryTextLightColor"
+        app:errorEnabled="true"
+        app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/RegisterPhoneTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/registerNombreTxt"
-        app:layout_constraintTop_toBottomOf="@+id/registerNombreTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/registerNombreTxt"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_full_nameR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="30"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="8dp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/secondaryTextLightColor" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/registerNombreTxt"
@@ -82,6 +123,8 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextFullName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.3"
+
         app:layout_constraintStart_toStartOf="@+id/editTextUsername"
         app:layout_constraintTop_toBottomOf="@+id/textRegisterTitle" />
 
@@ -98,13 +141,9 @@
         app:layout_constraintStart_toStartOf="@+id/editTextUsername"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhoneN" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextPhoneN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="280dp"
         android:maxLength="10"
-        android:drawableStart="@drawable/outline_phone_iphone_24"
         android:drawablePadding="8dp"
         android:hint="@string/edittext_phone_register"
         android:inputType="number"
@@ -113,7 +152,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/RegisterPhoneTxt"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterPhoneTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/RegisterPhoneTxt"
+        app:hintTextAppearance="@style/MyHintStyle"
+        app:errorEnabled="true"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_phoneR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:textColor="@color/secondaryTextLightColor"
+            android:drawableStart="@drawable/outline_phone_iphone_24"
+            android:drawablePadding="8dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/RegisterPhoneTxt"
@@ -166,9 +222,11 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+        app:layout_constraintVertical_bias="1.0" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,13 @@
 package com.example.carpool
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.recyclerview.widget.RecyclerView
 import com.example.carpool.RecyclerAdapter.TravelHistory
 import com.example.carpool.controllers.TravelScreen
 import com.example.carpool.controllers.VerPerfil
@@ -20,7 +17,6 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import android.widget.Toast
 
 
 
@@ -70,11 +66,9 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         textView = findViewById(R.id.textView3)
         textView2 = findViewById(R.id.textView4)
         textView3 = findViewById(R.id.textView5)
-        coordenadaActual=findViewById(R.id.EditCoordenadaActual)
-        coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
+        coordenadaActual=findViewById(R.id.edit_coordinate_latitude)
+        coordenadaDestino=findViewById(R.id.edit_coordinate_longitude)
         buttonCoordenadas=findViewById(R.id.button)
-
-
 
 
         buttonCoordenadas.setOnClickListener {
@@ -112,11 +106,10 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val userDB: User = intent.getParcelableExtra("userDB")!!
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
         drawer_header =findViewById(R.id.drawer_user)
         drawer_number = findViewById(R.id.drawer_number)
-        drawer_header.text=userDB?.name
-        drawer_number.text=userDB?.phone
+        drawer_header.text=userDB.name
+        drawer_number.text=userDB.phone
 
 
         return super.onCreateOptionsMenu(menu)
