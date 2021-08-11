@@ -1,5 +1,6 @@
 package com.example.carpool.controllers
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,6 +25,7 @@ class VerPerfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_perfil)
+
         val userDB: User = intent.getParcelableExtra("userDB")!!
         getSupportActionBar()?.setHomeButtonEnabled(true)
         EditUsuario=findViewById(R.id.UsuarioEdit)
@@ -75,4 +77,16 @@ class VerPerfil : AppCompatActivity() {
 
             }
         }
+
+    override fun finish() {
+        val userDB: User = intent.getParcelableExtra("userDB")!!
+        val intent = Intent(this, principalscreen::class.java)
+        intent.putExtra("userDB", userDB)
+
+        // Activity finished ok, return the data
+        setResult(RESULT_OK, intent)
+        super.finish()
     }
+
+
+}

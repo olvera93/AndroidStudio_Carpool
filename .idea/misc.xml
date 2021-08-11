@@ -27,13 +27,18 @@
         <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/drawer_menu.xml" value="0.25" />
         <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/menu.xml" value="0.29270833333333335" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_principalscreen.xml" value="0.24864130434782608" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_principalscreen.xml" value="0.4" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_register.xml" value="0.17239583333333333" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_travel_screen.xml" value="0.1359375" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_ver_perfil.xml" value="0.1359375" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/content_travel_history.xml" value="0.17239583333333333" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/drawer_header.xml" value="0.264" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/fragment_main.xml" value="0.13333333333333333" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/fragment_principal_screen.xml" value="0.1" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/item_driver.xml" value="0.264" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/loading_item.xml" value="0.1359375" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/menu/contextualmenu.xml" value="0.103125" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/menu/toolbar_menu.xml" value="0.103125" />
       </map>
     </option>
   </component>

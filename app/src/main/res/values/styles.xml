@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
@@ -9,6 +8,9 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="MyHintStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/design_default_color_primary</item>

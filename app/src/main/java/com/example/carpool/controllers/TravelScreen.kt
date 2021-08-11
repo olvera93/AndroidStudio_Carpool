@@ -32,6 +32,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import java.lang.Exception
 
 
 class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
@@ -108,16 +109,22 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                             response ->
                         val jsonResponse = JSONObject(response)
                         // Obtener rutas
+
                         val routes = jsonResponse.getJSONArray("routes")
-                        val legs = routes.getJSONObject(0).getJSONArray("legs")
-                        val steps = legs.getJSONObject(0).getJSONArray("steps")
-                        for (i in 0 until steps.length()) {
-                            val points = steps.getJSONObject(i).getJSONObject("polyline").getString("points")
-                            path.add(PolyUtil.decode(points))
+                        if (routes.length() > 0) {
+                            val legs = routes.getJSONObject(0).getJSONArray("legs")
+                            val steps = legs.getJSONObject(0).getJSONArray("steps")
+                            for (i in 0 until steps.length()) {
+                                val points = steps.getJSONObject(i).getJSONObject("polyline").getString("points")
+                                path.add(PolyUtil.decode(points))
+                            }
+                            for (i in 0 until path.size) {
+                                this.map!!.addPolyline(PolylineOptions().addAll(path[i]).color(Color.RED))
+                            }
+                        } else {
+                            Toast.makeText(this,getString(R.string.invalid_coordinate), Toast.LENGTH_LONG).show()
                         }
-                        for (i in 0 until path.size) {
-                            this.map!!.addPolyline(PolylineOptions().addAll(path[i]).color(Color.RED))
-                        }
+
                     }, Response.ErrorListener {
                             _ ->
                     }){}
@@ -128,12 +135,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                     Toast.makeText(this, getString(R.string.not_get_location),
                         Toast.LENGTH_SHORT).show()
                 }
-
-
-            // Se agrega una animación cuando muestra la ubicación
-            //map.animateCamera(
-                //CameraUpdateFactory.newLatLngZoom(coordenadas, 15f),4000, null)
-        }catch (e: NumberFormatException){ }
+        }catch (e: Exception){ }
     }
 
     //

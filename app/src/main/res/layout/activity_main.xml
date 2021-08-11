@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="@+id/EditUsuario"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-    <!--
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EditUsuario"
         app:layout_constraintTop_toTopOf="parent"
@@ -41,12 +41,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.335"
         app:layout_constraintVertical_bias="0.427"
+        app:hintTextAppearance="@style/MyHintStyle"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:hint="@string/user"
         android:textColor="@color/secondaryTextColor">
-
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_user"
@@ -54,25 +54,10 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:maxLines="1"
+            android:textColor="@color/secondaryTextLightColor"
             android:drawableLeft="@drawable/user"
             android:drawablePadding="8dp"/>
-    </com.google.android.material.textfield.TextInputLayout>-->
-
-    <EditText
-        android:id="@+id/EditUsuario"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/user"
-        android:drawablePadding="8dp"
-        android:hint="@string/user"
-        android:inputType="text"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.335"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <!--
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EditContrasena"
         android:layout_width="280dp"
@@ -103,33 +88,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.583"
-        android:layout_margin="4dp"
-        android:textColor="@color/secondaryTextColor">
+        app:hintTextAppearance="@style/MyHintStyle"
+        android:layout_margin="4dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:maxLines="1"
+            android:textColor="@color/secondaryTextLightColor"
             android:drawableLeft="@drawable/phone"
             android:drawablePadding="8dp"/>
-    </com.google.android.material.textfield.TextInputLayout>-->
-    <EditText
-    android:id="@+id/EditContrasena"
-    android:layout_width="280dp"
-    android:textStyle="bold"
-    android:layout_height="wrap_content"
-    android:drawableLeft="@drawable/phone"
-    android:hint="@string/password_text"
-    android:inputType="textPassword"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.335"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.583" />
-
+    </com.google.android.material.textfield.TextInputLayout>
 
    <Button
        android:id="@+id/Login_button"

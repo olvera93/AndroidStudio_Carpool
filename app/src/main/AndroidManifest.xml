@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">
         <activity android:name=".controllers.Register"
-            android:label="@string/register"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +24,10 @@
         </activity>
 
 
+
         <activity android:name=".controllers.VerPerfil"
-            android:label="@string/view_profile_user"
-            ></activity>
+            android:label="@string/view_profile_user">
+    </activity>
 
         <activity
             android:name=".MainActivity"

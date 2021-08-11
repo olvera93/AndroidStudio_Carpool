@@ -17,6 +17,7 @@ import com.google.android.material.button.MaterialButton
 class MainActivity : AppCompatActivity() {
 
     //Inicio de componentes
+
     lateinit var usuario: EditText
     lateinit var contrasena:EditText
     lateinit var button: Button
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         //Instancia de componentes
         button = findViewById(R.id.Login_button)
-        usuario = findViewById(R.id.EditUsuario)
+        usuario = findViewById(R.id.edit_user)
 
 
         //Generacion de Listener para cambio de texto en el edit de usuario
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
         //Instancia de contraseña
-        contrasena = findViewById(R.id.EditContrasena)
+        contrasena = findViewById(R.id.edit_password)
 
         //Generacion de Listener para cambio de texto en el edit de contraseña
         contrasena.addTextChangedListener(object : TextWatcher {

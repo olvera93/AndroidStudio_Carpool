@@ -1,5 +1,6 @@
 package com.example.carpool
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
@@ -19,6 +20,10 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import android.widget.Toast
+
+
+
 
 const val COORDENADAS_ACTUALES ="org.example.activity.COORDENADAS_ACTUALES"
 const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
@@ -27,6 +32,12 @@ const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
 
 class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
+
+    lateinit var imageCarpool: ImageView
+    lateinit var imageView2: ImageView
+    lateinit var textView: TextView
+    lateinit var textView2: TextView
+    lateinit var textView3: TextView
 
     lateinit var buttonCoordenadas: Button
     lateinit var coordenadaActual: EditText
@@ -48,19 +59,17 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_principalscreen)
-        val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
-        val recycler = findViewById<RecyclerView>(R.id.recycler)
-
 
         //App Bar
         val appBar = findViewById<Toolbar>(R.id.app_bar)
         this.setSupportActionBar(appBar)
-
         setupDrawer(appBar)
 
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
-
-
+        imageCarpool = findViewById(R.id.imageView)
+        imageView2 = findViewById(R.id.imageView2)
+        textView = findViewById(R.id.textView3)
+        textView2 = findViewById(R.id.textView4)
+        textView3 = findViewById(R.id.textView5)
         coordenadaActual=findViewById(R.id.EditCoordenadaActual)
         coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
         buttonCoordenadas=findViewById(R.id.button)
@@ -102,7 +111,7 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     //Funciones appBar
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
+        val userDB: User = intent.getParcelableExtra("userDB")!!
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         drawer_header =findViewById(R.id.drawer_user)
         drawer_number = findViewById(R.id.drawer_number)
@@ -121,6 +130,11 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         val toggle:ActionBarDrawerToggle = object:ActionBarDrawerToggle (this,drawer,toolbar,R.string.open_drawer,R.string.close_drawer){
                 override fun onDrawerClosed(view: View){
                     super.onDrawerClosed(view)
+                    imageCarpool.isVisible = true
+                    imageView2.isVisible = true
+                    textView.isVisible = true
+                    textView2.isVisible = true
+                    textView3.isVisible = true
                     coordenadaActual.isVisible=true
                     coordenadaDestino.isVisible=true
                     buttonCoordenadas.isVisible=true
@@ -129,6 +143,11 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
 
                 override fun onDrawerOpened(drawerView: View){
                     super.onDrawerOpened(drawerView)
+                    imageCarpool.isVisible = false
+                    imageView2.isVisible = false
+                    textView.isVisible = false
+                    textView2.isVisible = false
+                    textView3.isVisible = false
                     coordenadaActual.isVisible=false
                     coordenadaDestino.isVisible=false
                     buttonCoordenadas.isVisible=false
@@ -142,18 +161,20 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val userDB:User?= intent.getParcelableExtra<User>("userDB")!!
+        val userDB: User = intent.getParcelableExtra("userDB")!!
         when (item.itemId){
             R.id.profile ->{val intent = Intent(this, VerPerfil::class.java)
                 intent.putExtra("userDB",userDB)
-                startActivity(intent)}
+                startActivity(intent)
+            }
             R.id.History ->{val intent = Intent(this, TravelHistory::class.java)
-                startActivity(intent)}
+                startActivity(intent)
+            }
         }
+        drawer = findViewById(R.id.drawer_layout)
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
-
 
 }
 

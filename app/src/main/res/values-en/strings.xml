@@ -43,6 +43,7 @@
 
     <!-- Nombre pantalla TravelScreen -->
     <string name="travel_screen">Travel</string>
+    <string name="invalid_coordinate">Impossible to reach your destination</string>
 
     <!-- Nombre pantalla Login -->
     <string name="login">Login</string>
