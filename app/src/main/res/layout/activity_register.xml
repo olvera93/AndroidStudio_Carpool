@@ -24,8 +24,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextUsername"
-        android:layout_width="340dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:drawablePadding="8dp"
         android:hint="@string/register_username"
@@ -54,8 +54,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextPassword"
-        android:layout_width="340dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:drawablePadding="8dp"
         android:hint="@string/register_password"
@@ -82,10 +82,11 @@
             android:textColor="@color/secondaryTextLightColor" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextFullName"
-        android:layout_width="340dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:drawablePadding="8dp"
         android:hint="@string/editText_fullname_register"
@@ -96,7 +97,7 @@
         app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/RegisterPhoneTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/registerNombreTxt"
         app:layout_constraintTop_toBottomOf="@+id/registerNombreTxt"
         app:layout_constraintVertical_chainStyle="packed">
@@ -112,7 +113,6 @@
             android:maxLines="1"
             android:textColor="@color/secondaryTextLightColor" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <TextView
         android:id="@+id/registerNombreTxt"
@@ -144,8 +144,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextPhoneN"
-        android:layout_width="340dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:drawablePadding="8dp"
         android:hint="@string/edittext_phone_register"
