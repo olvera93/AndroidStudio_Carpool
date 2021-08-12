@@ -17,10 +17,9 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="0.01999998" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextUsername"
@@ -35,9 +34,8 @@
         app:errorEnabled="false"
         app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/textRegisterPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhoneN"
+        app:layout_constraintStart_toStartOf="@+id/textUsernameTitle"
         app:layout_constraintTop_toBottomOf="@+id/textUsernameTitle">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -65,9 +63,9 @@
         app:errorEnabled="false"
         app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUsername"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="@+id/textRegisterPassword"
         app:layout_constraintTop_toBottomOf="@+id/textRegisterPassword">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -97,8 +95,7 @@
         app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/RegisterPhoneTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/registerNombreTxt"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerNombreTxt"
         app:layout_constraintVertical_chainStyle="packed">
 
@@ -123,11 +120,11 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextFullName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextUsername"
 
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextFullName"
         app:layout_constraintTop_toBottomOf="@+id/textRegisterTitle"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.49" />
 
     <TextView
         android:id="@+id/textUsernameTitle"
@@ -139,7 +136,7 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextUsername"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhoneN"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhoneN" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -155,8 +152,7 @@
         app:errorEnabled="false"
         app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/textUsernameTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/editTextFullName"
         app:layout_constraintStart_toStartOf="@+id/RegisterPhoneTxt"
         app:layout_constraintTop_toBottomOf="@+id/RegisterPhoneTxt">
 
@@ -180,9 +176,7 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPhoneN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.011"
-        app:layout_constraintStart_toStartOf="@+id/editTextUsername"
+        app:layout_constraintStart_toStartOf="@+id/editTextFullName"
         app:layout_constraintTop_toBottomOf="@+id/editTextFullName" />
 
     <TextView
@@ -193,9 +187,7 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextUsername"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
     <Button
@@ -225,7 +217,7 @@
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.9" />
 
 
 
