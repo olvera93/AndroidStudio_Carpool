@@ -66,8 +66,8 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         textView = findViewById(R.id.textView3)
         textView2 = findViewById(R.id.textView4)
         textView3 = findViewById(R.id.textView5)
-        coordenadaActual=findViewById(R.id.edit_coordinate_latitude)
-        coordenadaDestino=findViewById(R.id.edit_coordinate_longitude)
+        coordenadaActual=findViewById(R.id.EditCoordenadaActual)
+        coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
         buttonCoordenadas=findViewById(R.id.button)
 
 
@@ -123,27 +123,13 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         val toggle:ActionBarDrawerToggle = object:ActionBarDrawerToggle (this,drawer,toolbar,R.string.open_drawer,R.string.close_drawer){
                 override fun onDrawerClosed(view: View){
                     super.onDrawerClosed(view)
-                    imageCarpool.isVisible = true
-                    imageView2.isVisible = true
-                    textView.isVisible = true
-                    textView2.isVisible = true
-                    textView3.isVisible = true
-                    coordenadaActual.isVisible=true
-                    coordenadaDestino.isVisible=true
-                    buttonCoordenadas.isVisible=true
+
                     //toast("Drawer closed")
                 }
 
                 override fun onDrawerOpened(drawerView: View){
                     super.onDrawerOpened(drawerView)
-                    imageCarpool.isVisible = false
-                    imageView2.isVisible = false
-                    textView.isVisible = false
-                    textView2.isVisible = false
-                    textView3.isVisible = false
-                    coordenadaActual.isVisible=false
-                    coordenadaDestino.isVisible=false
-                    buttonCoordenadas.isVisible=false
+
                     //toast("Drawer opened")
                 }
             }
