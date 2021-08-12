@@ -11,9 +11,6 @@
     android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primaryColor"
@@ -88,38 +85,60 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:layout_constraintVertical_bias="0.49" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/EditCoordenadaActual"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/navigation"
             android:drawablePadding="8dp"
             android:hint="@string/latitude_coordinates"
             android:inputType="numberDecimal|numberSigned"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/EditCoordenadaDestino"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:errorEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:hintTextAppearance="@style/MyHintStyle"
+            android:layout_margin="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_coordinate_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal|numberSigned"
+                android:drawableLeft="@drawable/navigation"
+                android:drawablePadding="8dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/EditCoordenadaDestino"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/navigation"
             android:drawablePadding="8dp"
             android:hint="@string/longitude_coordinates"
             android:inputType="numberDecimal|numberSigned"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.472"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EditCoordenadaActual"
-            app:layout_constraintVertical_bias="0.49" />
+            app:layout_constraintVertical_bias="0.49"
+            app:errorEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:hintTextAppearance="@style/MyHintStyle"
+            android:layout_margin="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_coordinate_longitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal|numberSigned"
+                android:drawableLeft="@drawable/navigation"
+                android:drawablePadding="8dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
 

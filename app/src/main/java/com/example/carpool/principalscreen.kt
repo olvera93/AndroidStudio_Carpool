@@ -66,8 +66,8 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         textView = findViewById(R.id.textView3)
         textView2 = findViewById(R.id.textView4)
         textView3 = findViewById(R.id.textView5)
-        coordenadaActual=findViewById(R.id.EditCoordenadaActual)
-        coordenadaDestino=findViewById(R.id.EditCoordenadaDestino)
+        coordenadaActual=findViewById(R.id.edit_coordinate_latitude)
+        coordenadaDestino=findViewById(R.id.edit_coordinate_longitude)
         buttonCoordenadas=findViewById(R.id.button)
 
 
