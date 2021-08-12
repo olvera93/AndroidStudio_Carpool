@@ -1,11 +1,12 @@
+
 ## 💻 Proyecto - Carpool
 <img src="images/carpool.png" align="right" height="100" width="100" hspace="10">
 
 ## :wave: Bienvenid@s
 
 
-
 ## :busts_in_silhouette: Integrantes: 
+<b>🛑Lista creada para la mitad de modulo🛑</b>
 
 * David - Encargado de la pantalla [Registro](https://github.com/olvera93/AndroidStudio_Carpool/tree/register)
 * Stuart - Encargado de la pantalla [VerPerfil](https://github.com/olvera93/AndroidStudio_Carpool/tree/Ver_Perfil)
@@ -13,6 +14,8 @@
 * Gonzalo - Encardado de la pantalla [TravelScreen](https://github.com/olvera93/AndroidStudio_Carpool/tree/Travel_Standby_Screen)
 
 <div style="text-align: justify;">
+  
+
 
 ### 🔧 Requisitos mínimos
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.5-purple?longCache=true&style=popout-square)](https://kotlinlang.org)
@@ -60,7 +63,13 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
 
 </div>
 
+<div >
+## 💻Proyecto Kotlin Fundamentals
+<p style="font-size:15px; margin:0px; padding:0px">
+[Kotlin Fundamentals](https://github.com/olvera93/AndroidStudio_Carpool/tree/register)</p>
+</div>
 <footer>
+
   <h3> Autores ✒️</h3>
   
   * David [![Web](https://img.shields.io/badge/GitHub-daviders98-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/daviders98)<br>
@@ -69,7 +78,8 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
   * Stuart [![Web](https://img.shields.io/badge/GitHub-StuartGa-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/StuartGa)
   
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
-  </p>
+ 
+
   <footer>
 
 
