@@ -66,7 +66,7 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
 
 ## 💻Proyecto Kotlin Fundamentals
 
-[Kotlin Fundamentals](https://github.com/olvera93/AndroidStudio_Carpool.git)
+[Kotlin Fundamentals](https://github.com/olvera93/Santander_Kotlin_Proyecto.git)
 
 
 <footer>
