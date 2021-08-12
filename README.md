@@ -63,11 +63,12 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
 
 </div>
 
-<div >
+
 ## 💻Proyecto Kotlin Fundamentals
 <p style="font-size:15px; margin:0px; padding:0px">
 [Kotlin Fundamentals](https://github.com/olvera93/AndroidStudio_Carpool/tree/register)</p>
-</div>
+
+
 <footer>
 
   <h3> Autores ✒️</h3>
