@@ -29,13 +29,29 @@
 Carpool es una plataforma de tecnología. En donde nuestra app para smartphones Android conectan a socios conductores y a usuarios.
 Donde opera Carpool por el momento es México, el usuario puede usar la app para pedir viajes. Cuando el usuario ingresa sus coordenadas latitud y longitud, la app le mostrara la ruta mas viable para llegar a su destino.
 
-En la app también aparece información acerca del historial de viajes que ha hecho el usuario, se le mostrara la información del conductor como su nombre, tipo de vehículo, número de matrícula y su reputación . Estos datos le ayudara al usuario por si tuvo algún incoveniente con un conductor.
+En la app también aparece información acerca del historial de viajes que ha hecho el usuario, se le mostrara la información del conductor como su nombre, telefono y su reputación . Estos datos le ayudara al usuario por si tuvo algún incoveniente con un conductor.
 
 ### :clipboard:  Descripción
 
 Este proyecto se basará en las distintas aplicaciones de movilidad ya existentes, como lo son Uber, Didi o inDriver: mismas que solucionan la necesidad de contar con un transporte que, además de que sea seguro, garantice ser económicamente accesible y represente una ventaja contra el transporte público en cuestión de rapidez y eficiencia.
 
-## :notebook: Uso
+## :notebook: Especificaciones
+
+* Para su correcto funcionamiento, la aplicacion requiere de un dispositivo actualizado y con la funcionalidad de GPS activa.
+
+* La aplicacion requiere el permiso de acceso a la ubicacion del dispositivo para poder llevar a cabo la asignacion de viajes.
+
+* La app tiene la funcionalidad de adaptarse a dos idiomas distintos que son ingles y español, mismos que seran asignados con base al idioma establecido en el telefono.
+
+* El usuario cuenta con acceso a su historial de viajes, donde puede consultar el nombre, numero de telefono y reputacion de los conductores con los que previamente ha viajado.
+
+## Uso
+
+* Se requiere el registro dentro de la aplicacion por medio de un numero de celular, nombre completo y nombre de usuario con contraseña para acceder a ella.
+
+* Para el correcto uso de la aplicacion es necesario ingresar coordenadas cercanas a la ubicacion del telefono al momento de solicitar un viaje.
+
+* La aplicacion permite la posibilidad de editar perfil en el caso que se requieran hacer ciertos cambios como actualizar el numero telefonico o la contraseña.
 
 ## Alcance del proyecto:
   
@@ -55,5 +71,6 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
   </p>
   <footer>
+
 
 
