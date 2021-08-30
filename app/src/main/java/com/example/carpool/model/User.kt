@@ -1,7 +1,7 @@
 package com.example.carpool.model
 
 import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import kotlinx.android.parcel.Parcelize
 
 var database =  mutableListOf(listOf("adminName","adminPhone","adminUser","123"))
 @Parcelize

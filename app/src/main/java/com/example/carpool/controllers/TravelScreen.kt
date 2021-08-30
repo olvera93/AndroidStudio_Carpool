@@ -104,7 +104,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                     this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 14.5f))
 
                     val path: MutableList<List<LatLng>> = ArrayList()
-                    val urlDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=${latLngOrigin.latitude},${latLngOrigin.longitude}&destination=${latLngDestination.latitude},${latLngDestination.longitude}&mode=driving&key=API_KEY"
+                    val urlDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=${latLngOrigin.latitude},${latLngOrigin.longitude}&destination=${latLngDestination.latitude},${latLngDestination.longitude}&mode=driving&key=AIzaSyDdb8SoncgLZzAraV3h6rOGIXwV-PB66gQ"
                     val directionsRequest = object : StringRequest(Request.Method.GET, urlDirections, Response.Listener<String> {
                             response ->
                         val jsonResponse = JSONObject(response)

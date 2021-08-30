@@ -86,7 +86,7 @@
                 />
 
             <TextView
-                android:id="@+id/tvPhone"
+                android:id="@+id/tvPrice"
                 android:layout_width="78dp"
                 android:layout_height="19dp"
                 android:layout_marginTop="20dp"
@@ -97,17 +97,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toTopOf="@+id/tvNombre" />
-
-            <RatingBar
-                android:id="@+id/rbCalificacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="?android:attr/ratingBarStyleSmall"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/tvPhone"
-                tools:ignore="MissingConstraints" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

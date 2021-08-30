@@ -88,11 +88,10 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
                         putExtras(bundle2)
                     }
                     startActivity(intent)
+                    overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out);
+
                 }
             }
-
-
-
 
         }
 

@@ -1,47 +1,58 @@
 package com.example.carpool.RecyclerAdapter
 
-
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RatingBar
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.carpool.model.Driver
 import com.example.carpool.R
+import com.example.carpool.model.Driver
 
-class RecyclerAdapter(val drivers : List<Driver>) :
-    RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
+//Declaración con constructor
+class RecyclerAdapter(
+    private val context:Context,
+    private val drivers: MutableList<Driver>,
+    private val clickListener: (Driver) -> Unit): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+    //Aquí atamos el ViewHolder
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val driver = drivers.get(position)
+        holder.bind(driver, context)
 
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        private val name = view.findViewById<TextView>(R.id.tvNombre)
-        private val phone = view.findViewById<TextView>(R.id.tvPhone)
-        private val ratingBar = view.findViewById<RatingBar>(R.id.rbCalificacion)
+        holder.view.setOnClickListener{clickListener(driver)}
 
-        fun bind(driver: Driver){
-            name.text = driver.name
-            phone.text = driver.phone
-            ratingBar.rating = driver.rating
-        }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater
-            .from(parent.context)
-            .inflate(R.layout.item_driver, parent, false)
-        return ViewHolder(view)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return ViewHolder(layoutInflater.inflate(R.layout.item_driver, parent, false))
     }
-
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val contact = drivers[position]
-        holder.bind(contact)
-    }
-
 
     override fun getItemCount(): Int {
         return drivers.size
+    }
+
+    //El ViewHolder ata los datos del RecyclerView a la Vista para desplegar la información
+    //También se encarga de gestionar los eventos de la View, como los clickListeners
+    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+        //obteniendo las referencias a las Views
+        private val name = view.findViewById<TextView>(R.id.tvNombre)
+        private val price = view.findViewById<TextView>(R.id.tvPrice)
+        //val description = view.findViewById(R.id.tvDescription) as TextView
+        //val price = view.findViewById(R.id.tvPrice) as TextView
+        //val image = view.findViewById(R.id.imgProduct) as ImageView
+
+        //"atando" los datos a las Views
+        fun bind(driver: Driver, context: Context){
+            name.text = driver.name
+            price.text = "$"+driver.price.toString()
+            //description.text = product.description
+            //price.text = product.price
+            //image.setImageResource(product.idImage)
+        }
     }
 
 }

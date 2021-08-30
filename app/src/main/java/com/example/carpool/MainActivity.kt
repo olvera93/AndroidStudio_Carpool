@@ -99,8 +99,8 @@ class MainActivity : AppCompatActivity() {
 
                     val intent = Intent(this, principalscreen::class.java)
                     intent.putExtra("userDB",userDB)
-
                     startActivity(intent)
+                    overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out)
                 }
                 else{
                     Toast.makeText(this, getString(R.string.invalid_user_password), Toast.LENGTH_SHORT).show()

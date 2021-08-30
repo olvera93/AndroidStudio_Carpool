@@ -3,14 +3,11 @@ package com.example.carpool.controllers
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.ContextMenu
-import android.view.MenuItem
-import android.view.View
 import android.widget.*
 import com.example.carpool.MainActivity
 import com.example.carpool.R
 import com.example.carpool.model.User
+
 
 class Register : AppCompatActivity() {
     lateinit var registerUser: EditText
@@ -29,6 +26,8 @@ class Register : AppCompatActivity() {
         registerLoginButton = findViewById(R.id.registerLogin)
         registerPhone = findViewById(R.id.edit_phoneR)
         registerName = findViewById(R.id.edit_full_nameR)
+
+        var translateLeft = R.anim.translate_left_side
 
         registerButton.setOnClickListener {
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
@@ -53,6 +52,7 @@ class Register : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("userDB",tempUsuario)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
                 }else{
                     Toast.makeText(this,getString(R.string.account_already_registered),Toast.LENGTH_LONG).show()
                     registerUser.setText("")
@@ -69,6 +69,8 @@ class Register : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("userDB",tempUsuario)
             startActivity(intent)
+            overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
+
         }
 
     }
