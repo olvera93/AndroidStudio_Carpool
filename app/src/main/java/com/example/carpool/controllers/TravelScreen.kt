@@ -216,7 +216,8 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
             map.isMyLocationEnabled = false
         } else {
             Toast.makeText(this, getString(R.string.activate_location), Toast.LENGTH_LONG).show()
-
+            finish();
+            startActivity(getIntent());
         }
     }
 
