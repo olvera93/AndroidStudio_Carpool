@@ -1,8 +1,11 @@
 package com.example.carpool.controllers
 
+import android.content.Context
 import android.content.Intent
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.*
 import com.example.carpool.MainActivity
 import com.example.carpool.R
@@ -28,6 +31,8 @@ class Register : AppCompatActivity() {
         registerName = findViewById(R.id.edit_full_nameR)
 
         var translateLeft = R.anim.translate_left_side
+
+
 
         registerButton.setOnClickListener {
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
@@ -73,5 +78,27 @@ class Register : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (!isLocationEnabled()) {
+            goToTurnLocation()
+        }
+    }
+
+    private fun goToTurnLocation(){
+        Toast.makeText(this, "Debes prender el servicio de GPS", Toast.LENGTH_LONG).show()
+        val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+        startActivity(intent)
+    }
+
+
+    //checa si el gps está apagado
+    private fun isLocationEnabled(): Boolean {
+        var locationManager: LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+            LocationManager.NETWORK_PROVIDER
+        )
     }
 }

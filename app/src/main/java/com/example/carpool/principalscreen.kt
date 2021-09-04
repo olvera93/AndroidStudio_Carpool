@@ -1,5 +1,6 @@
 package com.example.carpool
 
+import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +14,7 @@ import com.example.carpool.controllers.TravelScreen
 import com.example.carpool.controllers.VerPerfil
 import com.example.carpool.model.User
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
@@ -60,6 +62,9 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         val appBar = findViewById<Toolbar>(R.id.app_bar)
         this.setSupportActionBar(appBar)
         setupDrawer(appBar)
+
+        //requestLocationPermission()
+
 
         imageCarpool = findViewById(R.id.imageView)
         imageView2 = findViewById(R.id.imageView2)
@@ -152,6 +157,19 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         drawer = findViewById(R.id.drawer_layout)
         drawer.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    // Para que el usuario acepte los permisos
+    private fun requestLocationPermission() {
+        // Ya se le habia pedido al usuario dar permiso pero los rechazo
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            Toast.makeText(this, getString(R.string.settings_accept), Toast.LENGTH_LONG).show()
+        } else {
+            // Es la primera vez que se le pide permisos al usuario
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                TravelScreen.REQUEST_CODE_LOCATION
+            )
+        }
     }
 
 }

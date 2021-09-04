@@ -1,6 +1,5 @@
 package com.example.carpool.controllers
 
-
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -94,56 +93,54 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
 
 
 
-            if (isLocationEnabled()){
-                try {
-                    fusedLocationClient.lastLocation
-                        .addOnSuccessListener { location ->
 
-                            // Se coloca
-                            val latLngOrigin = LatLng(location!!.latitude.toDouble(), location!!.longitude.toDouble())
-                            val latLngDestination = LatLng(coordenadaActual!!.toDouble(), coordenadaDestino!!.toDouble())
+        try {
+                fusedLocationClient.lastLocation
+                    .addOnSuccessListener { location ->
+
+                        // Se coloca
+                        val latLngOrigin = LatLng(location!!.latitude.toDouble(), location!!.longitude.toDouble())
+                        val latLngDestination = LatLng(coordenadaActual!!.toDouble(), coordenadaDestino!!.toDouble())
 
 
-                            this.map!!.addMarker(MarkerOptions().position(latLngOrigin).title(getString(R.string.current_location)))
-                            this.map!!.addMarker(MarkerOptions().position(latLngDestination).title(getString(R.string.destination_location)))
-                            this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 14.5f))
+                        this.map!!.addMarker(MarkerOptions().position(latLngOrigin).title(getString(R.string.current_location)))
+                        this.map!!.addMarker(MarkerOptions().position(latLngDestination).title(getString(R.string.destination_location)))
+                        this.map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngOrigin, 14.5f))
 
-                            val path: MutableList<List<LatLng>> = ArrayList()
-                            val urlDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=${latLngOrigin.latitude},${latLngOrigin.longitude}&destination=${latLngDestination.latitude},${latLngDestination.longitude}&mode=driving&key=AIzaSyDdb8SoncgLZzAraV3h6rOGIXwV-PB66gQ"
-                            val directionsRequest = object : StringRequest(Request.Method.GET, urlDirections, Response.Listener<String> {
-                                    response ->
-                                val jsonResponse = JSONObject(response)
-                                // Obtener rutas
+                        val path: MutableList<List<LatLng>> = ArrayList()
+                        val urlDirections = "https://maps.googleapis.com/maps/api/directions/json?origin=${latLngOrigin.latitude},${latLngOrigin.longitude}&destination=${latLngDestination.latitude},${latLngDestination.longitude}&mode=driving&key=AIzaSyDdb8SoncgLZzAraV3h6rOGIXwV-PB66gQ"
+                        val directionsRequest = object : StringRequest(Request.Method.GET, urlDirections, Response.Listener<String> {
+                                response ->
+                            val jsonResponse = JSONObject(response)
+                            // Obtener rutas
 
-                                val routes = jsonResponse.getJSONArray("routes")
-                                if (routes.length() > 0) {
-                                    val legs = routes.getJSONObject(0).getJSONArray("legs")
-                                    val steps = legs.getJSONObject(0).getJSONArray("steps")
-                                    for (i in 0 until steps.length()) {
-                                        val points = steps.getJSONObject(i).getJSONObject("polyline").getString("points")
-                                        path.add(PolyUtil.decode(points))
-                                    }
-                                    for (i in 0 until path.size) {
-                                        this.map!!.addPolyline(PolylineOptions().addAll(path[i]).color(Color.RED))
-                                    }
-                                } else {
-                                    Toast.makeText(this,getString(R.string.invalid_coordinate), Toast.LENGTH_LONG).show()
+                            val routes = jsonResponse.getJSONArray("routes")
+                            if (routes.length() > 0) {
+                                val legs = routes.getJSONObject(0).getJSONArray("legs")
+                                val steps = legs.getJSONObject(0).getJSONArray("steps")
+                                for (i in 0 until steps.length()) {
+                                    val points = steps.getJSONObject(i).getJSONObject("polyline").getString("points")
+                                    path.add(PolyUtil.decode(points))
                                 }
+                                for (i in 0 until path.size) {
+                                    this.map!!.addPolyline(PolylineOptions().addAll(path[i]).color(Color.RED))
+                                }
+                            } else {
+                                Toast.makeText(this,getString(R.string.invalid_coordinate), Toast.LENGTH_LONG).show()
+                            }
 
-                            }, Response.ErrorListener {
-                                    _ ->
-                            }){}
-                            val requestQueue = Volley.newRequestQueue(this)
-                            requestQueue.add(directionsRequest)
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this, getString(R.string.not_get_location),
-                                Toast.LENGTH_SHORT).show()
-                        }
-                }catch (e: Exception){ }
-            } else {
-                goToTurnLocation()
-            }
+                        }, Response.ErrorListener {
+                                _ ->
+                        }){}
+                        val requestQueue = Volley.newRequestQueue(this)
+                        requestQueue.add(directionsRequest)
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, getString(R.string.not_get_location),
+                            Toast.LENGTH_SHORT).show()
+                    }
+            }catch (e: Exception){ }
+
 
     }
 
@@ -173,11 +170,6 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
         }
     }
 
-    private fun goToTurnLocation(){
-        Toast.makeText(this, "Debes prender el servicio de GPS", Toast.LENGTH_LONG).show()
-        val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-        startActivity(intent)
-    }
 
     @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(
@@ -197,9 +189,7 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
                 }
 
             }
-            else -> {
-                goToTurnLocation()
-            }
+            else -> { }
         }
     }
 
@@ -215,19 +205,13 @@ class TravelScreen : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLoca
         if (!isLocationPermissionGranted()) { //Si no están permitidos
             map.isMyLocationEnabled = false
         } else {
-            Toast.makeText(this, getString(R.string.activate_location), Toast.LENGTH_LONG).show()
-            finish();
-            startActivity(getIntent());
+            //Toast.makeText(this, getString(R.string.activate_location), Toast.LENGTH_LONG).show()
+            onDetachedFromWindow()
+            startActivity(getIntent())
         }
     }
 
-    //checa si el gps está apagado
-    private fun isLocationEnabled(): Boolean {
-        var locationManager: LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-            LocationManager.NETWORK_PROVIDER
-        )
-    }
+
 
     override fun onMyLocationButtonClick(): Boolean {
         return true
