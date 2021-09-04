@@ -29,10 +29,10 @@
 
 ## 🛠️ Funcionalidad
   
-Carpool es una plataforma de tecnología. En donde nuestra app para smartphones Android conectan a socios conductores y a usuarios.
-Donde opera Carpool por el momento es México, el usuario puede usar la app para pedir viajes. Cuando el usuario ingresa sus coordenadas latitud y longitud, la app le mostrara la ruta mas viable para llegar a su destino.
+Carpool es una plataforma de tecnología. En donde nuestra app para smartphones Android conecta a socios conductores y a usuarios. Donde opera Carpool por el momento es México, el usuario puede usar la app para pedir viajes. Cuando el usuario ingresa sus coordenadas latitud y longitud, la app le mostrará la ruta más viable para llegar a su destino.
 
-En la app también aparece información acerca del historial de viajes que ha hecho el usuario, se le mostrara la información del conductor como su nombre, telefono y su reputación . Estos datos le ayudara al usuario por si tuvo algún incoveniente con un conductor.
+En la app también aparece información acerca del historial de viajes que ha hecho el usuario, se le mostrará la información del conductor como su nombre, teléfono y su reputación . Estos datos le ayudarán al usuario por si tuvo algún inconveniente con un conductor.
+
 
 ### :clipboard:  Descripción
 
