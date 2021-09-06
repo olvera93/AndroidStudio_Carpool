@@ -1,17 +1,13 @@
-
 ## 💻 Proyecto - Carpool
 <img src="images/carpool.png" align="right" height="100" width="100" hspace="10">
 
 ## :wave: Bienvenid@s
 
-
-## :busts_in_silhouette: Integrantes: 
-<b>🛑Lista creada para la mitad de modulo🛑</b>
-
-* David - Encargado de la pantalla [Registro](https://github.com/olvera93/AndroidStudio_Carpool/tree/register)
-* Stuart - Encargado de la pantalla [VerPerfil](https://github.com/olvera93/AndroidStudio_Carpool/tree/Ver_Perfil)
-* Marco - Encargado de la pantalla [HomeScreen](https://github.com/olvera93/AndroidStudio_Carpool/tree/HomeScreen)
-* Gonzalo - Encardado de la pantalla [TravelScreen](https://github.com/olvera93/AndroidStudio_Carpool/tree/Travel_Standby_Screen)
+# Nuevas funcionalidades 🚗
+* Los datos del usuario ya se guarda en una Base de Datos.
+* Se agregaron transiciones en diferentes pantallas.
+* Se agregó una pequeña animación cuando obtiene su ubicación del usuario.
+* Ahora el usuario ya podrá escribir al lugar que desea ir(Falta dibujar ruta) sin colocar coordenadas.
 
 <div style="text-align: justify;">
   
@@ -82,6 +78,5 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
  
 
   <footer>
-
 
 
