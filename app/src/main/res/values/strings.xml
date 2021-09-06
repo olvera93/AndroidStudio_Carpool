@@ -18,7 +18,7 @@
     <string name="register_password_title">Contraseña</string>
     <string name="register_btn">Registrarse</string>
     <string name="register_login">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
-    <string name="waiting_travel">Esperando Viaje...</string>
+    <string name="waiting_travel">Obteniedo su ubicación...</string>
     <string name="register_nameTitle">Nombre completo</string>
     <string name="latitude_coordinates">Ingrese coordenada latitud</string>
     <string name="longitude_coordinates">Ingrese coordenada longitud</string>
@@ -114,8 +114,6 @@
     <string name="drawer_privacy">Privacy</string>
 
     <string name="vehicle">Vehicle</string>
-
-
 
 
 </resources>

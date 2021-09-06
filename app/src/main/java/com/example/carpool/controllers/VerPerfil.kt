@@ -11,7 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.carpool.R
 import com.example.carpool.model.User
-import com.example.carpool.principalscreen
+//import com.example.carpool.principalscreen
 
 class VerPerfil : AppCompatActivity() {
     lateinit var EditNombre:EditText
@@ -70,7 +70,7 @@ class VerPerfil : AppCompatActivity() {
                 userDB.password = EditContra.text.toString()
                 userDB.phone = EditTelefono.text.toString()
 
-                val intent = Intent(this, principalscreen::class.java)
+                val intent = Intent(this, RequestTravel::class.java)
                 intent.putExtra("userDB",userDB)
                 startActivity(intent)
                 }
@@ -80,7 +80,7 @@ class VerPerfil : AppCompatActivity() {
 
     override fun finish() {
         val userDB: User = intent.getParcelableExtra("userDB")!!
-        val intent = Intent(this, principalscreen::class.java)
+        val intent = Intent(this, RequestTravel::class.java)
         intent.putExtra("userDB", userDB)
 
         // Activity finished ok, return the data

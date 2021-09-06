@@ -10,8 +10,12 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.view.ActionMode
+import com.example.carpool.controllers.RequestTravel
 import com.example.carpool.model.User
+import com.example.carpool.progressbar.AnimationCar
 import com.google.android.material.button.MaterialButton
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity() {
@@ -96,11 +100,16 @@ class MainActivity : AppCompatActivity() {
                 //Validacion si existe usuario en la base de datos de la clase User
                 if(userDB.validateUser(usuario.text.toString(),contrasena.text.toString())){
                     Toast.makeText(this, getString(R.string.login_succesfully), Toast.LENGTH_SHORT).show()
+                    val intent2 = Intent(this, AnimationCar::class.java)
+                    startActivity(intent2)
+                    Executors.newSingleThreadScheduledExecutor().schedule({
+                        val intent = Intent(this, RequestTravel::class.java)
+                        intent.putExtra("userDB",userDB)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out)
+                    }, 5, TimeUnit.SECONDS)
 
-                    val intent = Intent(this, principalscreen::class.java)
-                    intent.putExtra("userDB",userDB)
-                    startActivity(intent)
-                    overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out)
+
                 }
                 else{
                     Toast.makeText(this, getString(R.string.invalid_user_password), Toast.LENGTH_SHORT).show()

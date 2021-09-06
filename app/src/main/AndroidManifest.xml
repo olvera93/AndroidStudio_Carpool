@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.carpool">
-
     <!-- Pedir permiso para la localización -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">
-        <activity android:name=".controllers.Register"
+        <activity
+            android:name=".controllers.RequestTravel"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".progressbar.AnimationCar"
+            android:exported="true"
+            android:theme="@style/Theme.Carpool" />
+        <activity
+            android:name=".controllers.Register"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,41 +30,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-        <activity android:name=".controllers.VerPerfil"
-            android:label="@string/view_profile_user">
-    </activity>
-
+        <activity
+            android:name=".controllers.VerPerfil"
+            android:label="@string/view_profile_user" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/SplashTheme"
             android:label="@string/login"
-            android:parentActivityName=".controllers.Register">
-           </activity>
+            android:parentActivityName=".controllers.Register"
+            android:theme="@style/SplashTheme" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".controllers.TravelScreen"
-            android:label="@string/travel_screen"/>
+        <activity
+            android:name=".controllers.TravelScreen"
+            android:label="@string/travel_screen" />
 
-        <activity android:name=".principalscreen"
-            android:label="@string/request_trip"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".RecyclerAdapter.DetailActivity"/>
-
-
-        <activity android:name=".RecyclerAdapter.TravelHistory"
-            android:label="@string/travel_histories"></activity>
-
-
-
-
-
+        <activity android:name=".RecyclerAdapter.DetailActivity" />
+        <activity
+            android:name=".RecyclerAdapter.TravelHistory"
+            android:label="@string/travel_histories" />
     </application>
 
 </manifest>

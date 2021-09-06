@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.widget.*
 import com.example.carpool.MainActivity
-import com.example.carpool.R
+import com.example.carpool.*
 import com.example.carpool.model.User
 
 
@@ -78,27 +78,5 @@ class Register : AppCompatActivity() {
 
         }
 
-    }
-
-    override fun onStart() {
-        super.onStart()
-        if (!isLocationEnabled()) {
-            goToTurnLocation()
-        }
-    }
-
-    private fun goToTurnLocation(){
-        Toast.makeText(this, "Debes prender el servicio de GPS", Toast.LENGTH_LONG).show()
-        val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-        startActivity(intent)
-    }
-
-
-    //checa si el gps está apagado
-    private fun isLocationEnabled(): Boolean {
-        var locationManager: LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-            LocationManager.NETWORK_PROVIDER
-        )
     }
 }

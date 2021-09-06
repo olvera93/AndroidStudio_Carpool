@@ -18,16 +18,18 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.carpool.progressbar.AnimationCar
 import com.google.android.material.navigation.NavigationView
-
-
+import java.util.*
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 
 const val COORDENADAS_ACTUALES ="org.example.activity.COORDENADAS_ACTUALES"
 const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
 
 
-
+/*
 class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -63,7 +65,7 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         this.setSupportActionBar(appBar)
         setupDrawer(appBar)
 
-        //requestLocationPermission()
+        requestLocationPermission()
 
 
         imageCarpool = findViewById(R.id.imageView)
@@ -89,11 +91,23 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
                     val bundle2 =Bundle()
                     bundle2.putString(COORDENADAS_ACTUALES, coordenadaActual.text.toString())
                     bundle2.putString(COORDENADAS_DESTINO, coordenadaDestino.text.toString())
-                    val intent = Intent(this, TravelScreen::class.java).apply {
-                        putExtras(bundle2)
-                    }
-                    startActivity(intent)
-                    overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out);
+                    val intent2 = Intent(this, AnimationCar::class.java)
+                    startActivity(intent2)
+
+
+
+                        Executors.newSingleThreadScheduledExecutor().schedule({
+                            val intent = Intent(this, TravelScreen::class.java).apply {
+                                putExtras(bundle2)
+                            }
+                            startActivity(intent)
+                            overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out);
+                        }, 6, TimeUnit.SECONDS)
+
+
+
+
+
 
                 }
             }
@@ -173,4 +187,4 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     }
 
 }
-
+*/

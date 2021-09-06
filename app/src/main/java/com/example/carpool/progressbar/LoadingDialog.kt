@@ -2,6 +2,7 @@ package com.example.carpool.progressbar
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.graphics.drawable.AnimationDrawable
 import com.example.carpool.R
 
 class LoadingDialog(val myActivity: Activity) {
@@ -12,6 +13,7 @@ class LoadingDialog(val myActivity: Activity) {
 
         val infalter = myActivity.layoutInflater
         val dialogView = infalter.inflate(R.layout.loading_item, null)
+
         val builder = AlertDialog.Builder(myActivity)
         builder.setView(dialogView)
         builder.setCancelable(false)
