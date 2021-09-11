@@ -1,8 +1,7 @@
 package com.example.carpool.controllers
 
-import android.content.Context
 import android.content.Intent
-import android.location.LocationManager
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
@@ -10,6 +9,7 @@ import android.widget.*
 import com.example.carpool.MainActivity
 import com.example.carpool.*
 import com.example.carpool.model.User
+import com.example.carpool.receiver.AirplaneReceiver
 
 
 class Register : AppCompatActivity() {
@@ -19,6 +19,10 @@ class Register : AppCompatActivity() {
     lateinit var registerLoginButton : Button
     lateinit var registerName : EditText
     lateinit var registerPhone : EditText
+
+
+    private var airplaneReceiver = AirplaneReceiver()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +34,23 @@ class Register : AppCompatActivity() {
         registerPhone = findViewById(R.id.edit_phoneR)
         registerName = findViewById(R.id.edit_full_nameR)
 
-        var translateLeft = R.anim.translate_left_side
+        // lee la configuración del modo avión
+        val isEnabled = Settings.System.getInt(
+            contentResolver,
+            Settings.Global.AIRPLANE_MODE_ON, 0
+        ) == 1
 
+        registerButton.isEnabled = !isEnabled
+        registerLoginButton.isEnabled = !isEnabled
 
+        IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
+            registerReceiver(airplaneReceiver, it)
+        }
 
         registerButton.setOnClickListener {
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
                 registerName.text.isEmpty() || registerPhone.text.isEmpty()){
-                Toast.makeText(this, getString(R.string.incorrect_data), Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.incorrect_data), Toast.LENGTH_SHORT).show()
 
                 registerUser.error = getString(R.string.incorrect_user)
                 registerPassword.error= getString(R.string.incorrect_password)
@@ -49,6 +62,7 @@ class Register : AppCompatActivity() {
                 }
 
             }else{
+
                 val tempUsuario =
                     User(registerName.text.toString(),registerPhone.text.toString(),
                         registerUser.text.toString(), registerPassword.text.toString())
@@ -78,5 +92,12 @@ class Register : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        val i = Intent(this, Register::class.java)
+        startActivity(i)
+        finish()
     }
 }

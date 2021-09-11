@@ -114,4 +114,8 @@
 
     <string name="vehicle">Automovil</string>
 
+    <!-- Toast Receiver -->
+    <string name="airplane_mode_on">Airplane Mode Enabled</string>
+    <string name="airplane_mode_off">Airplane Mode Disabled</string>
+
 </resources>
