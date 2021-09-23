@@ -118,4 +118,16 @@
     <string name="airplane_mode_on">Airplane Mode Enabled</string>
     <string name="airplane_mode_off">Airplane Mode Disabled</string>
 
+    <!-- Textos para la push simple -->
+    <string name="simple_title">Carpool</string>
+
+    <string name="large_text">For being a new user, we will give you a 10% discount on your first 3 trips.
+    Code: CARPOOL-10, I hope you enjoy your trips.</string>
+
+    <!-- CANAL CURSOS -->
+    <string name="channel_travel">Travel</string>
+    <string name="travel_description">Notifications about new users</string>
+
+
+
 </resources>
