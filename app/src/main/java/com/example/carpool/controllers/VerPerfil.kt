@@ -17,10 +17,10 @@ import com.example.carpool.R
 import com.example.carpool.model.User
 import com.example.carpool.model.UserDb
 import com.example.carpool.model.Userdbclass
-import com.example.carpool.principalscreen
-import com.example.carpool.validateUser
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+
+//import com.example.carpool.principalscreen
 
 class VerPerfil : AppCompatActivity() {
     lateinit var EditNombre:EditText
@@ -89,9 +89,8 @@ class VerPerfil : AppCompatActivity() {
         }
 
     override fun finish() {
-        val userDB: User = intent.getParcelableExtra("userDB")!!
-        val intent = Intent(this, principalscreen::class.java)
-        intent.putExtra("userDB", userDB)
+        val intent = Intent(this, RequestTravel::class.java)
+        startActivity(intent)
 
         // Activity finished ok, return the data
         setResult(RESULT_OK, intent)
