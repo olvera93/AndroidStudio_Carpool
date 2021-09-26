@@ -9,8 +9,6 @@ interface DAO_User {
     @Insert
     fun insertUser(User: Userdbclass)
 
-    @Update()//"UPDATE Userdbclass set User=:User, Password=:Password, Phone=:Phone, Name=:Name WHERE User=:User")
-    fun updateUser(User: Userdbclass)
 
     @Delete
     fun removeUser(User: Userdbclass)
@@ -27,6 +25,16 @@ interface DAO_User {
     @Query("SELECT * FROM Userdbclass WHERE Id_user = :id")
     fun getUserbyid(id: Int): Userdbclass
 
-    @Query("SELECT User FROM Userdbclass WHERE User= :user")
-    fun checkRegister(user:String):String
+    @Query("SELECT * FROM Userdbclass WHERE User= :user")
+    fun checkRegister(user:String):List<Userdbclass>
+
+    @Query("SELECT * FROM Userdbclass WHERE User= :user")
+    fun viewProfile(user:String):Userdbclass
+
+    @Query("SELECT user FROM Userdbclass WHERE User= :user")
+    fun validationUser(user:String):String
+    @Query("UPDATE Userdbclass set  Name=:name, Phone=:phone, Password=:password where user=:user")
+    fun updateUser(user: String,name:String,phone:String,password:String)
+
 }
+
