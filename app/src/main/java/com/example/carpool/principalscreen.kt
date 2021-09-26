@@ -1,8 +1,10 @@
 package com.example.carpool
 
+import android.content.Context
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -18,18 +20,18 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.carpool.progressbar.AnimationCar
+import com.example.carpool.model.UserDb
+import com.example.carpool.model.Userdbclass
 import com.google.android.material.navigation.NavigationView
-import java.util.*
+import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 
 const val COORDENADAS_ACTUALES ="org.example.activity.COORDENADAS_ACTUALES"
 const val COORDENADAS_DESTINO ="org.example.activity.COORDENADAS_DESTINO"
 
 
-/*
+
 class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -47,16 +49,18 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
    // private lateinit var toggle: ActionBarDrawerToggle
 
     //Drawer header
-    lateinit var  drawer_header:TextView
+    lateinit var drawer_header:TextView
     lateinit var drawer_number:TextView
     //Drawe body
 
-    //Descarga bundle de Login
-
+    //Inicio de sharedPreferences
+    lateinit var preferences: SharedPreferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        preferences = getSharedPreferences(MainActivity.PREFS_NAME,Context.MODE_PRIVATE) //SE OBTIENEN LOS SHARED PREFERENCES DE MODO PRIVADO
+
 
         setContentView(R.layout.activity_principalscreen)
 
@@ -65,7 +69,7 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         this.setSupportActionBar(appBar)
         setupDrawer(appBar)
 
-        requestLocationPermission()
+        //requestLocationPermission()
 
 
         imageCarpool = findViewById(R.id.imageView)
@@ -91,23 +95,11 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
                     val bundle2 =Bundle()
                     bundle2.putString(COORDENADAS_ACTUALES, coordenadaActual.text.toString())
                     bundle2.putString(COORDENADAS_DESTINO, coordenadaDestino.text.toString())
-                    val intent2 = Intent(this, AnimationCar::class.java)
-                    startActivity(intent2)
-
-
-
-                        Executors.newSingleThreadScheduledExecutor().schedule({
-                            val intent = Intent(this, TravelScreen::class.java).apply {
-                                putExtras(bundle2)
-                            }
-                            startActivity(intent)
-                            overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out);
-                        }, 6, TimeUnit.SECONDS)
-
-
-
-
-
+                    val intent = Intent(this, TravelScreen::class.java).apply {
+                        putExtras(bundle2)
+                    }
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out);
 
                 }
             }
@@ -123,11 +115,12 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     //Funciones appBar
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val userDB: User = intent.getParcelableExtra("userDB")!!
         drawer_header =findViewById(R.id.drawer_user)
+        setValues()
+        dbOperation()
         drawer_number = findViewById(R.id.drawer_number)
-        drawer_header.text=userDB.name
-        drawer_number.text=userDB.phone
+
+
 
 
         return super.onCreateOptionsMenu(menu)
@@ -158,10 +151,8 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val userDB: User = intent.getParcelableExtra("userDB")!!
         when (item.itemId){
             R.id.profile ->{val intent = Intent(this, VerPerfil::class.java)
-                intent.putExtra("userDB",userDB)
                 startActivity(intent)
             }
             R.id.History ->{val intent = Intent(this, TravelHistory::class.java)
@@ -173,6 +164,44 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         return true
     }
 
+    //SharedPreferences
+    fun goToLogged(){
+        //cambiar de actividad sin poder regresar a esta con back button
+        val i = Intent(this, MainActivity::class.java)
+        i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(i)
+    }
+
+    fun setValues(){
+        //obtenemos los valores desde preferencias
+        val user = preferences.getString(MainActivity.USERP,"")
+
+        drawer_header.text = user
+    }
+
+    fun resetShared(){
+        preferences.edit().clear().commit() //a diferencia de apply, este cambio se hace de forma asíncrona
+    }
+
+    private fun dbOperation() {
+        //Validacion si existe usuario en la base de datos de la clase User
+        val executor: ExecutorService = Executors.newSingleThreadExecutor()
+        executor.execute(Runnable {
+            val userArray = UserDb
+                .getInstance(this)
+                ?.userDao()
+                ?.checkRegister(drawer_header.text.toString()) as MutableList<Userdbclass>
+            setValuesDrawer(userArray)
+        })
+    }
+
+    private fun setValuesDrawer(userArray: MutableList<Userdbclass>) {
+        for (user in userArray) {
+            drawer_header.text = user.User
+            drawer_number.text = user.Phone
+
+        }
+    }
     // Para que el usuario acepte los permisos
     private fun requestLocationPermission() {
         // Ya se le habia pedido al usuario dar permiso pero los rechazo
@@ -187,4 +216,4 @@ class principalscreen : AppCompatActivity(),NavigationView.OnNavigationItemSelec
     }
 
 }
-*/
+
