@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         //Listener botones material design
 
         //Descarga de usuarios provinientes de Registros
-        val userDB: User = intent.getParcelableExtra("userDB")!!
+
 
         //Instancia de componentes
         button = findViewById(R.id.Login_button)
