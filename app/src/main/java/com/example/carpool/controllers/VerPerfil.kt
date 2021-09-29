@@ -115,14 +115,14 @@ class VerPerfil : AppCompatActivity() {
             val Userdbclass = UserDb
                 .getInstance(this)
                 ?.userDao()
-                    Userdbclass?.apply {updateUser(usuu,nameu,pasu,phoneu)  }
+                    Userdbclass?.apply {updateUser(usuu,nameu,phoneu,pasu)  }
 
 
         })}
 
     private fun setValuesDrawer(userdbclass: Userdbclass) {
         runOnUiThread {
-        EditUsuario.setText(userdbclass.Name)
+        EditUsuario.setText(userdbclass.User)
         EditContra.setText(userdbclass.Password)
         EditNombre.setText(userdbclass.Name)
         EditTelefono.setText(userdbclass.Phone)}
