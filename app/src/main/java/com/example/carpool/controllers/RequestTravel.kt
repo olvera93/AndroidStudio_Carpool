@@ -7,7 +7,9 @@ import java.util.*
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.location.Geocoder
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -43,10 +45,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
+import com.example.carpool.MainActivity
 import com.example.carpool.R
 import com.example.carpool.RecyclerAdapter.TravelHistory
 import com.example.carpool.model.User
+import com.example.carpool.model.UserDb
+import com.example.carpool.model.Userdbclass
 import com.google.android.material.navigation.NavigationView
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
@@ -69,6 +76,9 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
     lateinit var drawer_number:TextView
 
 
+    //Inicio de sharedPreferences
+    lateinit var preferences: SharedPreferences
+
     override fun onDestroy() {
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)
         super.onDestroy()
@@ -79,6 +89,8 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
 
         binding = ActivityRequestTravelBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        preferences = getSharedPreferences(MainActivity.PREFS_NAME, Context.MODE_PRIVATE) //SE OBTIENEN LOS SHARED PREFERENCES DE MODO PRIVADO
+
 
         //App Bar
         val appBar = findViewById<Toolbar>(R.id.app_bar)
@@ -217,11 +229,10 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
 
     //Funciones appBar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val userDB: User = intent.getParcelableExtra("userDB")!!
         drawer_header =findViewById(R.id.drawer_user)
+        setValues()
+        dbOperation()
         drawer_number = findViewById(R.id.drawer_number)
-        drawer_header.text=userDB.name
-        drawer_number.text=userDB.phone
 
 
         return super.onCreateOptionsMenu(menu)
@@ -253,10 +264,10 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val userDB: User = intent.getParcelableExtra("userDB")!!
+
         when (item.itemId){
             R.id.profile ->{val intent = Intent(this, VerPerfil::class.java)
-                intent.putExtra("userDB",userDB)
+              
                 startActivity(intent)
             }
             R.id.History ->{val intent = Intent(this, TravelHistory::class.java)
@@ -268,6 +279,36 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
         return true
     }
 
+    fun setValues(){
+        //obtenemos los valores desde preferencias
+        val user = preferences.getString(MainActivity.USERP,"")
+
+        drawer_header.text = user
+    }
+
+    fun resetShared(){
+        preferences.edit().clear().commit() //a diferencia de apply, este cambio se hace de forma asíncrona
+    }
+
+    private fun dbOperation() {
+        //Validacion si existe usuario en la base de datos de la clase User
+        val executor: ExecutorService = Executors.newSingleThreadExecutor()
+        executor.execute(Runnable {
+            val userArray = UserDb
+                .getInstance(this)
+                ?.userDao()
+                ?.checkRegister(drawer_header.text.toString()) as MutableList<Userdbclass>
+            setValuesDrawer(userArray)
+        })
+    }
+
+    private fun setValuesDrawer(userArray: MutableList<Userdbclass>) {
+        runOnUiThread{
+        for (user in userArray) {
+            drawer_header.text = user.User
+            drawer_number.text = user.Phone}
+
+        }
+    }
 
 }
-
