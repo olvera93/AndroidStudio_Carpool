@@ -48,6 +48,7 @@
 
     <!-- Nombre pantalla Login -->
     <string name="login">Inicio Sesión</string>
+    <string name="sign_up">Crea una cuenta</string>
 
     <!-- Nombre pantalla Register -->
     <string name="register">Registro</string>
@@ -61,6 +62,8 @@
     <string name="incorrect_fullname">Escribe un nombre completo</string>
     <string name="successfully_registered">Se ha registrado con éxito :)</string>
     <string name="account_already_registered">Esa cuenta ya está registrada :(</string>
+
+    <string name="phone_number">El teléfeno debe de tener 10 dígitos </string>
 
 
     <string name="empty_name">Nombre no puede estar vacio</string>

@@ -51,7 +51,11 @@ import com.example.carpool.RecyclerAdapter.TravelHistory
 import com.example.carpool.model.User
 import com.example.carpool.model.UserDb
 import com.example.carpool.model.Userdbclass
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -91,6 +95,7 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
         setContentView(binding.root)
         preferences = getSharedPreferences(MainActivity.PREFS_NAME, Context.MODE_PRIVATE) //SE OBTIENEN LOS SHARED PREFERENCES DE MODO PRIVADO
 
+        notification()
 
         //App Bar
         val appBar = findViewById<Toolbar>(R.id.app_bar)
@@ -309,6 +314,21 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
             drawer_number.text = user.Phone}
 
         }
+    }
+
+    private fun notification() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("Error", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            val token = task.result
+
+            Log.d("FCM_TOKEN",token)
+        })
+
+
     }
 
 }

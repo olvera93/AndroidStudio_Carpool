@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.view.ActionMode
+import com.example.carpool.controllers.Register
 import com.example.carpool.controllers.RequestTravel
 import com.example.carpool.model.User
 import com.example.carpool.model.UserDb
@@ -32,6 +33,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var usuario: EditText
     lateinit var contrasena:EditText
     lateinit var button: Button
+
+    private lateinit var buttonRegister: Button
+
     //Variable global para Action Mode:
     private var actionMode: ActionMode? = null
 
@@ -57,8 +61,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme2)
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -66,13 +68,21 @@ class MainActivity : AppCompatActivity() {
         //Permisos
         preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-
-        //Creacion del back button
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
-
         //Instancia de componentes
         button = findViewById(R.id.Login_button)
         usuario = findViewById(R.id.edit_user)
+        buttonRegister = findViewById(R.id.sign_up)
+
+        buttonRegister.setOnClickListener {
+            val tempUsuario =
+                User("Admin","5555555555",
+                    "Admin", "Admin123")
+            val prueba=tempUsuario.addUser()
+            intent.putExtra("userDB",tempUsuario)
+            val intent = Intent(this, Register::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
+        }
 
 
         //Generacion de Listener para cambio de texto en el edit de usuario

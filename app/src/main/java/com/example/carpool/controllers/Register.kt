@@ -86,6 +86,10 @@ class Register : AppCompatActivity() {
 
 
         registerButton.setOnClickListener {
+
+
+
+
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
                 registerName.text.isEmpty() || registerPhone.text.isEmpty()){
                 Toast.makeText(this, getString(R.string.incorrect_data), Toast.LENGTH_SHORT).show()
@@ -99,11 +103,13 @@ class Register : AppCompatActivity() {
                     error = null
                 }
 
-            }else{
+            }else if (registerPhone.text.length < 10){
+                Toast.makeText(this, getString(R.string.phone_number), Toast.LENGTH_SHORT).show()
 
+
+            } else {
                 //Check if register exists
                 checkRegister()
-
             }
         }
 
@@ -183,8 +189,7 @@ class Register : AppCompatActivity() {
                 val tempUsuario =
                     User(registerName.text.toString(),registerPhone.text.toString(),
                         registerUser.text.toString(), registerPassword.text.toString())
-                if(tempUsuario.addUser()){
-                }
+
                 val executor: ExecutorService = Executors.newSingleThreadExecutor()
 
                 executor.execute (Runnable {

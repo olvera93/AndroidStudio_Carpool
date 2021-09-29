@@ -17,6 +17,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Carpool">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_name" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="DEFAULT_CHANNEL" />
+
+
+        <service
+            android:name=".util.notifications.CarpoolMessaging"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
         <activity
             android:name=".controllers.RequestTravel"
             android:theme="@style/AppTheme.NoActionBar"
@@ -27,12 +45,10 @@
             android:theme="@style/Theme.Carpool" />
         <activity
             android:name=".controllers.Register"
-            android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/SplashTheme"
+            android:parentActivityName=".MainActivity"
+            >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".controllers.VerPerfil"
@@ -40,16 +56,19 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/login"
-            android:parentActivityName=".controllers.Register"
-            android:theme="@style/SplashTheme" />
+
+            android:theme="@style/SplashTheme">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".controllers.TravelScreen"
-            android:label="@string/travel_screen" />
 
         <activity android:name=".RecyclerAdapter.DetailActivity" />
         <activity

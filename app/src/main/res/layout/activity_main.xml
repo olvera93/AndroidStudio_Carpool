@@ -102,33 +102,49 @@
         app:layout_constraintTop_toBottomOf="@+id/EditUsuario"
         app:layout_constraintVertical_bias="0.84" />
 
+
     <TextView
         android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"
         android:text="@string/forgot"
         android:textColor="@color/primaryTextColor"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/Login_button"
-        app:layout_constraintEnd_toEndOf="@+id/EditContrasena"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintStart_toStartOf="@id/EditContrasena"
         app:layout_constraintTop_toBottomOf="@+id/EditContrasena" />
+
+    <Button
+        android:id="@+id/sign_up"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Backgroundgrey"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_button"
+        app:layout_constraintVertical_bias="0.899" />
 
     <Button
         android:id="@+id/Login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:backgroundTint="@color/primaryDarkColor"
         android:text="@string/botonLog"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/forgotpass"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="@+id/EditContrasena"
-        app:layout_constraintTop_toBottomOf="@+id/forgotpass" />
+        app:layout_constraintTop_toBottomOf="@+id/EditContrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

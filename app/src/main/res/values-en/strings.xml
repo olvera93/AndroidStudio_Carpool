@@ -47,6 +47,8 @@
 
     <!-- Nombre pantalla Login -->
     <string name="login">Login</string>
+    <string name="sign_up">Create an account</string>
+
 
     <!-- Nombre pantalla Register -->
     <string name="register">Register</string>
@@ -59,6 +61,9 @@
     <string name="incorrect_fullname">Write a full name</string>
     <string name="successfully_registered">Successfully registered :)</string>
     <string name="account_already_registered">That account is already registered :(</string>
+
+    <string name="phone_number">The phone must have 10 digits </string>
+
 
     <string name="empty_name">Name can´t be empty</string>
     <string name="empty_username">Username can´t be empty</string>
