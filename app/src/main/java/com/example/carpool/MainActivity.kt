@@ -1,5 +1,6 @@
 package com.example.carpool
 
+import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -231,7 +232,7 @@ class MainActivity : AppCompatActivity() {
         return preferences.getBoolean(IS_LOGGED,false)
     }
     private fun goToLogged(){//Nos manda a la siguiente actividad
-        val i= Intent(this, principalscreen::class.java)
+        val i= Intent(this, RequestTravel::class.java)
         i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(i)
     }
