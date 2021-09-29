@@ -78,7 +78,7 @@ class Register : AppCompatActivity() {
         ) == 1
 
         registerButton.isEnabled = !isEnabled
-        //registerLoginButton.isEnabled = !isEnabled
+        registerLoginButton.isEnabled = !isEnabled
 
         IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
             registerReceiver(airplaneReceiver, it)
@@ -104,27 +104,6 @@ class Register : AppCompatActivity() {
                 //Check if register exists
                 checkRegister()
 
-
-
-
-                /*val tempUsuario =
-
-                val tempUsuario =
-
-                    User(registerName.text.toString(),registerPhone.text.toString(),
-                        registerUser.text.toString(), registerPassword.text.toString())
-                if(tempUsuario.addUser()){
-                   // Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("userDB",tempUsuario)
-                    expandableNotification()
-                    startActivity(intent)
-                    overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
-                }else{
-                   // Toast.makeText(this,getString(R.string.account_already_registered),Toast.LENGTH_LONG).show()
-                    registerUser.setText("")
-                    registerPassword.setText("")
-                }*/
             }
         }
 
@@ -214,6 +193,7 @@ class Register : AppCompatActivity() {
                         ?.userDao()
                         ?.insertUser(baseUser)
                     runOnUiThread(Runnable {
+                        expandableNotification()
                         Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
                     })
                 })

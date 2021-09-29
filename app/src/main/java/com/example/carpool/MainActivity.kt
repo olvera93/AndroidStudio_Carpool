@@ -18,9 +18,11 @@ import com.example.carpool.model.User
 import com.example.carpool.model.UserDb
 import com.example.carpool.model.Userdbclass
 import com.example.carpool.model.database
+import com.example.carpool.progressbar.AnimationCar
 import com.google.android.material.button.MaterialButton
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity() {
@@ -67,11 +69,6 @@ class MainActivity : AppCompatActivity() {
 
         //Creacion del back button
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
-
-        //Listener botones material design
-
-        //Descarga de usuarios provinientes de Registros
-
 
         //Instancia de componentes
         button = findViewById(R.id.Login_button)
@@ -153,15 +150,26 @@ class MainActivity : AppCompatActivity() {
                     contrasena.text.toString()
                 )
             )  { saveData()
-                runOnUiThread(Runnable {
+
+                val intent2 = Intent(this, AnimationCar::class.java)
+                startActivity(intent2)
+
+                runOnUiThread(Runnable{
                     Toast.makeText(
                         this,
                         getString(R.string.login_succesfully),
                         Toast.LENGTH_SHORT
                     ).show()
-                    val i= Intent(this, RequestTravel::class.java)
-                    i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(i) })
+
+                    Executors.newSingleThreadScheduledExecutor().schedule({
+                        val i= Intent(this, RequestTravel::class.java)
+                        i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(i)
+                        overridePendingTransition(R.anim.translate_left_side,R.anim.translate_left_out)
+                    }, 5, TimeUnit.SECONDS)
+
+                })
+
 
             } else {
                 runOnUiThread(Runnable {
@@ -173,17 +181,6 @@ class MainActivity : AppCompatActivity() {
                 })
             }
         })
-        /*if(userDB.validateUser(usuario.text.toString(),contrasena.text.toString())){
-                    Toast.makeText(this, getString(R.string.login_succesfully), Toast.LENGTH_SHORT).show()
-
-                    val intent = Intent(this, principalscreen::class.java)
-                    intent.putExtra("userDB",userDB)
-
-                    startActivity(intent)
-                }
-                else{
-                    Toast.makeText(this, getString(R.string.invalid_user_password), Toast.LENGTH_SHORT).show()
-                }*/
     }
 
     //Clase interna para implementar el callback de ActionMode
@@ -237,8 +234,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(i)
     }
 }
-
-
 
     //Funcion de validacion de campos
 fun validacionCampos(campo1:String,campo2:String):Boolean{

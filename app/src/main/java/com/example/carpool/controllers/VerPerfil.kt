@@ -142,8 +142,4 @@ class VerPerfil : AppCompatActivity() {
 
     }
 
-
-
-
-
 }
