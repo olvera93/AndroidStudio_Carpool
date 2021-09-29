@@ -1,24 +1,32 @@
 package com.example.carpool.controllers
 
+
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.location.LocationManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.example.carpool.MainActivity
-import com.example.carpool.*
+import com.example.carpool.R
 import com.example.carpool.model.User
+import com.example.carpool.model.UserDb
+import com.example.carpool.model.Userdbclass
 import com.example.carpool.receiver.AirplaneReceiver
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 
 class Register : AppCompatActivity() {
@@ -49,6 +57,14 @@ class Register : AppCompatActivity() {
         registerPhone = findViewById(R.id.edit_phoneR)
         registerName = findViewById(R.id.edit_full_nameR)
 
+
+
+
+        var translateLeft = R.anim.translate_left_side
+
+
+
+
         // Para android Oreo en adelante, es obligatorio registrar el canal de notificación
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setNotificationChannel()
@@ -62,11 +78,12 @@ class Register : AppCompatActivity() {
         ) == 1
 
         registerButton.isEnabled = !isEnabled
-        registerLoginButton.isEnabled = !isEnabled
+        //registerLoginButton.isEnabled = !isEnabled
 
         IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
             registerReceiver(airplaneReceiver, it)
         }
+
 
         registerButton.setOnClickListener {
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||
@@ -84,21 +101,30 @@ class Register : AppCompatActivity() {
 
             }else{
 
+                //Check if register exists
+                checkRegister()
+
+
+
+
+                /*val tempUsuario =
+
                 val tempUsuario =
+
                     User(registerName.text.toString(),registerPhone.text.toString(),
                         registerUser.text.toString(), registerPassword.text.toString())
                 if(tempUsuario.addUser()){
-                    Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
+                   // Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("userDB",tempUsuario)
                     expandableNotification()
                     startActivity(intent)
                     overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
                 }else{
-                    Toast.makeText(this,getString(R.string.account_already_registered),Toast.LENGTH_LONG).show()
+                   // Toast.makeText(this,getString(R.string.account_already_registered),Toast.LENGTH_LONG).show()
                     registerUser.setText("")
                     registerPassword.setText("")
-                }
+                }*/
             }
         }
 
@@ -111,6 +137,7 @@ class Register : AppCompatActivity() {
             intent.putExtra("userDB",tempUsuario)
             startActivity(intent)
             overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
+
 
         }
 
@@ -144,8 +171,81 @@ class Register : AppCompatActivity() {
 
         NotificationManagerCompat.from(this).run {
             notify(++notificationId, notification)
+
         }
 
+    }
+
+
+    fun checkRegister(){
+        val user:String?
+        user=registerUser.text.toString()
+
+        val executor: ExecutorService = Executors.newSingleThreadExecutor()
+        var usercomp: String?
+        executor.execute(Runnable {
+            usercomp= UserDb
+                .getInstance(this)
+                ?.userDao()
+                ?.validationUser(user)
+            if(user==usercomp){
+                runOnUiThread(Runnable {
+                    Toast.makeText(this, getString(R.string.account_already_registered)
+                        , Toast.LENGTH_SHORT).show()})
+            }
+            else{
+                //Database register
+                val baseUser= Userdbclass(
+                    User=registerUser.text.toString(),
+                    Password = registerPassword.text.toString(),
+                    Phone = registerPhone.text.toString(),
+                    Name = registerName.text.toString()
+                )
+                val tempUsuario =
+                    User(registerName.text.toString(),registerPhone.text.toString(),
+                        registerUser.text.toString(), registerPassword.text.toString())
+                if(tempUsuario.addUser()){
+                }
+                val executor: ExecutorService = Executors.newSingleThreadExecutor()
+
+                executor.execute (Runnable {
+                    UserDb
+                        .getInstance(this)
+                        ?.userDao()
+                        ?.insertUser(baseUser)
+                    runOnUiThread(Runnable {
+                        Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
+                    })
+                })
+                val intent = Intent(this, MainActivity::class.java)
+
+                startActivity(intent)
+
+            }
+        })
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (!isLocationEnabled()) {
+            goToTurnLocation()
+        }
+    }
+
+    private fun goToTurnLocation(){
+        Toast.makeText(this, "Debes prender el servicio de GPS", Toast.LENGTH_LONG).show()
+        val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+        startActivity(intent)
+    }
+
+
+    //checa si el gps está apagado
+    private fun isLocationEnabled(): Boolean {
+        var locationManager: LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+            LocationManager.NETWORK_PROVIDER
+        )
     }
 
     override fun onRestart() {
@@ -154,4 +254,5 @@ class Register : AppCompatActivity() {
         startActivity(i)
         finish()
     }
+
 }
