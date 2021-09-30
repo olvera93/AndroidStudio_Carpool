@@ -52,39 +52,23 @@ class VerPerfil : AppCompatActivity() {
         setValues()
         dbOperation()
 
-
-
-        EditNombre.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {
-            }
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                EditNombre.error = "Usuario no puede estar vacío"
-
-
-            }
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
-                    EditNombre.error = getString(R.string.empty_name)
-                    EditTelefono.error = getString(R.string.empty_phone)
-                    EditContra.error = getString(R.string.empty_password)
-                    EditUsuario.error = getString(R.string.empty_username)
-                }
-
-            }
-        })
         actbtn.setOnClickListener {
             if(EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
                 Toast.makeText(this, getString(R.string.valid_data), Toast.LENGTH_LONG).show()
+                EditNombre.error = getString(R.string.empty_name)
+                EditTelefono.error = getString(R.string.empty_phone)
+                EditContra.error = getString(R.string.empty_password)
+                EditUsuario.error = getString(R.string.empty_username)
                 fun EditText.clearError() {
                     error = null
             }}
-            else{
+            else if (EditTelefono.text.length < 10){
+                    Toast.makeText(this, getString(R.string.phone_number), Toast.LENGTH_SHORT).show()
 
-                Toast.makeText(this, getString(R.string.update_data), Toast.LENGTH_LONG).show()
-                dbOperationUpdate()
-
+                } else {
+                    Toast.makeText(this, getString(R.string.update_data), Toast.LENGTH_LONG).show()
+                    dbOperationUpdate()
                 }
-
             }
         }
 

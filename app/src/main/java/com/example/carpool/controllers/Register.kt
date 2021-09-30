@@ -57,19 +57,10 @@ class Register : AppCompatActivity() {
         registerPhone = findViewById(R.id.edit_phoneR)
         registerName = findViewById(R.id.edit_full_nameR)
 
-
-
-
-        var translateLeft = R.anim.translate_left_side
-
-
-
-
         // Para android Oreo en adelante, es obligatorio registrar el canal de notificación
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setNotificationChannel()
         }
-
 
         // lee la configuración del modo avión
         val isEnabled = Settings.System.getInt(
@@ -86,8 +77,6 @@ class Register : AppCompatActivity() {
 
 
         registerButton.setOnClickListener {
-
-
 
 
             if (registerUser.text.isEmpty() || registerPassword.text.isEmpty() ||

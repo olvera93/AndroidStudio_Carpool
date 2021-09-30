@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:layout_marginTop="8dp"
-        android:drawableLeft="@drawable/phone"
+        android:drawableStart="@drawable/phone"
         android:hint="@string/password_text"
         android:inputType="textPassword"
         app:errorEnabled="true"
@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="@+id/EditUsuario"
         app:layout_constraintStart_toStartOf="@+id/EditUsuario"
         app:layout_constraintTop_toBottomOf="@+id/EditUsuario"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_password"
@@ -43,7 +44,8 @@
             android:drawableLeft="@drawable/phone"
             android:drawablePadding="8dp"
             android:inputType="textPassword"
-            android:textColor="@color/secondaryTextLightColor" />
+            android:textColor="@color/secondaryTextLightColor"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

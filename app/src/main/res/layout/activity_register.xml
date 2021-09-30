@@ -66,7 +66,9 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextUsername"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="@+id/textRegisterPassword"
-        app:layout_constraintTop_toBottomOf="@+id/textRegisterPassword">
+        app:layout_constraintTop_toBottomOf="@+id/textRegisterPassword"
+        app:passwordToggleEnabled="true"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_passwordR"
