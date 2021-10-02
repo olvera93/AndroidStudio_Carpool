@@ -46,7 +46,7 @@ class RegisterActivity : AppCompatActivity(), RegisterPresenter.View {
 
     companion object {
         const val CHANNEL_TRAVEL = "CHANNEL_TRAVEL"
-
+        const val CHANNEL_FIREBASE = "CHANNEL_FIREBASE"
         var notificationId = 0
     }
 
@@ -92,6 +92,7 @@ class RegisterActivity : AppCompatActivity(), RegisterPresenter.View {
         // Para android Oreo en adelante, es obligatorio registrar el canal de notificación
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setNotificationChannel()
+            setNotificationChannelFirebase()
         }
 
         // lee la configuración del modo avión
@@ -151,6 +152,40 @@ class RegisterActivity : AppCompatActivity(), RegisterPresenter.View {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         notificationManager.createNotificationChannel(channel)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setNotificationChannelFirebase(){
+        val channel = NotificationChannel(
+            CHANNEL_FIREBASE,
+            "Canal Generico",
+            NotificationManager.IMPORTANCE_DEFAULT
+        ).apply {
+            description = "CANAL FIREBASE"
+        }
+
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    private fun expandableNotification() {
+        val notification = NotificationCompat.Builder(this, CHANNEL_TRAVEL)
+            .setSmallIcon(R.drawable.ic_stat_name)
+            .setColor(ContextCompat.getColor(this, R.color.primaryColor))
+            .setContentTitle(getString(R.string.simple_title))
+            .setContentText(getString(R.string.large_text))
+            .setLargeIcon(getDrawable(R.mipmap.carpool)?.toBitmap())
+            .setStyle(NotificationCompat.BigTextStyle()
+                .bigText(getString(R.string.large_text)))
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .build()
+
+        NotificationManagerCompat.from(this).run {
+            notify(++notificationId, notification)
+
+        }
+
     }
 
 

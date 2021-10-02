@@ -4,22 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryColor"
-    tools:context=".ui.register.RegisterActivity">
-
-    <TextView
-        android:id="@+id/textRegisterTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/register_title"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    tools:context=".ui.register.RegisterActivity"
+    android:background="@color/quantum_white_secondary_text"
+    >
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextUsername"
@@ -30,9 +17,9 @@
         android:hint="@string/register_username"
         android:inputType="text"
         android:maxLength="16"
-        android:textColor="@color/secondaryTextLightColor"
+        android:textColor="@color/black"
         app:errorEnabled="false"
-        app:hintTextAppearance="@style/MyHintStyle"
+        app:hintTextAppearance="@style/amu_Bubble.TextAppearance.Dark"
         app:layout_constraintBottom_toTopOf="@+id/textRegisterPassword"
         app:layout_constraintEnd_toEndOf="@+id/editTextPhoneN"
         app:layout_constraintStart_toStartOf="@+id/textUsernameTitle"
@@ -47,7 +34,7 @@
             android:inputType="text"
             android:maxLength="16"
             android:maxLines="1"
-            android:textColor="@color/secondaryTextLightColor" />
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -59,9 +46,9 @@
         android:hint="@string/register_password"
         android:inputType="textPassword"
         android:maxLength="16"
-        android:textColor="@color/secondaryTextLightColor"
+        android:textColor="@color/black"
         app:errorEnabled="false"
-        app:hintTextAppearance="@style/MyHintStyle"
+        app:hintTextAppearance="@style/amu_Bubble.TextAppearance.Dark"
         app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
         app:layout_constraintEnd_toEndOf="@+id/editTextUsername"
         app:layout_constraintHorizontal_bias="0.53"
@@ -79,7 +66,7 @@
             android:inputType="textPassword"
             android:maxLength="16"
             android:maxLines="1"
-            android:textColor="@color/secondaryTextLightColor" />
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -92,9 +79,9 @@
         android:hint="@string/editText_fullname_register"
         android:inputType="textPersonName"
         android:maxLength="30"
-        android:textColor="@color/secondaryTextLightColor"
+        android:textColor="@color/black"
         app:errorEnabled="false"
-        app:hintTextAppearance="@style/MyHintStyle"
+        app:hintTextAppearance="@style/amu_Bubble.TextAppearance.Dark"
         app:layout_constraintBottom_toTopOf="@+id/RegisterPhoneTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +97,7 @@
             android:inputType="text"
             android:maxLength="30"
             android:maxLines="1"
-            android:textColor="@color/secondaryTextLightColor" />
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -118,14 +105,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_nameTitle"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="20sp"
+        android:textColor="@color/common_google_signin_btn_text_light_focused"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextFullName"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextFullName"
-        app:layout_constraintTop_toBottomOf="@+id/textRegisterTitle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -133,8 +120,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_username_title"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="20sp"
+        android:textColor="@color/common_google_signin_btn_text_light_focused"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -150,9 +137,9 @@
         android:hint="@string/edittext_phone_register"
         android:inputType="number"
         android:maxLength="10"
-        android:textColor="@color/secondaryTextLightColor"
+        android:textColor="@color/black"
         app:errorEnabled="false"
-        app:hintTextAppearance="@style/MyHintStyle"
+        app:hintTextAppearance="@style/amu_Bubble.TextAppearance.Dark"
         app:layout_constraintBottom_toTopOf="@+id/textUsernameTitle"
         app:layout_constraintEnd_toEndOf="@+id/editTextFullName"
         app:layout_constraintStart_toStartOf="@+id/RegisterPhoneTxt"
@@ -167,7 +154,7 @@
             android:inputType="number"
             android:maxLength="10"
             android:maxLines="1"
-            android:textColor="@color/secondaryTextLightColor" />
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -175,8 +162,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/phone"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="20sp"
+        android:textColor="@color/common_google_signin_btn_text_light_focused"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPhoneN"
         app:layout_constraintStart_toStartOf="@+id/editTextFullName"
         app:layout_constraintTop_toBottomOf="@+id/editTextFullName" />
@@ -186,8 +173,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_password_title"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="20sp"
+        android:textColor="@color/common_google_signin_btn_text_light_focused"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextUsername"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
@@ -198,6 +185,8 @@
         android:layout_height="wrap_content"
         android:text="@string/register_btn"
         android:textAllCaps="false"
+        android:backgroundTint="@color/primaryDarkColor"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/registerLogin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +201,7 @@
         android:backgroundTint="@color/Backgroundgrey"
         android:text="@string/register_login"
         android:textAllCaps="false"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
