@@ -277,6 +277,8 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
             R.id.History ->{val intent = Intent(this, TravelHistory::class.java)
                 startActivity(intent)
             }
+            R.id.LogOut ->{resetShared()
+                goToLogged()}
         }
         drawer = findViewById(R.id.drawer_layout)
         drawer.closeDrawer(GravityCompat.START)
@@ -328,6 +330,15 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
         })
 
 
+
+
+    }
+
+    fun goToLogged(){
+        //cambiar de actividad sin poder regresar a esta con back button
+        val i = Intent(this, MainActivity::class.java)
+        i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(i)
     }
 
 }

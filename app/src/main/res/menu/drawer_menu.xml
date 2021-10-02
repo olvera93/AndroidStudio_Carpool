@@ -16,6 +16,26 @@
                     android:id="@+id/History"
                     android:icon="@drawable/settings"
                     android:title="@string/drawer_history" />
+                <item
+                    android:id="@+id/none1"
+                    android:title=""
+                     />
+                <item
+                    android:id="@+id/none2"
+                    android:title=""
+                     />
+                <item
+                    android:id="@+id/none3"
+                    android:title=""
+                   />
+                <item
+                    android:id="@+id/none4"
+                    android:title=""
+                    />
+                <item
+                    android:id="@+id/LogOut"
+                    android:icon="@drawable/logout"
+                    android:title="@string/drawer_logout"/>
             </group>
         </menu>
     </item>
