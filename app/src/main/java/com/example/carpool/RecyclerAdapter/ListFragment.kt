@@ -47,15 +47,15 @@ class ListFragment : Fragment() {
     private fun getProducts(): MutableList<Driver>{
         var drivers:MutableList<Driver> = ArrayList()
 
-        drivers.add(Driver("Javier", "5511223344","Conducto desde hace mas de 10 años", 4.5f, Vehicle("Azul", "Nissan", "Versa", "AU219"),345.00f))
-        drivers.add( Driver("Juan", "5522334455","Conducto desde hace mas de 2 años", 3.8f, Vehicle("Azul", "Nissan", "Versa", "AU219"),276.45f))
-        drivers.add(Driver("Luis", "5533445566", "Conducto desde hace mas de 4 años",2.4f, Vehicle("Azul", "Nissan", "Versa", "AU219"),289.99f))
-        drivers.add(Driver("Fernanda", "5544556677", "Conducto desde hace mas de 7 años",4.0f, Vehicle("Azul", "Nissan", "Versa", "AU219"),126.43f))
-        drivers.add(Driver("Luisa", "5555667788", "Conducto desde hace mas de 9 años",4.9f, Vehicle("Azul", "Nissan", "Versa", "AU219"),179.70f))
-        drivers.add(Driver("Manuel", "5566778899", "Conducto desde hace mas de 1 año",3.9f, Vehicle("Azul", "Nissan", "Versa", "AU219"),157.87f))
-        drivers.add(Driver("Jose", "5577889900", "Conducto desde hace mas de 5 años",4.3f, Vehicle("Azul", "Nissan", "Versa", "AU219"),132.39f))
-        drivers.add(Driver("Maria", "5588990011", "Conducto desde hace mas de 11 años",2.0f, Vehicle("Azul", "Nissan", "Versa", "AU219"),118.89f))
-        drivers.add(Driver("Ana", "5599001122", "Conducto desde hace mas de 6 años",4.8f, Vehicle("Azul", "Nissan", "Versa", "AU219"),99.34f))
+        drivers.add(Driver("Javier", "5511223344","Conducto desde hace mas de 10 años", 4.5f, Vehicle("Nissan", "Versa", "AU219"),345.00f, R.drawable.viaje1))
+        drivers.add( Driver("Juan", "5522334455","Conducto desde hace mas de 2 años", 3.8f, Vehicle( "Nissan", "Versa", "AU219"),276.45f, R.drawable.viaje2))
+        drivers.add(Driver("Luis", "5533445566", "Conducto desde hace mas de 4 años",2.4f, Vehicle( "Nissan", "Versa", "AU219"),289.99f, R.drawable.viaje3))
+        drivers.add(Driver("Fernanda", "5544556677", "Conducto desde hace mas de 7 años",4.0f, Vehicle( "Nissan", "Versa", "AU219"),126.43f, R.drawable.viaje4))
+        drivers.add(Driver("Luisa", "5555667788", "Conducto desde hace mas de 9 años",4.9f, Vehicle( "Nissan", "Versa", "AU219"),179.70f, R.drawable.viaje5))
+        drivers.add(Driver("Manuel", "5566778899", "Conducto desde hace mas de 1 año",3.9f, Vehicle( "Nissan", "Versa", "AU219"),157.87f, R.drawable.viaje6))
+        drivers.add(Driver("Jose", "5577889900", "Conducto desde hace mas de 5 años",4.3f, Vehicle( "Nissan", "Versa", "AU219"),132.39f, R.drawable.viaje7))
+        drivers.add(Driver("Maria", "5588990011", "Conducto desde hace mas de 11 años",2.0f, Vehicle( "Nissan", "Versa", "AU219"),118.89f, R.drawable.viaje8))
+        drivers.add(Driver("Ana", "5599001122", "Conducto desde hace mas de 6 años",4.8f, Vehicle( "Nissan", "Versa", "AU219"),99.34f, R.drawable.viaje9))
 
         return drivers
     }

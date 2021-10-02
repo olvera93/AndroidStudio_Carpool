@@ -43,7 +43,7 @@ class Register : AppCompatActivity() {
 
     companion object {
         const val CHANNEL_TRAVEL = "CHANNEL_TRAVEL"
-
+        const val CHANNEL_FIREBASE = "CHANNEL_FIREBASE"
         var notificationId = 0
     }
 
@@ -60,6 +60,7 @@ class Register : AppCompatActivity() {
         // Para android Oreo en adelante, es obligatorio registrar el canal de notificación
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setNotificationChannel()
+            setNotificationChannelFirebase()
         }
 
         // lee la configuración del modo avión
@@ -128,6 +129,21 @@ class Register : AppCompatActivity() {
 
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setNotificationChannelFirebase(){
+        val channel = NotificationChannel(
+            CHANNEL_FIREBASE,
+            "Canal Generico",
+            NotificationManager.IMPORTANCE_DEFAULT
+        ).apply {
+            description = "CANAL FIREBASE"
+        }
+
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
 

@@ -10,5 +10,6 @@ data class Driver (
     val description: String,
     val rating: Float,
     val vehicle: Vehicle,
-    val price: Float
+    val price: Float,
+    val imageTravel: Int
 ) : Parcelable

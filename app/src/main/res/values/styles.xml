@@ -14,8 +14,13 @@
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primaryLightColor</item>
-        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
 
+    </style>
+
+    <style name="AppThemeRegister" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primaryLightColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
     </style>
 
     <style name="AppTheme.NoActionBar" >
