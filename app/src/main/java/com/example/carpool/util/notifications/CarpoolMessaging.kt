@@ -5,7 +5,7 @@ import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.carpool.R
-import com.example.carpool.controllers.Register
+import com.example.carpool.ui.register.RegisterActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -24,7 +24,7 @@ class CarpoolMessaging : FirebaseMessagingService() {
 
         val notificationLayout = RemoteViews(packageName, R.layout.notification_custom)
         val notificationlayoutExpanded = RemoteViews(packageName, R.layout.notification_custom_expanded)
-        val notification = NotificationCompat.Builder(this, Register.CHANNEL_FIREBASE)
+        val notification = NotificationCompat.Builder(this, RegisterActivity.CHANNEL_FIREBASE)
             .setSmallIcon(R.drawable.ic_stat_name)
             .setStyle(NotificationCompat.DecoratedCustomViewStyle())
             .setCustomContentView(notificationLayout)

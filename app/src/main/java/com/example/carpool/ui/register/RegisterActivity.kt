@@ -206,8 +206,7 @@ class RegisterActivity : AppCompatActivity(), RegisterPresenter.View {
                         , Toast.LENGTH_SHORT).show()})
             }
             else{
-
-
+                addNewUserToDB()
             }
         })
 

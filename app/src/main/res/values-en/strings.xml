@@ -9,6 +9,7 @@
     <string name="botonLog">Log In</string>
     <string name="forgot"><u>Forgot your password?</u></string>
     <string name="password_error">Wrong password</string>
+    <string name="drawer_logout">Log out</string>
 
     <!-- Valores pantalla de registro: -->
     <string name="register_title">Register</string>
