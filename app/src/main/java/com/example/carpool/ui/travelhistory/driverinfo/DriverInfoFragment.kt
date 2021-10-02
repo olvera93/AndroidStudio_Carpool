@@ -1,4 +1,4 @@
-package com.example.carpool.RecyclerAdapter
+package com.example.carpool.ui.travelhistory.driverinfo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import com.example.carpool.R
-import com.example.carpool.model.Driver
+import com.example.carpool.data.models.Driver
 
 class DetailFragment : Fragment() {
 

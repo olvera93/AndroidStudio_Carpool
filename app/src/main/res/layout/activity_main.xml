@@ -9,14 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_width="208dp"
+        android:layout_height="144dp"
         android:src="@mipmap/carpool"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012" />
+        app:layout_constraintVertical_bias=".05" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -24,8 +24,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/phone"
+        android:drawableStart="@drawable/outline_lock_24"
         android:hint="@string/password_text"
         android:inputType="textPassword"
         app:errorEnabled="true"
@@ -33,8 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/forgotpass"
         app:layout_constraintEnd_toEndOf="@+id/EditUsuario"
         app:layout_constraintStart_toStartOf="@+id/EditUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/EditUsuario"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -44,8 +42,7 @@
             android:drawableLeft="@drawable/phone"
             android:drawablePadding="8dp"
             android:inputType="textPassword"
-            android:textColor="@color/secondaryTextLightColor"
-            />
+            android:textColor="@color/secondaryTextLightColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +57,7 @@
         app:hintTextAppearance="@style/MyHintStyle"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -79,8 +76,6 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/username"
         android:textColor="@color/primaryTextColor"
@@ -93,8 +88,6 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/password"
         android:textColor="@color/primaryTextColor"
@@ -102,19 +95,20 @@
         app:layout_constraintBottom_toTopOf="@+id/EditContrasena"
         app:layout_constraintStart_toStartOf="@+id/EditContrasena"
         app:layout_constraintTop_toBottomOf="@+id/EditUsuario"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintVertical_bias=".5" />
 
 
     <TextView
         android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/forgot"
         android:textColor="@color/primaryTextColor"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintBottom_toTopOf="@+id/Login_button"
+        app:layout_constraintEnd_toEndOf="@+id/EditContrasena"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/EditContrasena"
         app:layout_constraintTop_toBottomOf="@+id/EditContrasena" />
 
@@ -123,6 +117,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/Backgroundgrey"
         android:text="@string/sign_up"
         android:textAllCaps="false"
@@ -132,21 +127,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_button"
-        app:layout_constraintVertical_bias="0.899" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_button" />
 
     <Button
         android:id="@+id/Login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
         android:backgroundTint="@color/primaryDarkColor"
         android:text="@string/botonLog"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/EditContrasena"
         app:layout_constraintStart_toStartOf="@+id/EditContrasena"
-        app:layout_constraintTop_toBottomOf="@+id/EditContrasena" />
+        app:layout_constraintTop_toBottomOf="@+id/forgotpass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

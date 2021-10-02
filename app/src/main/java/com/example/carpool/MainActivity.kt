@@ -1,6 +1,5 @@
 package com.example.carpool
 
-import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,17 +8,18 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.view.ActionMode
-import com.example.carpool.controllers.Register
-import com.example.carpool.controllers.RequestTravel
-import com.example.carpool.model.User
-import com.example.carpool.model.UserDb
-import com.example.carpool.model.Userdbclass
-import com.example.carpool.model.database
-import com.example.carpool.progressbar.AnimationCar
+import com.example.carpool.R
+import com.example.carpool.ui.register.RegisterActivity
+import com.example.carpool.api.RequestTravel
+import com.example.carpool.data.models.User
+
+
+import com.example.carpool.data.room.UserDb
+import com.example.carpool.data.room.Userdbclass
+import com.example.carpool.ui.animations.AnimationCar
 import com.google.android.material.button.MaterialButton
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                     "Admin", "Admin123")
             val prueba=tempUsuario.addUser()
             intent.putExtra("userDB",tempUsuario)
-            val intent = Intent(this, Register::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
         }
@@ -250,7 +250,7 @@ fun validacionCampos(campo1:String,campo2:String):Boolean{
     return campo1.isNotEmpty()&&campo1!=null || campo2.length>0 &&campo2!=null
         }
 
-fun validateUser(userArray:MutableList<Userdbclass>,usuario:String,contra:String):Boolean{
+fun validateUser(userArray:MutableList<Userdbclass>, usuario:String, contra:String):Boolean{
     for(user in userArray){
         if(user.User==usuario && user.Password==contra){
             return true

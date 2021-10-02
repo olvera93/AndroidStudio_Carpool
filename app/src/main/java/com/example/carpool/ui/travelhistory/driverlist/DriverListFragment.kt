@@ -1,4 +1,4 @@
-package com.example.carpool.RecyclerAdapter
+package com.example.carpool.ui.travelhistory.driverlist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.carpool.R
-import com.example.carpool.model.Driver
-import com.example.carpool.model.Vehicle
+import com.example.carpool.data.models.Driver
+import com.example.carpool.data.models.Vehicle
 import kotlinx.android.synthetic.main.fragment_list.*
 
-class ListFragment : Fragment() {
+class DriverListFragment : Fragment() {
 
-    private lateinit var mAdapter : RecyclerAdapter
+    private lateinit var mAdapter : DriverListAdapter
     private var listener : (Driver) ->Unit = {}
 
     override fun onCreateView(
@@ -38,13 +38,13 @@ class ListFragment : Fragment() {
         recyclerDrivers.setHasFixedSize(true)
         recyclerDrivers.layoutManager = LinearLayoutManager(activity)
         //seteando el Adapter
-        mAdapter = RecyclerAdapter( requireActivity(), getProducts(), listener)
+        mAdapter = DriverListAdapter( requireActivity(), getDrivers(), listener)
         //asignando el Adapter al RecyclerView
         recyclerDrivers.adapter = mAdapter
     }
 
     //generamos datos dummy con este método
-    private fun getProducts(): MutableList<Driver>{
+    private fun getDrivers(): MutableList<Driver>{
         var drivers:MutableList<Driver> = ArrayList()
 
         drivers.add(Driver("Javier", "5511223344","Conducto desde hace mas de 10 años", 4.5f, Vehicle("Azul", "Nissan", "Versa", "AU219"),345.00f))

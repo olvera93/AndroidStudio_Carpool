@@ -1,4 +1,4 @@
-package com.example.carpool.model
+package com.example.carpool.data.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -1,11 +1,11 @@
-package com.example.carpool.RecyclerAdapter
+package com.example.carpool.ui.travelhistory.driverinfo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.carpool.R
-import com.example.carpool.model.Driver
+import com.example.carpool.data.models.Driver
 
-class DetailActivity : AppCompatActivity() {
+class DriverInfoActivity : AppCompatActivity() {
 
     companion object {
         val DRIVER = "DRIVER"

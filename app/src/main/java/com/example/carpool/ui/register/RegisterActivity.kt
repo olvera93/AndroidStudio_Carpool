@@ -1,4 +1,4 @@
-package com.example.carpool.controllers
+package com.example.carpool.ui.register
 
 
 import android.app.NotificationChannel
@@ -10,6 +10,8 @@ import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -19,17 +21,19 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
-import com.example.carpool.MainActivity
 import com.example.carpool.R
-import com.example.carpool.model.User
-import com.example.carpool.model.UserDb
-import com.example.carpool.model.Userdbclass
-import com.example.carpool.receiver.AirplaneReceiver
+import com.example.carpool.data.models.User
+
+import com.example.carpool.data.room.UserDb
+import com.example.carpool.data.room.Userdbclass
+import com.example.carpool.MainActivity
+import com.example.carpool.ui.receiver.AirplaneReceiver
+
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 
-class Register : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity(), RegisterPresenter.View {
     private lateinit var registerUser: EditText
     private lateinit var registerPassword: EditText
     private lateinit var registerButton: Button
@@ -37,9 +41,8 @@ class Register : AppCompatActivity() {
     private lateinit var registerName : EditText
     private lateinit var registerPhone : EditText
 
-
+    private val presenter = RegisterPresenter(this)
     private var airplaneReceiver = AirplaneReceiver()
-
 
     companion object {
         const val CHANNEL_TRAVEL = "CHANNEL_TRAVEL"
@@ -56,6 +59,35 @@ class Register : AppCompatActivity() {
         registerLoginButton = findViewById(R.id.registerLogin)
         registerPhone = findViewById(R.id.edit_phoneR)
         registerName = findViewById(R.id.edit_full_nameR)
+
+        registerUser.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updateUser(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+        registerPassword.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updatePassword(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+        registerName.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updateName(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+        registerPhone.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updatePhone(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
 
         // Para android Oreo en adelante, es obligatorio registrar el canal de notificación
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -94,8 +126,6 @@ class Register : AppCompatActivity() {
 
             }else if (registerPhone.text.length < 10){
                 Toast.makeText(this, getString(R.string.phone_number), Toast.LENGTH_SHORT).show()
-
-
             } else {
                 //Check if register exists
                 checkRegister()
@@ -103,16 +133,8 @@ class Register : AppCompatActivity() {
         }
 
         registerLoginButton.setOnClickListener{
-            val tempUsuario =
-                User("Admin","5555555555",
-                    "Admin", "Admin123")
-            val prueba=tempUsuario.addUser()
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("userDB",tempUsuario)
-            startActivity(intent)
+            addExistingUsersToDB()
             overridePendingTransition(R.anim.translate_left_side, R.anim.translate_left_out)
-
-
         }
 
     }
@@ -129,25 +151,6 @@ class Register : AppCompatActivity() {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         notificationManager.createNotificationChannel(channel)
-    }
-
-    private fun expandableNotification() {
-        val notification = NotificationCompat.Builder(this, CHANNEL_TRAVEL)
-            .setSmallIcon(R.drawable.ic_stat_name)
-            .setColor(ContextCompat.getColor(this, R.color.primaryColor))
-            .setContentTitle(getString(R.string.simple_title))
-            .setContentText(getString(R.string.large_text))
-            .setLargeIcon(getDrawable(R.mipmap.carpool)?.toBitmap())
-            .setStyle(NotificationCompat.BigTextStyle()
-                .bigText(getString(R.string.large_text)))
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .build()
-
-        NotificationManagerCompat.from(this).run {
-            notify(++notificationId, notification)
-
-        }
-
     }
 
 
@@ -168,32 +171,7 @@ class Register : AppCompatActivity() {
                         , Toast.LENGTH_SHORT).show()})
             }
             else{
-                //Database register
-                val baseUser= Userdbclass(
-                    User=registerUser.text.toString(),
-                    Password = registerPassword.text.toString(),
-                    Phone = registerPhone.text.toString(),
-                    Name = registerName.text.toString()
-                )
-                val tempUsuario =
-                    User(registerName.text.toString(),registerPhone.text.toString(),
-                        registerUser.text.toString(), registerPassword.text.toString())
 
-                val executor: ExecutorService = Executors.newSingleThreadExecutor()
-
-                executor.execute (Runnable {
-                    UserDb
-                        .getInstance(this)
-                        ?.userDao()
-                        ?.insertUser(baseUser)
-                    runOnUiThread(Runnable {
-                        expandableNotification()
-                        Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
-                    })
-                })
-                val intent = Intent(this, MainActivity::class.java)
-
-                startActivity(intent)
 
             }
         })
@@ -224,9 +202,17 @@ class Register : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
-        val i = Intent(this, Register::class.java)
+        val i = Intent(this, RegisterActivity::class.java)
         startActivity(i)
         finish()
+    }
+
+    override fun addExistingUsersToDB() {
+        presenter.addExistingUsersToDB(this)
+    }
+
+    override fun addNewUserToDB() {
+        presenter.addNewUserToDB(this)
     }
 
 }

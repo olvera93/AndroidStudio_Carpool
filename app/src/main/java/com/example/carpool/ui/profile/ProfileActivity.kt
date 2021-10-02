@@ -1,6 +1,5 @@
-package com.example.carpool.controllers
+package com.example.carpool.ui.profile
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -12,30 +11,30 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.carpool.MainActivity
 import com.example.carpool.R
-import com.example.carpool.model.User
-import com.example.carpool.model.UserDb
-import com.example.carpool.model.Userdbclass
+import com.example.carpool.api.RequestTravel
+import com.example.carpool.data.room.UserDb
+import com.example.carpool.data.room.Userdbclass
+import com.example.carpool.MainActivity
+import com.example.carpool.ui.register.RegisterPresenter
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 //import com.example.carpool.principalscreen
 
-class VerPerfil : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity(), ProfilePresenter.View  {
     lateinit var EditNombre:EditText
     lateinit var EditUsuario:EditText
     lateinit var EditTelefono:EditText
     lateinit var EditContra:EditText
     lateinit var actbtn:Button
+    private val presenter = ProfilePresenter(this)
 
     //Inicio de sharedPreferences
     lateinit var preferences: SharedPreferences
 
     //Objeto User
-    private lateinit var manduser:Userdbclass
-
-
+    private lateinit var manduser: Userdbclass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +50,34 @@ class VerPerfil : AppCompatActivity() {
         actbtn = findViewById(R.id.Actualizar)
         setValues()
         dbOperation()
-
+        EditUsuario.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updateUser(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+        EditContra.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updatePassword(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+        EditNombre.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updateName(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+        EditTelefono.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                presenter.updatePhone(s.toString())
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
         actbtn.setOnClickListener {
             if(EditUsuario.text.toString().isEmpty() ||EditContra.text.toString().isEmpty() ||EditNombre.text.toString().isEmpty() ||EditTelefono.text.toString().isEmpty()){
                 Toast.makeText(this, getString(R.string.valid_data), Toast.LENGTH_LONG).show()
@@ -83,26 +109,8 @@ class VerPerfil : AppCompatActivity() {
     fun setValues(){
         //obtenemos los valores desde preferencias
         val user = preferences.getString(MainActivity.USERP,"")
-
         EditUsuario.setText(user)
     }
-    private fun dbOperationUpdate() {
-        //Validacion si existe usuario en la base de datos de la clase User
-        val nameu=EditNombre.text.toString()
-        val usuu=EditUsuario.text.toString()
-        val pasu=EditContra.text.toString()
-        val phoneu=EditTelefono.text.toString()
-
-
-        val executor: ExecutorService = Executors.newSingleThreadExecutor()
-        executor.execute(Runnable {
-            val Userdbclass = UserDb
-                .getInstance(this)
-                ?.userDao()
-                    Userdbclass?.apply {updateUser(usuu,nameu,phoneu,pasu)  }
-
-
-        })}
 
     private fun setValuesDrawer(userdbclass: Userdbclass) {
         runOnUiThread {
@@ -124,6 +132,10 @@ class VerPerfil : AppCompatActivity() {
             setValuesDrawer(userdbclass)
         })
 
+    }
+
+    override fun dbOperationUpdate() {
+        presenter.dbOperationUpdate(this)
     }
 
 }

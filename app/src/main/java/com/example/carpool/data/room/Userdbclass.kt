@@ -1,4 +1,4 @@
-package com.example.carpool.model
+package com.example.carpool.data.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

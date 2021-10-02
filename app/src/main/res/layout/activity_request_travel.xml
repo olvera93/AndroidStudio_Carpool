@@ -7,7 +7,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controllers.RequestTravel"
+    tools:context=".api.RequestTravel"
     tools:openDrawer="start"
     android:fitsSystemWindows="true">
 
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        tools:context=".controllers.RequestTravel">
+        tools:context=".api.RequestTravel">
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="151dp"
             android:gravity="bottom"
-            tools:context=".controllers.RequestTravel">
+            tools:context=".api.RequestTravel">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,7 +81,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".controllers.RequestTravel">
+            tools:context=".api.RequestTravel">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"

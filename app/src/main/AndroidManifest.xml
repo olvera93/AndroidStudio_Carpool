@@ -36,22 +36,22 @@
 
 
         <activity
-            android:name=".controllers.RequestTravel"
+            android:name=".api.RequestTravel"
             android:theme="@style/AppTheme.NoActionBar"
             />
         <activity
-            android:name=".progressbar.AnimationCar"
+            android:name="com.example.carpool.ui.animations.AnimationCar"
             android:exported="true"
             android:theme="@style/Theme.Carpool" />
         <activity
-            android:name=".controllers.Register"
+            android:name=".ui.register.RegisterActivity"
             android:theme="@style/SplashTheme"
             android:parentActivityName=".MainActivity"
             >
 
         </activity>
         <activity
-            android:name=".controllers.VerPerfil"
+            android:name=".ui.profile.ProfileActivity"
             android:label="@string/view_profile_user" />
         <activity
             android:name=".MainActivity"
@@ -70,9 +70,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".RecyclerAdapter.DetailActivity" />
+        <activity android:name="com.example.carpool.ui.travelhistory.driverinfo.DriverInfoActivity" />
         <activity
-            android:name=".RecyclerAdapter.TravelHistory"
+            android:name="com.example.carpool.ui.travelhistory.TravelHistory"
             android:label="@string/travel_histories" />
     </application>
 

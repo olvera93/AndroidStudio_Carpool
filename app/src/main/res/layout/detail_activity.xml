@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecyclerAdapter.TravelHistory">
+    tools:context=".ui.travelhistory.TravelHistory">
     <fragment
         android:id="@+id/fragmentDetail"
-        class="com.example.carpool.RecyclerAdapter.DetailFragment"
+        class="com.example.carpool.ui.travelhistory.driverinfo.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

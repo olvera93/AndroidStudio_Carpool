@@ -1,9 +1,12 @@
-package com.example.carpool.RecyclerAdapter
+package com.example.carpool.ui.travelhistory
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.carpool.R
+import com.example.carpool.ui.travelhistory.driverinfo.DetailFragment
+import com.example.carpool.ui.travelhistory.driverinfo.DriverInfoActivity
+import com.example.carpool.ui.travelhistory.driverlist.DriverListFragment
 
 class TravelHistory : AppCompatActivity() {
 
@@ -11,7 +14,7 @@ class TravelHistory : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_travel_history)
 
-        val listFragment = supportFragmentManager.findFragmentById(R.id.fragmentList) as ListFragment
+        val listFragment = supportFragmentManager.findFragmentById(R.id.fragmentList) as DriverListFragment
 
         listFragment.setListener{
             val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
@@ -20,8 +23,8 @@ class TravelHistory : AppCompatActivity() {
             if(detailFragment!=null){
                 detailFragment.showDriver(it)
             } else{ //pantalla pequeña, navegar a un nuevo Activity
-                val intent = Intent(this, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.DRIVER,it)
+                val intent = Intent(this, DriverInfoActivity::class.java)
+                intent.putExtra(DriverInfoActivity.DRIVER,it)
                 startActivity(intent)
             }
         }

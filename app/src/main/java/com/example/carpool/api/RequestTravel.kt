@@ -1,4 +1,4 @@
-package com.example.carpool.controllers
+package com.example.carpool.api
 
 import com.example.carpool.databinding.ActivityRequestTravelBinding
 
@@ -45,16 +45,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
-import com.example.carpool.MainActivity
+
 import com.example.carpool.R
-import com.example.carpool.RecyclerAdapter.TravelHistory
-import com.example.carpool.model.User
-import com.example.carpool.model.UserDb
-import com.example.carpool.model.Userdbclass
+import com.example.carpool.ui.travelhistory.TravelHistory
+import com.example.carpool.ui.profile.ProfileActivity
+import com.example.carpool.data.room.UserDb
+import com.example.carpool.data.room.Userdbclass
+import com.example.carpool.MainActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.iid.FirebaseInstanceId
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -271,7 +270,7 @@ class RequestTravel: AppCompatActivity(), OnMapReadyCallback, NavigationView.OnN
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId){
-            R.id.profile ->{val intent = Intent(this, VerPerfil::class.java)
+            R.id.profile ->{val intent = Intent(this, ProfileActivity::class.java)
               
                 startActivity(intent)
             }

@@ -1,7 +1,6 @@
-package com.example.carpool.progressbar
+package com.example.carpool.ui.animations
 
 import android.animation.AnimatorInflater
-import android.app.Activity
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

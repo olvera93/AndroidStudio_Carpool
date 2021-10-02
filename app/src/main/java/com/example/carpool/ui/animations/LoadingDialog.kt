@@ -1,8 +1,7 @@
-package com.example.carpool.progressbar
+package com.example.carpool.ui.animations
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.graphics.drawable.AnimationDrawable
 import com.example.carpool.R
 
 class LoadingDialog(val myActivity: Activity) {

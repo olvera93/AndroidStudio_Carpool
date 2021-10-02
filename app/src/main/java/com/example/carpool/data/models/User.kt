@@ -1,4 +1,4 @@
-package com.example.carpool.model
+package com.example.carpool.data.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -6,8 +6,8 @@ import kotlinx.android.parcel.Parcelize
 var database =  mutableListOf(listOf("adminName","adminPhone","adminUser","123"))
 @Parcelize
 class User(
-    var name: String, var phone: String, var user: String,
-    var password:String):Parcelable{
+    var name: String="NOMBRE_DEFAULT", var phone: String="CELULAR_DEFAULT", var user: String="USUARIO_DEFAULT",
+    var password:String="CONTRA_DEFAULT"):Parcelable{
 
     fun addUser():Boolean{
         var users: MutableList<String> = mutableListOf()

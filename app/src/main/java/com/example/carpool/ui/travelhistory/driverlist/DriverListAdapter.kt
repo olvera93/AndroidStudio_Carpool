@@ -1,20 +1,19 @@
-package com.example.carpool.RecyclerAdapter
+package com.example.carpool.ui.travelhistory.driverlist
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carpool.R
-import com.example.carpool.model.Driver
+import com.example.carpool.data.models.Driver
 
 //Declaración con constructor
-class RecyclerAdapter(
+class DriverListAdapter(
     private val context:Context,
     private val drivers: MutableList<Driver>,
-    private val clickListener: (Driver) -> Unit): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+    private val clickListener: (Driver) -> Unit): RecyclerView.Adapter<DriverListAdapter.ViewHolder>() {
 
     //Aquí atamos el ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

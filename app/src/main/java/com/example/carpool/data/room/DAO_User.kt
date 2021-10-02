@@ -1,14 +1,12 @@
-package com.example.carpool.model
+package com.example.carpool.data.room
 
 import androidx.room.*
 
 @Dao
 interface DAO_User {
 
-
     @Insert
     fun insertUser(User: Userdbclass)
-
 
     @Delete
     fun removeUser(User: Userdbclass)
@@ -29,7 +27,7 @@ interface DAO_User {
     fun checkRegister(user:String):List<Userdbclass>
 
     @Query("SELECT * FROM Userdbclass WHERE User= :user")
-    fun viewProfile(user:String):Userdbclass
+    fun viewProfile(user:String): Userdbclass
 
     @Query("SELECT user FROM Userdbclass WHERE User= :user")
     fun validationUser(user:String):String
