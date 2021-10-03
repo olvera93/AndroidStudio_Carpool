@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.example.carpool.R
@@ -42,49 +44,12 @@ class DriverListFragmentTest {
     fun onCreateView() {
         launchFragmentInContainer<DriverListFragment>(null,R.style.Theme_Carpool)
         Thread.sleep(40000)
-        fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-            val driver = driverList.get(position)
-            holder.bind(driver, this)
 
-            holder.view.setOnClickListener{clickListener(driver)}
+        driverList.drop(1)
+        var result = driverList
 
-        }
+        assertEquals(result,driverList)
 
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val layoutInflater = LayoutInflater.from(parent.context)
-            return ViewHolder(layoutInflater.inflate(R.layout.item_driver, parent, false))
-        }
-
-        override fun getItemCount(): Int {
-            return drivers.size
-        }
-
-        //El ViewHolder ata los datos del RecyclerView a la Vista para desplegar la información
-        //También se encarga de gestionar los eventos de la View, como los clickListeners
-        class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-            //obteniendo las referencias a las Views
-            private val name = view.findViewById<TextView>(R.id.tvNombre)
-            private val price = view.findViewById<TextView>(R.id.tvPrice)
-
-
-            //"atando" los datos a las Views
-            fun bind(driver: Driver, context: Context){
-                name.text = driver.name
-                price.text = "$"+driver.price.toString()
-            }
-        }
-
-    }
-        Espresso.onView(withId(R.id.recyclerDrivers)
-            .perfom(
-                RecyclerViewActions.actionOnItem<RecyclerView.ViewHolder>(
-                    ViewMatchers.hasDescendant(
-                        ViewMatchers.withText("Javier")
-                    ),
-                    ItemAction(R.id.detailView)
-                )
-            )
 
     }
 
