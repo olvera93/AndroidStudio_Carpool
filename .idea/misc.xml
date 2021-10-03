@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/delete.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/home.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/info.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/menu.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/payment.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/privacy.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/settings.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/drawable/share.xml" value="0.2677083333333333" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/activity_principalscreen.xml" value="0.2" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/activity_register.xml" value="0.13072916666666667" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/activity_travel_screen.xml" value="0.13072916666666667" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/activity_ver_perfil.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/content_travel_history.xml" value="0.13072916666666667" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/drawer_header.xml" value="0.10280797101449275" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/drawer_menu.xml" value="0.15081521739130435" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/item_driver.xml" value="0.13072916666666667" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/layout/loading_item.xml" value="0.13072916666666667" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/appbar.xml" value="0.2515625" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/contextualmenu.xml" value="0.2515625" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/drawer_header.xml" value="0.1578125" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/drawer_menu.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio_Carpool/app/src/main/res/menu/menu.xml" value="0.29270833333333335" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_animation.xml" value="0.2" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_principalscreen.xml" value="0.24864130434782608" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_register.xml" value="0.17239583333333333" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_request_travel.xml" value="0.2" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_travel.xml" value="0.259375" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_travel_screen.xml" value="0.1359375" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/activity_ver_perfil.xml" value="0.1359375" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/content_travel_history.xml" value="0.17239583333333333" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/detail_activity.xml" value="0.2391304347826087" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/drawer_header.xml" value="0.2391304347826087" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/fragment_detail.xml" value="0.2391304347826087" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/fragment_list.xml" value="0.2391304347826087" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/item_driver.xml" value="0.264" />
+        <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/loading_item.xml" value="0.264" />
+        <entry key="..\:/Users/Stuart/Desktop/AndroidStudio_Carpool-master/app/src/main/res/layout/fragment_detail.xml" value="0.1" />
+        <entry key="..\:/Users/Stuart/Desktop/AndroidStudio_Carpool-master/app/src/main/res/layout/fragment_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_animation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_principalscreen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_travel_screen.xml" value="0.1286231884057971" />
+        <entry key="app/src/main/res/layout/activity_ver_perfil.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_travel_history.xml" value="0.13043478260869565" />
+        <entry key="app/src/main/res/layout/detail_activity.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/drawer_header.xml" value="0.13043478260869565" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/item_driver.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/loading_item.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

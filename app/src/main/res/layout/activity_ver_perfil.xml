@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileActivity"
+    android:background="@color/primaryColor">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="@+id/NombreText"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#050505"
+        app:layout_constraintBottom_toTopOf="@+id/NombreText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/NombreEdit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:hint="@string/editText_fullname_register"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/UsuarioText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NombreText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nameP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:inputType="text"
+            android:maxLength="30"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/UsuarioText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_profile_user"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/UsuarioEdit"
+        app:layout_constraintStart_toStartOf="@+id/UsuarioEdit"
+        app:layout_constraintTop_toBottomOf="@+id/NombreEdit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsuarioEdit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textSize="16sp"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/NumeroText"
+        app:layout_constraintEnd_toEndOf="@+id/NumeroEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/NumeroText"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_userP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:inputType="text"
+            android:maxLength="16"
+            android:enabled="false"
+            android:textColor="@color/secondaryTextColor"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/ContraText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/ContraEdit"
+        app:layout_constraintStart_toStartOf="@+id/ContraEdit"
+        app:layout_constraintTop_toBottomOf="@+id/NumeroEdit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ContraEdit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:hint="@string/register_password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".95"
+        app:passwordToggleEnabled="true"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_passwordP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/NumeroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/NumeroEdit"
+        app:layout_constraintStart_toStartOf="@+id/NumeroEdit"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioEdit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/NumeroEdit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/edit"
+        android:drawablePadding="10dp"
+        android:hint="@string/edittext_phone_register"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/ContraText"
+        app:layout_constraintEnd_toEndOf="@+id/ContraEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ContraEdit"
+        app:layout_constraintTop_toBottomOf="@+id/NumeroText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_phoneP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/NombreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/NombreEdit"
+        app:layout_constraintStart_toStartOf="@+id/NombreEdit"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <Button
+        android:id="@+id/Actualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Backgroundgrey"
+        android:text="@string/user_update"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        android:backgroundTint="@color/black"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="@color/black"
+        app:layout_constraintGuide_begin="17dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

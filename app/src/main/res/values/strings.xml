@@ -1,0 +1,141 @@
+<resources>
+
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+
+    <string name="app_name">Carpool</string>
+    <string name="user">Ingrese su nombre de usuario</string>
+    <string name="password_text">Ingrese su contraseña</string>
+    <string name="botonLog">Iniciar sesion</string>
+    <string name="forgot"><u>¿Olvidaste tu contraseña?</u></string>
+    <string name="password_error">Contraseña incorrecta</string>
+
+    <!-- Valores pantalla de registro: -->
+    <string name="register_title">Registro</string>
+    <string name="register_username">Ingresa un nombre de usuario</string>
+    <string name="register_password">Escribe tu contraseña</string>
+    <string name="register_username_title">Usuario</string>
+    <string name="register_password_title">Contraseña</string>
+    <string name="register_btn">Registrarse</string>
+    <string name="register_login">¿Ya tienes una cuenta? <u>Inicia sesión</u></string>
+    <string name="waiting_travel">Obteniedo su ubicación...</string>
+    <string name="register_nameTitle">Nombre completo</string>
+    <string name="latitude_coordinates">Ingrese coordenada latitud</string>
+    <string name="longitude_coordinates">Ingrese coordenada longitud</string>
+    <string name="coordinate_error">Coordenadas no validas</string>
+    <string name="editText_fullname_register">Coloca tu nombre completo</string>
+    <string name="register_phonetitle">Número de teléfono</string>
+    <string name="edittext_phone_register">Escribe tu número de teléfono</string>
+
+    <!-- Valores pantalla de Historial de Viajes: -->
+    <string name="travel_history">Viajes</string>
+    <string name="driver_name">Nombre del conductor</string>
+    <string name="phone">Teléfono</string>
+
+    <!-- Valores pantalla principalScreen: -->
+    <string name="need_to_go_somewhere">¿Necesitas ir a algún lugar?</string>
+    <string name="where_go">¿A dónde quieres ir?</string>
+    <string name="request_trip">Solicitar Viaje</string>
+    <string name="view_profile">Perfil</string>
+
+
+    <!-- Nombre pantalla TravelHistory -->
+    <string name="travel_histories">Historial De Viajes</string>
+
+    <!-- Nombre pantalla TravelScreen -->
+    <string name="travel_screen">Viaje</string>
+    <string name="invalid_coordinate">Imposible llegar a tu destino</string>
+
+    <!-- Nombre pantalla Login -->
+    <string name="login">Inicio Sesión</string>
+    <string name="sign_up">Crea una cuenta</string>
+
+    <!-- Nombre pantalla Register -->
+    <string name="register">Registro</string>
+
+
+    <!-- Toast -->
+    <string name="incorrect_data">Por favor introduce los datos correctamente</string>
+    <string name="incorrect_user">Escribe un nombre de usuario</string>
+    <string name="incorrect_password">Escribe una contraseña</string>
+    <string name="incorrect_phone">Escribe un número de teléfono</string>
+    <string name="incorrect_fullname">Escribe un nombre completo</string>
+    <string name="successfully_registered">Se ha registrado con éxito :)</string>
+    <string name="account_already_registered">Esa cuenta ya está registrada :(</string>
+
+    <string name="phone_number">El teléfeno debe de tener 10 dígitos </string>
+
+
+    <string name="empty_name">Nombre no puede estar vacio</string>
+    <string name="empty_username">Usuario no puede estar vacio</string>
+    <string name="empty_phone">Telefono no puede estar vacio</string>
+    <string name="empty_password">Contraseña no puede estar vacia</string>
+    <string name="valid_data">Ingrese datos validos</string>
+    <string name="update_data">Datos actualizados correctamente</string>
+
+    <string name="username_invalid">Incorrecto Usuario</string>
+    <string name="password_invalid">Incorrecto Password</string>
+    <string name="user_password_invalid">Usuario o contraseña invalidos</string>
+    <string name="login_succesfully">Ha iniciado sesión correctamente</string>
+    <string name="invalid_user_password">Usuario/Contraseña incorrectos :(</string>
+
+    <string name="current_location">Ubicación Actual</string>
+    <string name="destination_location">Ubicación Destino</string>
+    <string name="not_get_location">No se pudo obtener la ubicación actual</string>
+    <string name="settings_accept">Ve a ajustes y acepta los permisos</string>
+    <string name="activate_location">Para activar la localización ve a ajustes y acepta los permisos</string>
+    <string name="coordinates_not_be_empty">Coordenadas no debe estar vacío</string>
+    <string name="coordinate_invalid">Coordenadas invalidas</string>
+
+
+    <string name="name">Nombre Completo</string>
+    <string name="view_profile_user">Usuario</string>
+    <string name="user_edit">Editar cuenta</string>
+    <string name="user_update">Actualizar</string>
+
+    <!--Menu-->
+    <string name="copy_action">Seleccionaste copiar</string>
+    <string name="copy">Copiar</string>
+    <string name="paste_action">Seleccionaste pegar</string>
+    <string name="paste">Pegar</string>
+    <string name="cut_action">Seleccionaste cortar</string>
+    <string name="cut">Cortar</string>
+
+    <string name="delete">Eliminar</string>
+    <string name="share">Compartir</string>
+    <string name="open_drawer">Abrir</string>
+    <string name="close_drawer">Cerrar</string>
+    <string name="delete_element">Eliminando elemento</string>
+    <string name="sharing_element">Compartiendo elemento</string>
+    <string name="email">Correo electrónico</string>
+    <string name="drawer_profile">Perfil</string>
+    <string name="drawer_account">Cuenta</string>
+    <string name="drawer_payments">Payment</string>
+    <string name="drawer_history">Historico de viajes</string>
+    <string name="drawer_extra">Extra</string>
+    <string name="drawer_about">About</string>
+    <string name="drawer_privacy">Privacy</string>
+    <string name="drawer_logout">Salir</string>
+
+    <string name="vehicle">Vehicle</string>
+
+    <!-- Toast Receiver -->
+    <string name="airplane_mode_on">Modo avión habilitado</string>
+    <string name="airplane_mode_off">Modo avión deshabilitado</string>
+
+
+    <!-- Textos para la push simple -->
+    <string name="simple_title">Carpool</string>
+    <string name="large_text">Por ser nuevo usuario, te daremos un descuento del 10% en tus 3 primeros viajes.
+    Código: CARPOOL-10, espero disfrutes tus viajes.</string>
+
+    <string name="climate">Viaja con cuidado</string>
+
+    <!-- CANAL CURSOS -->
+    <string name="channel_travel">Viaje</string>
+    <string name="travel_description">Notificaciones acerca de nuevos usuarios</string>
+
+
+
+
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.carpool">
+    <!-- Pedir permiso para la localización -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Para WIFI -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Carpool">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_name" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="DEFAULT_CHANNEL" />
+
+
+        <service
+            android:name=".util.notifications.CarpoolMessaging"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".api.RequestTravel"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name="com.example.carpool.ui.animations.AnimationCar"
+            android:exported="true"
+            android:theme="@style/Theme.Carpool" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:theme="@style/AppThemeRegister"
+            android:label="@string/register"
+            android:parentActivityName=".MainActivity"
+            >
+
+        </activity>
+
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:label="@string/view_profile_user" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name="com.example.carpool.ui.travelhistory.driverinfo.DriverInfoActivity" />
+        <activity
+            android:name="com.example.carpool.ui.travelhistory.TravelHistory"
+            android:label="@string/travel_histories" />
+    </application>
+
+</manifest>
