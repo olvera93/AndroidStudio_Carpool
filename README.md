@@ -14,6 +14,11 @@
 * Se agregaron notificaciones mediante push notifications y Firebase cloud messaging.
 * Se deshabilitan los botones de la pantalla de registro al estar activo el modo avión.
 
+
+### Nota importante:
+Los commits se borraron de la rama master(fue muy raro), pero en la rama [bugs](https://github.com/olvera93/AndroidStudio_Carpool/commits/bugs) viene lo que hizo cada integrante del equipo.
+
+
 <div style="text-align: justify;">
   
 
@@ -82,6 +87,6 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
  
 
-  <footer>
+  </footer>
 
 
