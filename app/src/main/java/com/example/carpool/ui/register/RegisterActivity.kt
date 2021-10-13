@@ -207,6 +207,10 @@ class RegisterActivity : AppCompatActivity(), RegisterPresenter.View {
             }
             else{
                 addNewUserToDB()
+                runOnUiThread(Runnable {
+                    expandableNotification()
+                    Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
+                })
             }
         })
 

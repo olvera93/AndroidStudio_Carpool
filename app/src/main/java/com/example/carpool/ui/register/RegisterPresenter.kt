@@ -64,35 +64,14 @@ class RegisterPresenter(view: View) : AppCompatActivity() {
                 .getInstance(activity)
                 ?.userDao()
                 ?.insertUser(baseUser)
-            runOnUiThread(Runnable {
-                expandableNotification()
-                Toast.makeText(this, getString(R.string.successfully_registered), Toast.LENGTH_LONG).show()
-            })
+
         })
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(activity, MainActivity::class.java)
 
-        startActivity(intent)
+        activity.startActivity(intent)
     }
 
-    private fun expandableNotification() {
-        val notification = NotificationCompat.Builder(this, RegisterActivity.CHANNEL_TRAVEL)
-            .setSmallIcon(R.drawable.ic_stat_name)
-            .setColor(ContextCompat.getColor(this, R.color.primaryColor))
-            .setContentTitle(getString(R.string.simple_title))
-            .setContentText(getString(R.string.large_text))
-            .setLargeIcon(getDrawable(R.mipmap.carpool)?.toBitmap())
-            .setStyle(
-                NotificationCompat.BigTextStyle()
-                .bigText(getString(R.string.large_text)))
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .build()
 
-        NotificationManagerCompat.from(this).run {
-            notify(++RegisterActivity.notificationId, notification)
-
-        }
-
-    }
 
     interface View{
         fun addExistingUsersToDB()
