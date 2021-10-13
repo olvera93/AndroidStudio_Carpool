@@ -1,17 +1,12 @@
 package com.example.carpool.ui.register
 
+import MainActivity
 import android.content.Intent
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.toBitmap
-import com.example.carpool.R
+
 import com.example.carpool.data.models.User
 import com.example.carpool.data.room.UserDb
 import com.example.carpool.data.room.Userdbclass
-import com.example.carpool.MainActivity
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
