@@ -7,6 +7,7 @@
 * Los datos del usuario ya se guarda en una Base de Datos.
 * Se agregaron transiciones en diferentes pantallas.
 * Se agregó una pequeña animación cuando obtiene su ubicación del usuario.
+<<<<<<< HEAD
 * Ahora el usuario ya podrá escribir al lugar que desea ir sin colocar coordenadas (No se logro establecer la ruta en el mapa).
 * Se modifico el diseño de las pantallas Log in y Register.
 * Ya es posible apreciar el detalle de los conductores en el historial de viajes.
@@ -18,6 +19,9 @@
 ### Nota importante:
 Los commits se borraron de la rama master(fue muy raro), pero en la rama [bugs](https://github.com/olvera93/AndroidStudio_Carpool/commits/bugs) viene lo que hizo cada integrante del equipo.
 
+=======
+* Ahora el usuario ya podrá escribir al lugar que desea ir(Falta dibujar ruta) sin colocar coordenadas.
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
 
 <div style="text-align: justify;">
   
@@ -87,6 +91,10 @@ El código a crear buscará desarrollar cada uno de los temas vistos en las sesi
   <p><br /> &copy; Equipo 02 - Kotlin-Intermedio-Santander  -  2021
  
 
+<<<<<<< HEAD
   </footer>
+=======
+  <footer>
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
 
 

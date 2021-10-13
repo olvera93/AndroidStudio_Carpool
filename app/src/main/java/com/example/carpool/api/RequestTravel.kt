@@ -1,5 +1,9 @@
 package com.example.carpool.api
 
+<<<<<<< HEAD
+=======
+import com.example.carpool.databinding.ActivityRequestTravelBinding
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
 
 import com.google.android.gms.location.*
 import java.util.*
@@ -51,7 +55,10 @@ import com.example.carpool.ui.profile.ProfileActivity
 import com.example.carpool.data.room.UserDb
 import com.example.carpool.data.room.Userdbclass
 import com.example.carpool.MainActivity
+<<<<<<< HEAD
 import com.example.carpool.databinding.ActivityRequestTravelBinding
+=======
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.messaging.FirebaseMessaging

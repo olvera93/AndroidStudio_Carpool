@@ -75,8 +75,15 @@
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/edit"
         android:drawablePadding="10dp"
+<<<<<<< HEAD
         android:inputType="text"
         android:paddingLeft="10dp"
+=======
+        android:hint="@string/register_username"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/black"
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
         android:textSize="16sp"
         app:errorEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/NumeroText"
@@ -92,8 +99,11 @@
             android:drawablePadding="8dp"
             android:inputType="text"
             android:maxLength="16"
+<<<<<<< HEAD
             android:enabled="false"
             android:textColor="@color/secondaryTextColor"
+=======
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 

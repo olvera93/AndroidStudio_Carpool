@@ -41,8 +41,11 @@
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/fragment_list.xml" value="0.2391304347826087" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/item_driver.xml" value="0.264" />
         <entry key="..\:/Escritorio/Carpool/app/src/main/res/layout/loading_item.xml" value="0.264" />
+<<<<<<< HEAD
         <entry key="..\:/Users/Stuart/Desktop/AndroidStudio_Carpool-master/app/src/main/res/layout/fragment_detail.xml" value="0.1" />
         <entry key="..\:/Users/Stuart/Desktop/AndroidStudio_Carpool-master/app/src/main/res/layout/fragment_list.xml" value="0.1" />
+=======
+>>>>>>> 86563378c17c2696ad38567ad2f0a6c554cff2bf
         <entry key="app/src/main/res/layout/activity_animation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_principalscreen.xml" value="0.25" />
